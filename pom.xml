@@ -537,6 +537,7 @@
 		<!-- TEST end -->		
 	</dependencies>
 	<build>
+	    <finalName>${project.artifactId}</finalName>
 		<plugins>
 			<!-- tomcat7插件 -->
 			<plugin>
@@ -559,15 +560,6 @@
 					<target>${jdk.version}</target>
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
-			</plugin>		
-			<!-- 打包jar文件时，配置manifest文件，加入lib包的jar依赖 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.6</version>
-				<configuration>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
 			</plugin>
 		</plugins>
 		<resources>
@@ -586,7 +578,6 @@
 			</resource>
 		</resources>
 	</build>
-	
 	<!--仓库-->
 	<repositories>
 		<repository>
