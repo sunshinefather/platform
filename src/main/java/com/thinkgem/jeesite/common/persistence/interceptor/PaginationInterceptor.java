@@ -1,6 +1,3 @@
-/**
- * Copyright &copy; 2012-2014 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
- */
 package com.thinkgem.jeesite.common.persistence.interceptor;
 
 import org.apache.ibatis.executor.Executor;
@@ -22,12 +19,9 @@ import com.thinkgem.jeesite.common.utils.StringUtils;
 import java.util.Properties;
 
 /**
- * 数据库分页插件，只拦截查询语句.
- * @author poplar.yfyang / thinkgem
- * @version 2013-8-28
+ * 数据库分页插件，只拦截查询语句
  */
-@Intercepts({@Signature(type = Executor.class, method = "query",
-        args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class})})
+@Intercepts({@Signature(type = Executor.class, method = "query",args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class})})
 public class PaginationInterceptor extends BaseInterceptor {
 
     private static final long serialVersionUID = 1L;
