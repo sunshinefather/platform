@@ -5,9 +5,9 @@ package com.thinkgem.jeesite.common.utils;
 
 import javax.servlet.http.HttpServletRequest;
 
-import eu.bitwalker.useragentutils.Browser;
-import eu.bitwalker.useragentutils.DeviceType;
-import eu.bitwalker.useragentutils.UserAgent;
+import nl.bitwalker.useragentutils.Browser;
+import nl.bitwalker.useragentutils.DeviceType;
+import nl.bitwalker.useragentutils.UserAgent;
 
 /**
  * 用户代理字符串识别工具

@@ -5,19 +5,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.Configuration;
 import org.apache.log4j.Logger;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.core.NestedIOException;
-
-/**
- * 刷新使用进程
- * 
- * @author liubaoquan
- * 
- */
 public class Runnable implements java.lang.Runnable {
 
 	public static Logger log = Logger.getLogger(Runnable.class);
