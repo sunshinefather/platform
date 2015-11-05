@@ -25,8 +25,7 @@ import com.platform.modules.gen.service.GenTableService;
 import com.platform.modules.gen.util.GenUtils;
 
 /**
- * 业务表Controller
- * @author ThinkGem
+ * 业务表Controller * @author sunshine
  * @version 2013-10-15
  */
 @Controller

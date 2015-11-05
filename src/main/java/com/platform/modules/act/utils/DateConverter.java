@@ -12,8 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 日期转换类
- * @author ThinkGem
+ * 日期转换类 * @author sunshine
  * @version 2013-11-03
  */
 public class DateConverter implements Converter {

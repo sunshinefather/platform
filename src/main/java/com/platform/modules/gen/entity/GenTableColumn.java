@@ -10,8 +10,7 @@ import com.platform.common.persistence.DataEntity;
 import com.platform.common.utils.StringUtils;
 
 /**
- * 业务表字段Entity
- * @author ThinkGem
+ * 业务表字段Entity * @author sunshine
  * @version 2013-10-15
  */
 public class GenTableColumn extends DataEntity<GenTableColumn> {

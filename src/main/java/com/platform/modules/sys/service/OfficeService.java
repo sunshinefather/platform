@@ -12,8 +12,7 @@ import com.platform.modules.sys.entity.Office;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 机构Service
- * @author ThinkGem
+ * 机构Service * @author sunshine
  * @version 2014-05-16
  */
 @Service

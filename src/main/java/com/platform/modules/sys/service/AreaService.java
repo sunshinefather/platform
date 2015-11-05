@@ -12,8 +12,7 @@ import com.platform.modules.sys.entity.Area;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 区域Service
- * @author ThinkGem
+ * 区域Service * @author sunshine
  * @version 2014-05-16
  */
 @Service

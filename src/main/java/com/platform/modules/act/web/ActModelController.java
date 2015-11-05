@@ -17,8 +17,7 @@ import com.platform.common.web.BaseController;
 import com.platform.modules.act.service.ActModelService;
 
 /**
- * 流程模型相关Controller
- * @author ThinkGem
+ * 流程模型相关Controller * @author sunshine
  * @version 2013-11-03
  */
 @Controller

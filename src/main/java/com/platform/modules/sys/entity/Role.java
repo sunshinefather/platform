@@ -11,8 +11,7 @@ import com.platform.common.config.Global;
 import com.platform.common.persistence.DataEntity;
 
 /**
- * 角色Entity
- * @author ThinkGem
+ * 角色Entity * @author sunshine
  * @version 2013-12-05
  */
 public class Role extends DataEntity<Role> {

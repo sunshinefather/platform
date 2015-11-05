@@ -16,8 +16,7 @@ import com.platform.modules.cms.entity.Category;
 import com.platform.modules.cms.service.StatsService;
 
 /**
- * 统计Controller
- * @author ThinkGem
+ * 统计Controller * @author sunshine
  * @version 2013-5-21
  */
 @Controller

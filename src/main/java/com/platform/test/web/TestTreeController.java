@@ -26,8 +26,7 @@ import com.platform.test.entity.TestTree;
 import com.platform.test.service.TestTreeService;
 
 /**
- * 树结构生成Controller
- * @author ThinkGem
+ * 树结构生成Controller * @author sunshine
  * @version 2015-04-06
  */
 @Controller

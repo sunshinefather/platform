@@ -24,8 +24,7 @@ import com.platform.modules.sys.entity.Role;
 import com.platform.modules.sys.entity.User;
 
 /**
- * 流程工具
- * @author ThinkGem
+ * 流程工具 * @author sunshine
  * @version 2013-11-03
  */
 public class ActUtils {

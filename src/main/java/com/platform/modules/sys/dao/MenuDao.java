@@ -8,8 +8,7 @@ import com.platform.common.persistence.annotation.MyBatisDao;
 import com.platform.modules.sys.entity.Menu;
 
 /**
- * 菜单DAO接口
- * @author ThinkGem
+ * 菜单DAO接口 * @author sunshine
  * @version 2014-05-16
  */
 @MyBatisDao

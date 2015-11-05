@@ -1,4 +1,3 @@
-
 package com.platform.common.utils;
 
 import net.sf.ehcache.Cache;
@@ -6,8 +5,7 @@ import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
 
 /**
- * Cache工具类
- * @author ThinkGem
+ * Cache工具类 * @author sunshine
  * @version 2013-5-29
  */
 public class CacheUtils {

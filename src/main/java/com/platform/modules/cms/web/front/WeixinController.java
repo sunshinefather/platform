@@ -12,8 +12,7 @@ import com.platform.common.web.BaseController;
 import com.platform.modules.cms.utils.WiexinSignUtil;
 
 /**
- * 测试Controller
- * @author ThinkGem
+ * 测试Controller * @author sunshine
  * @version 2014-02-28
  */
 @Controller

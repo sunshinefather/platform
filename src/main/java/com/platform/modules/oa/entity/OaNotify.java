@@ -13,8 +13,7 @@ import com.platform.common.utils.StringUtils;
 import com.platform.modules.sys.entity.User;
 
 /**
- * 通知通告Entity
- * @author ThinkGem
+ * 通知通告Entity * @author sunshine
  * @version 2014-05-16
  */
 public class OaNotify extends DataEntity<OaNotify> {

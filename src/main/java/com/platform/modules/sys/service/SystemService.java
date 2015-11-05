@@ -36,8 +36,7 @@ import com.platform.modules.sys.utils.LogUtils;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 系统管理，安全相关实体的管理类,包括用户、角色、菜单.
- * @author ThinkGem
+ * 系统管理，安全相关实体的管理类,包括用户、角色、菜单. * @author sunshine
  * @version 2013-12-05
  */
 @Service

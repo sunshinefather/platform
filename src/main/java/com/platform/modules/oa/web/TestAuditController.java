@@ -22,8 +22,7 @@ import com.platform.modules.oa.entity.TestAudit;
 import com.platform.modules.oa.service.TestAuditService;
 
 /**
- * 审批Controller
- * @author thinkgem
+ * 审批Controller * @author sunshine
  * @version 2014-05-16
  */
 @Controller

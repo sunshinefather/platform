@@ -31,8 +31,7 @@ import com.platform.modules.cms.service.SiteService;
 import com.platform.modules.cms.utils.TplUtils;
 
 /**
- * 栏目Controller
- * @author ThinkGem
+ * 栏目Controller * @author sunshine
  * @version 2013-4-21
  */
 @Controller

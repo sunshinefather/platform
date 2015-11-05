@@ -23,8 +23,7 @@ import com.platform.modules.cms.service.SiteService;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 站点Controller
- * @author ThinkGem
+ * 站点Controller * @author sunshine
  * @version 2013-3-23
  */
 @Controller

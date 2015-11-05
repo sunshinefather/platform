@@ -26,8 +26,7 @@ import com.platform.modules.act.utils.ActUtils;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 流程个人任务相关Controller
- * @author ThinkGem
+ * 流程个人任务相关Controller * @author sunshine
  * @version 2013-11-03
  */
 @Controller

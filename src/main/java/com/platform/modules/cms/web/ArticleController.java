@@ -33,8 +33,7 @@ import com.platform.modules.cms.utils.TplUtils;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 文章Controller
- * @author ThinkGem
+ * 文章Controller * @author sunshine
  * @version 2013-3-23
  */
 @Controller

@@ -27,8 +27,7 @@ import com.platform.modules.cms.service.CategoryService;
 import com.platform.modules.cms.service.LinkService;
 
 /**
- * 链接Controller
- * @author ThinkGem
+ * 链接Controller * @author sunshine
  * @version 2013-3-23
  */
 @Controller

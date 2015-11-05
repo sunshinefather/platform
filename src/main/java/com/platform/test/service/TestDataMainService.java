@@ -16,8 +16,7 @@ import com.platform.test.entity.TestDataChild;
 import com.platform.test.dao.TestDataChildDao;
 
 /**
- * 主子表生成Service
- * @author ThinkGem
+ * 主子表生成Service * @author sunshine
  * @version 2015-04-06
  */
 @Service

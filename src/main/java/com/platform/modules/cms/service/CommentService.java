@@ -10,8 +10,7 @@ import com.platform.modules.cms.dao.CommentDao;
 import com.platform.modules.cms.entity.Comment;
 
 /**
- * 评论Service
- * @author ThinkGem
+ * 评论Service * @author sunshine
  * @version 2013-01-15
  */
 @Service

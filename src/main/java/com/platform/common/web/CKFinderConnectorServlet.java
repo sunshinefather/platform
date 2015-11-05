@@ -15,8 +15,7 @@ import com.platform.modules.sys.utils.UserUtils;
 import com.ckfinder.connector.ConnectorServlet;
 
 /**
- * CKFinderConnectorServlet
- * @author ThinkGem
+ * CKFinderConnectorServlet * @author sunshine
  * @version 2014-06-25
  */
 public class CKFinderConnectorServlet extends ConnectorServlet {

@@ -37,8 +37,7 @@ import com.platform.modules.sys.service.SystemService;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 用户Controller
- * @author ThinkGem
+ * 用户Controller * @author sunshine
  * @version 2013-8-29
  */
 @Controller

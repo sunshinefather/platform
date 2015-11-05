@@ -1,4 +1,3 @@
-
 package com.platform.common.mapper;
 
 import java.io.IOException;
@@ -29,8 +28,7 @@ import com.google.common.collect.Maps;
 
 /**
  * 简单封装Jackson，实现JSON String<->Java Object的Mapper.
- * 封装不同的输出风格, 使用不同的builder函数创建实例.
- * @author ThinkGem
+ * 封装不同的输出风格, 使用不同的builder函数创建实例. * @author sunshine
  * @version 2013-11-15
  */
 public class JsonMapper extends ObjectMapper {

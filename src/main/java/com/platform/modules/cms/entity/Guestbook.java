@@ -13,8 +13,7 @@ import com.platform.common.utils.IdGen;
 import com.platform.modules.sys.entity.User;
 
 /**
- * 留言Entity
- * @author ThinkGem
+ * 留言Entity * @author sunshine
  * @version 2013-05-15
  */
 public class Guestbook extends DataEntity<Guestbook> {

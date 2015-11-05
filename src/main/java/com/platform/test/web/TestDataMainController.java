@@ -21,8 +21,7 @@ import com.platform.test.entity.TestDataMain;
 import com.platform.test.service.TestDataMainService;
 
 /**
- * 主子表生成Controller
- * @author ThinkGem
+ * 主子表生成Controller * @author sunshine
  * @version 2015-04-06
  */
 @Controller

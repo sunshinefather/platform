@@ -10,8 +10,7 @@ import org.hibernate.validator.constraints.Length;
 import com.platform.common.persistence.TreeEntity;
 
 /**
- * 机构Entity
- * @author ThinkGem
+ * 机构Entity * @author sunshine
  * @version 2013-05-15
  */
 public class Office extends TreeEntity<Office> {

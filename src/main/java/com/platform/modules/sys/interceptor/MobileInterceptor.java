@@ -12,8 +12,7 @@ import com.platform.common.utils.StringUtils;
 import com.platform.common.utils.UserAgentUtils;
 
 /**
- * 手机端视图拦截器
- * @author ThinkGem
+ * 手机端视图拦截器 * @author sunshine
  * @version 2014-9-1
  */
 public class MobileInterceptor extends BaseService implements HandlerInterceptor {

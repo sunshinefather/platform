@@ -6,8 +6,7 @@ import com.platform.modules.sys.entity.Office;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 字段类型转换
- * @author ThinkGem
+ * 字段类型转换 * @author sunshine
  * @version 2013-03-10
  */
 public class OfficeType {

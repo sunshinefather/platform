@@ -19,8 +19,7 @@ import org.springframework.web.util.UriUtils;
 import com.platform.common.config.Global;
 
 /**
- * 查看CK上传的图片
- * @author ThinkGem
+ * 查看CK上传的图片 * @author sunshine
  * @version 2014-06-25
  */
 public class UserfilesDownloadServlet extends HttpServlet {

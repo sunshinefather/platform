@@ -25,8 +25,7 @@ import org.apache.shiro.web.util.WebUtils;
 import com.platform.common.utils.StringUtils;
 
 /**
- * 自定义WEB会话管理类
- * @author ThinkGem
+ * 自定义WEB会话管理类 * @author sunshine
  * @version 2014-7-20
  */
 public class SessionManager extends DefaultWebSessionManager {

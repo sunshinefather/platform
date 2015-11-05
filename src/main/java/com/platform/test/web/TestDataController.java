@@ -21,8 +21,7 @@ import com.platform.test.entity.TestData;
 import com.platform.test.service.TestDataService;
 
 /**
- * 单表生成Controller
- * @author ThinkGem
+ * 单表生成Controller * @author sunshine
  * @version 2015-04-06
  */
 @Controller

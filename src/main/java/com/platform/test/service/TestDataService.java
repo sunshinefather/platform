@@ -12,8 +12,7 @@ import com.platform.test.entity.TestData;
 import com.platform.test.dao.TestDataDao;
 
 /**
- * 单表生成Service
- * @author ThinkGem
+ * 单表生成Service * @author sunshine
  * @version 2015-04-06
  */
 @Service

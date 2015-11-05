@@ -1,6 +1,6 @@
 /**
 * 树表组件
-* @author benzhan (詹潮江)
+* @author benzhan
 * @version 1.4.2
 * @lastUpdateDate 2011-09-03
 * @mail zhanchaojiang@qq.com

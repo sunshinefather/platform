@@ -15,8 +15,7 @@ import com.platform.common.persistence.DataEntity;
 import com.platform.modules.cms.utils.CmsUtils;
 
 /**
- * 文章Entity
- * @author ThinkGem
+ * 文章Entity * @author sunshine
  * @version 2013-05-15
  */
 public class Article extends DataEntity<Article> {

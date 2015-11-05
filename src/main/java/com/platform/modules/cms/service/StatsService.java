@@ -17,8 +17,7 @@ import com.platform.modules.cms.entity.Site;
 import com.platform.modules.sys.entity.Office;
 
 /**
- * 统计Service
- * @author ThinkGem
+ * 统计Service * @author sunshine
  * @version 2013-05-21
  */
 @Service

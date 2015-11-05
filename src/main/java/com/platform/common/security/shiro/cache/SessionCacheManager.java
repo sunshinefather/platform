@@ -22,8 +22,7 @@ import com.google.common.collect.Sets;
 import com.platform.common.web.Servlets;
 
 /**
- * 自定义授权缓存管理类
- * @author ThinkGem
+ * 自定义授权缓存管理类 * @author sunshine
  * @version 2014-7-21
  */
 public class SessionCacheManager implements CacheManager {

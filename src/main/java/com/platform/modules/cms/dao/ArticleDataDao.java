@@ -6,8 +6,7 @@ import com.platform.common.persistence.annotation.MyBatisDao;
 import com.platform.modules.cms.entity.ArticleData;
 
 /**
- * 文章DAO接口
- * @author ThinkGem
+ * 文章DAO接口 * @author sunshine
  * @version 2013-8-23
  */
 @MyBatisDao

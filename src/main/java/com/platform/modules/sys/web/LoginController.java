@@ -30,8 +30,7 @@ import com.platform.modules.sys.security.SystemAuthorizingRealm.Principal;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 登录Controller
- * @author ThinkGem
+ * 登录Controller * @author sunshine
  * @version 2013-5-31
  */
 @Controller

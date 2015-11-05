@@ -10,8 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.platform.modules.sys.entity.Dict;
 
 /**
- * 生成方案Entity
- * @author ThinkGem
+ * 生成方案Entity * @author sunshine
  * @version 2013-10-15
  */
 @XmlRootElement(name="category")

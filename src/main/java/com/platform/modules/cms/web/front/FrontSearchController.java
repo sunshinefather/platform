@@ -23,8 +23,7 @@ import com.platform.modules.cms.utils.CmsUtils;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 网站搜索Controller
- * @author ThinkGem
+ * 网站搜索Controller * @author sunshine
  * @version 2013-5-29
  */
 @Controller

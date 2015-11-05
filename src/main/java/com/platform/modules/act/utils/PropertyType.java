@@ -4,8 +4,7 @@ package com.platform.modules.act.utils;
 import java.util.Date;
 
 /**
- * 属性数据类型
- * @author ThinkGem
+ * 属性数据类型 * @author sunshine
  * @version 2013-11-03
  */
 public enum PropertyType {

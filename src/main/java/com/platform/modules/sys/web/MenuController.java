@@ -26,8 +26,7 @@ import com.platform.modules.sys.service.SystemService;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 菜单Controller
- * @author ThinkGem
+ * 菜单Controller * @author sunshine
  * @version 2013-3-23
  */
 @Controller

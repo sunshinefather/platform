@@ -8,8 +8,7 @@ import nl.bitwalker.useragentutils.DeviceType;
 import nl.bitwalker.useragentutils.UserAgent;
 
 /**
- * 用户代理字符串识别工具
- * @author ThinkGem
+ * 用户代理字符串识别工具 * @author sunshine
  * @version 2014-6-13
  */
 public class UserAgentUtils {

@@ -1,6 +1,3 @@
-/**
- * Copyright (c) 2005-2012 springside.org.cn
- */
 package com.platform.common.beanvalidator;
 
 import java.util.List;

@@ -14,8 +14,7 @@ import com.platform.modules.sys.entity.Role;
 import com.platform.modules.sys.entity.User;
 
 /**
- * Service基类
- * @author ThinkGem
+ * Service基类 * @author sunshine
  * @version 2014-05-16
  */
 @Transactional(readOnly = true)

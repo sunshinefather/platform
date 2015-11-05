@@ -1,4 +1,3 @@
-
 package com.platform.common.utils;
 
 import java.io.UnsupportedEncodingException;
@@ -10,8 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Cookie工具类
- * @author ThinkGem
+ * Cookie工具类 * @author sunshine
  * @version 2013-01-15
  */
 public class CookieUtils {

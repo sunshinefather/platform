@@ -18,8 +18,7 @@ import com.platform.modules.gen.dao.GenTableColumnDao;
 import com.platform.modules.gen.dao.GenTableDao;
 
 /**
- * 业务表Service
- * @author ThinkGem
+ * 业务表Service * @author sunshine
  * @version 2013-10-15
  */
 @Service

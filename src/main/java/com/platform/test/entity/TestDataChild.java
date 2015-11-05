@@ -6,8 +6,7 @@ import org.hibernate.validator.constraints.Length;
 import com.platform.common.persistence.DataEntity;
 
 /**
- * 主子表生成Entity
- * @author ThinkGem
+ * 主子表生成Entity * @author sunshine
  * @version 2015-04-06
  */
 public class TestDataChild extends DataEntity<TestDataChild> {

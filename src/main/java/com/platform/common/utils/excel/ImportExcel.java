@@ -31,8 +31,7 @@ import com.platform.common.utils.excel.annotation.ExcelField;
 import com.platform.modules.sys.utils.DictUtils;
 
 /**
- * 导入Excel文件（支持“XLS”和“XLSX”格式）
- * @author ThinkGem
+ * 导入Excel文件（支持“XLS”和“XLSX”格式） * @author sunshine
  * @version 2013-03-10
  */
 public class ImportExcel {

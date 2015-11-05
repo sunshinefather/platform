@@ -6,8 +6,7 @@ import com.platform.common.persistence.annotation.MyBatisDao;
 import com.platform.test.entity.TestData;
 
 /**
- * 单表生成DAO接口
- * @author ThinkGem
+ * 单表生成DAO接口 * @author sunshine
  * @version 2015-04-06
  */
 @MyBatisDao

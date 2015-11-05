@@ -23,8 +23,7 @@ import com.platform.modules.test.entity.Test;
 import com.platform.modules.test.service.TestService;
 
 /**
- * 测试Controller
- * @author ThinkGem
+ * 测试Controller * @author sunshine
  * @version 2013-10-17
  */
 @Controller

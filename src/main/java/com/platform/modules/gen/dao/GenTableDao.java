@@ -6,8 +6,7 @@ import com.platform.common.persistence.annotation.MyBatisDao;
 import com.platform.modules.gen.entity.GenTable;
 
 /**
- * 业务表DAO接口
- * @author ThinkGem
+ * 业务表DAO接口 * @author sunshine
  * @version 2013-10-15
  */
 @MyBatisDao

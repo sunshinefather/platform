@@ -11,8 +11,7 @@ import com.platform.modules.sys.entity.Role;
 import com.platform.modules.sys.service.SystemService;
 
 /**
- * 字段类型转换
- * @author ThinkGem
+ * 字段类型转换 * @author sunshine
  * @version 2013-5-29
  */
 public class RoleListType {

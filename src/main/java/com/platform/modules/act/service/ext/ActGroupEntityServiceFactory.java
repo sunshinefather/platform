@@ -7,8 +7,7 @@ import org.activiti.engine.impl.persistence.entity.GroupIdentityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * Activiti Group Entity Factory
- * @author ThinkGem
+ * Activiti Group Entity Factory * @author sunshine
  * @version 2013-11-03
  */
 public class ActGroupEntityServiceFactory implements SessionFactory {

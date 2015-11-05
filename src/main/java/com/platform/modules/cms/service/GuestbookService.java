@@ -10,8 +10,7 @@ import com.platform.modules.cms.dao.GuestbookDao;
 import com.platform.modules.cms.entity.Guestbook;
 
 /**
- * 留言Service
- * @author ThinkGem
+ * 留言Service * @author sunshine
  * @version 2013-01-15
  */
 @Service

@@ -24,8 +24,7 @@ import com.platform.modules.sys.utils.DictUtils;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 评论Controller
- * @author ThinkGem
+ * 评论Controller * @author sunshine
  * @version 2013-3-23
  */
 @Controller

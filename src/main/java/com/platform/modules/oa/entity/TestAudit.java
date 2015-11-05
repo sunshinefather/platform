@@ -6,8 +6,7 @@ import com.platform.modules.sys.entity.Office;
 import com.platform.modules.sys.entity.User;
 
 /**
- * 审批Entity
- * @author thinkgem
+ * 审批Entity * @author sunshine
  * @version 2014-05-16
  */
 public class TestAudit extends ActEntity<TestAudit> {

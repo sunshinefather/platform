@@ -22,8 +22,7 @@ import com.platform.modules.gen.entity.GenTemplate;
 import com.platform.modules.gen.util.GenUtils;
 
 /**
- * 生成方案Service
- * @author ThinkGem
+ * 生成方案Service * @author sunshine
  * @version 2013-10-15
  */
 @Service

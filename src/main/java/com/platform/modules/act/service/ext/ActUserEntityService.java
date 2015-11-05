@@ -21,8 +21,7 @@ import com.platform.modules.sys.entity.Role;
 import com.platform.modules.sys.service.SystemService;
 
 /**
- * Activiti User Entity Service
- * @author ThinkGem
+ * Activiti User Entity Service * @author sunshine
  * @version 2013-11-03
  */
 @Service

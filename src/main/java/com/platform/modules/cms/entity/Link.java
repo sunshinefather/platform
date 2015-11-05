@@ -13,8 +13,7 @@ import com.platform.common.persistence.DataEntity;
 import com.platform.modules.sys.entity.User;
 
 /**
- * 链接Entity
- * @author ThinkGem
+ * 链接Entity * @author sunshine
  * @version 2013-05-15
  */
 public class Link extends DataEntity<Link> {

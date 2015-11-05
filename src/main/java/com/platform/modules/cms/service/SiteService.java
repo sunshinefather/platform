@@ -12,8 +12,7 @@ import com.platform.modules.cms.entity.Site;
 import com.platform.modules.cms.utils.CmsUtils;
 
 /**
- * 站点Service
- * @author ThinkGem
+ * 站点Service * @author sunshine
  * @version 2013-01-15
  */
 @Service

@@ -13,8 +13,7 @@ import com.platform.modules.sys.dao.LogDao;
 import com.platform.modules.sys.entity.Log;
 
 /**
- * 日志Service
- * @author ThinkGem
+ * 日志Service * @author sunshine
  * @version 2014-05-16
  */
 @Service

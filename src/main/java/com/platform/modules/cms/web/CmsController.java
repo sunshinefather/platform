@@ -11,8 +11,7 @@ import com.platform.common.web.BaseController;
 import com.platform.modules.cms.service.CategoryService;
 
 /**
- * 内容管理Controller
- * @author ThinkGem
+ * 内容管理Controller * @author sunshine
  * @version 2013-4-21
  */
 @Controller

@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.platform.common.persistence.DataEntity;
 
 /**
- * 单表生成Entity
- * @author ThinkGem
+ * 单表生成Entity * @author sunshine
  * @version 2015-04-06
  */
 public class TestData extends DataEntity<TestData> {

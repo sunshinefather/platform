@@ -28,8 +28,7 @@ import com.platform.modules.sys.utils.DictUtils;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 机构Controller
- * @author ThinkGem
+ * 机构Controller * @author sunshine
  * @version 2013-5-15
  */
 @Controller

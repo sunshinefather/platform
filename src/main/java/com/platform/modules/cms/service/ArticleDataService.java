@@ -9,8 +9,7 @@ import com.platform.modules.cms.dao.ArticleDataDao;
 import com.platform.modules.cms.entity.ArticleData;
 
 /**
- * 站点Service
- * @author ThinkGem
+ * 站点Service * @author sunshine
  * @version 2013-01-15
  */
 @Service

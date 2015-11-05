@@ -31,8 +31,7 @@ import com.platform.modules.sys.service.SystemService;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 角色Controller
- * @author ThinkGem
+ * 角色Controller * @author sunshine
  * @version 2013-12-05
  */
 @Controller

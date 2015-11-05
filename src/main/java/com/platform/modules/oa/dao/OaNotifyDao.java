@@ -6,8 +6,7 @@ import com.platform.common.persistence.annotation.MyBatisDao;
 import com.platform.modules.oa.entity.OaNotify;
 
 /**
- * 通知通告DAO接口
- * @author ThinkGem
+ * 通知通告DAO接口 * @author sunshine
  * @version 2014-05-16
  */
 @MyBatisDao

@@ -19,8 +19,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * 生成随机验证码
- * @author ThinkGem
+ * 生成随机验证码 * @author sunshine
  * @version 2014-7-27
  */
 @SuppressWarnings("serial")

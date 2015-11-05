@@ -16,8 +16,7 @@ import com.platform.modules.sys.entity.Log;
 import com.platform.modules.sys.service.LogService;
 
 /**
- * 日志Controller
- * @author ThinkGem
+ * 日志Controller * @author sunshine
  * @version 2013-6-2
  */
 @Controller

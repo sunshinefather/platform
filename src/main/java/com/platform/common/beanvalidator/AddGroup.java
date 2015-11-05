@@ -1,8 +1,7 @@
 package com.platform.common.beanvalidator;
 
 /**
- * 添加Bean验证组
- * @author ThinkGem
+ * 添加Bean验证组 * @author sunshine
  *
  */
 public interface AddGroup {

@@ -13,8 +13,7 @@ import com.google.common.collect.Lists;
 import com.platform.common.persistence.DataEntity;
 
 /**
- * 主子表生成Entity
- * @author ThinkGem
+ * 主子表生成Entity * @author sunshine
  * @version 2015-04-06
  */
 public class TestDataMain extends DataEntity<TestDataMain> {

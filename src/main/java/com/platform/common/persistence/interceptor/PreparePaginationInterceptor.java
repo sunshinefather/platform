@@ -19,7 +19,7 @@ import java.util.Properties;
 
 /**
  * Mybatis数据库分页插件，拦截StatementHandler的prepare方法
- * @author poplar.yfyang / thinkgem
+ * @author poplar.yfyang
  * @version 2013-8-28
  */
 @Intercepts({

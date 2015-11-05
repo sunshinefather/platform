@@ -28,8 +28,7 @@ import com.platform.common.utils.StringUtils;
 import com.platform.common.web.BaseController;
 
 /**
- * 硕正Controller
- * @author ThinkGem
+ * 硕正Controller * @author sunshine
  * @version 2013-11-13
  */
 @Controller

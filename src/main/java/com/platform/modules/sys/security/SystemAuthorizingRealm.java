@@ -38,8 +38,7 @@ import com.platform.modules.sys.utils.UserUtils;
 import com.platform.modules.sys.web.LoginController;
 
 /**
- * 系统安全认证实现类
- * @author ThinkGem
+ * 系统安全认证实现类 * @author sunshine
  * @version 2014-7-5
  */
 @Service
