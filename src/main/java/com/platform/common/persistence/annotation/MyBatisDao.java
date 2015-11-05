@@ -1,4 +1,3 @@
-
 package com.platform.common.persistence.annotation;
 
 import java.lang.annotation.Documented;
@@ -6,12 +5,13 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-
 import org.springframework.stereotype.Component;
-
 /**
- * 标识MyBatis的DAO,方便{@link org.mybatis.spring.mapper.MapperScannerConfigurer}的扫描。 * @author sunshine
- * @version 2013-8-28
+ * 标识MyBatis的DAO
+ * @ClassName:  MyBatisDao   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月5日 下午5:41:44
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
@@ -19,11 +19,6 @@ import org.springframework.stereotype.Component;
 @Component
 public @interface MyBatisDao {
 	
-	/**
-	 * The value may indicate a suggestion for a logical component name,
-	 * to be turned into a Spring bean in case of an autodetected component.
-	 * @return the suggested component name, if any
-	 */
 	String value() default "";
 
 }

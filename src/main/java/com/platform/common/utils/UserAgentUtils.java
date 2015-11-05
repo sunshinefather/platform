@@ -6,10 +6,12 @@ import javax.servlet.http.HttpServletRequest;
 import nl.bitwalker.useragentutils.Browser;
 import nl.bitwalker.useragentutils.DeviceType;
 import nl.bitwalker.useragentutils.UserAgent;
-
 /**
- * 用户代理字符串识别工具 * @author sunshine
- * @version 2014-6-13
+ * 客户端访问工具识别
+ * @ClassName:  UserAgentUtils   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月5日 下午6:05:38
  */
 public class UserAgentUtils {
 

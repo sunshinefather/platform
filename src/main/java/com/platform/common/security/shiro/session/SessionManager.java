@@ -1,15 +1,12 @@
-
 package com.platform.common.security.shiro.session;
 
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
-
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.shiro.session.InvalidSessionException;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.UnknownSessionException;
@@ -21,12 +18,13 @@ import org.apache.shiro.web.servlet.ShiroHttpServletRequest;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.apache.shiro.web.util.WebUtils;
-
 import com.platform.common.utils.StringUtils;
-
 /**
- * 自定义WEB会话管理类 * @author sunshine
- * @version 2014-7-20
+ * session会话管理
+ * @ClassName:  SessionManager   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月5日 下午6:19:52
  */
 public class SessionManager extends DefaultWebSessionManager {
 
@@ -45,11 +43,11 @@ public class SessionManager extends DefaultWebSessionManager {
 		        HttpServletResponse rs = (HttpServletResponse)response;
 				Cookie template = getSessionIdCookie();
 		        Cookie cookie = new SimpleCookie(template);
-				cookie.setValue(sid); cookie.saveTo(rq, rs);
+				cookie.setValue(sid);
+				cookie.saveTo(rq, rs);
 			}
 			// 设置当前session状态
-            request.setAttribute(ShiroHttpServletRequest.REFERENCED_SESSION_ID_SOURCE,
-                    ShiroHttpServletRequest.URL_SESSION_ID_SOURCE); // session来源与url
+            request.setAttribute(ShiroHttpServletRequest.REFERENCED_SESSION_ID_SOURCE,ShiroHttpServletRequest.URL_SESSION_ID_SOURCE); // session来源与url
             request.setAttribute(ShiroHttpServletRequest.REFERENCED_SESSION_ID, sid);
             request.setAttribute(ShiroHttpServletRequest.REFERENCED_SESSION_ID_IS_VALID, Boolean.TRUE);
         	return sid;
@@ -67,7 +65,6 @@ public class SessionManager extends DefaultWebSessionManager {
 		try{
 			return super.retrieveSession(sessionKey);
 		}catch (UnknownSessionException e) {
-    		// 获取不到SESSION不抛出异常
 			return null;
 		}
 	}
@@ -76,7 +73,6 @@ public class SessionManager extends DefaultWebSessionManager {
     	try{
     		return super.getStartTimestamp(key);
     	}catch (InvalidSessionException e) {
-    		// 获取不到SESSION不抛出异常
         	return null;
 		}
     }
@@ -85,7 +81,6 @@ public class SessionManager extends DefaultWebSessionManager {
     	try{
     		return super.getLastAccessTime(key);
     	}catch (InvalidSessionException e) {
-    		// 获取不到SESSION不抛出异常
         	return null;
 		}
     }
@@ -94,7 +89,6 @@ public class SessionManager extends DefaultWebSessionManager {
     	try{
     		return super.getTimeout(key);
     	}catch (InvalidSessionException e) {
-    		// 获取不到SESSION不抛出异常
         	return 0;
 		}
     }
@@ -103,7 +97,6 @@ public class SessionManager extends DefaultWebSessionManager {
     	try{
     		super.setTimeout(key, maxIdleTimeInMillis);
     	}catch (InvalidSessionException e) {
-    		// 获取不到SESSION不抛出异常
 		}
     }
 
@@ -111,7 +104,6 @@ public class SessionManager extends DefaultWebSessionManager {
     	try{
 	    	super.touch(key);
 		}catch (InvalidSessionException e) {
-			// 获取不到SESSION不抛出异常
 		}
     }
 
@@ -119,7 +111,6 @@ public class SessionManager extends DefaultWebSessionManager {
     	try{
     		return super.getHost(key);
     	}catch (InvalidSessionException e) {
-    		// 获取不到SESSION不抛出异常
         	return null;
 		}
     }
@@ -128,7 +119,6 @@ public class SessionManager extends DefaultWebSessionManager {
     	try{
     		return super.getAttributeKeys(key);
     	}catch (InvalidSessionException e) {
-    		// 获取不到SESSION不抛出异常
         	return null;
 		}
     }
@@ -137,7 +127,6 @@ public class SessionManager extends DefaultWebSessionManager {
     	try{
     		return super.getAttribute(sessionKey, attributeKey);
     	}catch (InvalidSessionException e) {
-    		// 获取不到SESSION不抛出异常
         	return null;
 		}
     }
@@ -146,7 +135,6 @@ public class SessionManager extends DefaultWebSessionManager {
     	try{
     		super.setAttribute(sessionKey, attributeKey, value);
     	}catch (InvalidSessionException e) {
-    		// 获取不到SESSION不抛出异常
 		}
     }
 
@@ -154,7 +142,6 @@ public class SessionManager extends DefaultWebSessionManager {
     	try{
     		return super.removeAttribute(sessionKey, attributeKey);
     	}catch (InvalidSessionException e) {
-    		// 获取不到SESSION不抛出异常
         	return null;
 		}
     }
@@ -163,7 +150,6 @@ public class SessionManager extends DefaultWebSessionManager {
     	try{
     		super.stop(key);
     	}catch (InvalidSessionException e) {
-    		// 获取不到SESSION不抛出异常
 		}
     }
     
@@ -171,7 +157,6 @@ public class SessionManager extends DefaultWebSessionManager {
     	try{
     		super.checkValid(key);
 		}catch (InvalidSessionException e) {
-			// 获取不到SESSION不抛出异常
 		}
     }
     
@@ -197,7 +182,7 @@ public class SessionManager extends DefaultWebSessionManager {
     		return super.start(context);
 		}catch (NullPointerException e) {
 			SimpleSession session = new SimpleSession();
-			session.setId(0);
+			session.setId(StringUtils.getUUIDCode());
 			return session;
 		}
     }

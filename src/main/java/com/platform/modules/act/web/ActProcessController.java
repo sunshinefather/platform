@@ -102,7 +102,7 @@ public class ActProcessController extends BaseController {
 	 */
 	@RequiresPermissions("act:process:edit")
 	@RequestMapping(value = "/deploy", method=RequestMethod.POST)
-	public String deploy(@Value("#{APP_PROP['activiti.export.diagram.path']}") String exportDir, 
+	public String deploy(@Value("#{project_cfg['activiti.export.diagram.path']}") String exportDir, 
 			String category, MultipartFile file, RedirectAttributes redirectAttributes) {
 
 		String fileName = file.getOriginalFilename();
@@ -160,7 +160,7 @@ public class ActProcessController extends BaseController {
 	@RequiresPermissions("act:process:edit")
 	@RequestMapping(value = "export/diagrams")
 	@ResponseBody
-	public List<String> exportDiagrams(@Value("#{APP_PROP['activiti.export.diagram.path']}") String exportDir) throws IOException {
+	public List<String> exportDiagrams(@Value("#{project_cfg['activiti.export.diagram.path']}") String exportDir) throws IOException {
 		List<String> files = actProcessService.exportDiagrams(exportDir);;
 		return files;
 	}

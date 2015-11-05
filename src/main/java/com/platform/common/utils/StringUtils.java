@@ -5,6 +5,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -344,5 +345,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 			}
 		}
 		return retStr;
+	}
+	
+	public static String getUUIDCode() {
+		return UUID.randomUUID().toString().replaceAll("-", "");
 	}
 }

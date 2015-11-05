@@ -15,10 +15,10 @@
     <!-- 加载配置属性文件 -->
 	<context:property-placeholder ignore-unresolvable="true" location="classpath:project-config.properties" />
 	
-	<!-- 可通过  @Value("#{APP_PROP['jdbc.driver']}")方式引用 -->
-    <util:properties id="APP_PROP" location="classpath:project-config.properties" local-override="true"/>
+	<!-- 可通过  @Value("#{project_cfg['jdbc.driver']}")方式引用 -->
+    <util:properties id="project_cfg" location="classpath:project-config.properties" local-override="true"/>
 	
-	<!-- 使用Annotation自动注册Bean,不扫描@Controller注解,base-package 如果多个用","分隔  -->
+	<!-- 自动扫描使用注解注册的Bean,不扫描@Controller注解,base-package 如果多个用","分隔  -->
 	<context:component-scan base-package="com.platform">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
@@ -56,9 +56,8 @@
 		<property name="removeAbandonedTimeout" value="1800" />
 		<!-- 关闭abanded连接时输出错误日志 -->
 		<property name="logAbandoned" value="true" />
-		<!-- 配置监控统计拦截的filters 
+		<!-- 配置监控统计拦截的filters -->
 	    <property name="filters" value="stat" /> 
-	    -->
 	</bean>
 	<!-- SqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -74,15 +73,15 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
+	<!-- 配置支持注解驱动，扫描@Transactional注解的类定义事务  -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+	
     <!-- 扫描basePackage下所有以@MyBatisDao注解的接口 -->
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
         <property name="basePackage" value="com.platform"/>
         <property name="annotationClass" value="com.platform.common.persistence.annotation.MyBatisDao"/>
     </bean>
-	
-	<!-- 配置 Annotation 驱动，扫描@Transactional注解的类定义事务  -->
-	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
     
 	<!-- 配置 JSR303 Bean Validator 定义 -->
 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
@@ -93,6 +92,7 @@
 	</bean>
 	
 	<!-- 计划任务配置，用 @Service @Lazy(false)标注类，用@Scheduled(cron = "0 0 2 * * ?")标注方法 -->
-    <task:executor id="executor" pool-size="10"/> <task:scheduler id="scheduler" pool-size="10"/>
+    <task:executor id="executor" pool-size="10"/>
+    <task:scheduler id="scheduler" pool-size="10"/>
     <task:annotation-driven scheduler="scheduler" executor="executor" proxy-target-class="true"/>	
 </beans>
