@@ -1,6 +1,3 @@
-/**
- * Copyright &copy; 2012-2014 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
- */
 package com.thinkgem.jeesite.common.utils;
 
 import java.io.UnsupportedEncodingException;
@@ -8,31 +5,17 @@ import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.LocaleResolver;
-
 import com.google.common.collect.Lists;
-
-/**
- * 字符串工具类, 继承org.apache.commons.lang3.StringUtils类
- * @author ThinkGem
- * @version 2013-05-22
- */
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
 	
     private static final char SEPARATOR = '_';
     private static final String CHARSET_NAME = "UTF-8";
     
-    /**
-     * 转换为字节数组
-     * @param str
-     * @return
-     */
     public static byte[] getBytes(String str){
     	if (str != null){
     		try {
@@ -45,11 +28,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     	}
     }
     
-    /**
-     * 转换为字节数组
-     * @param str
-     * @return
-     */
     public static String toString(byte[] bytes){
     	try {
 			return new String(bytes, CHARSET_NAME);
@@ -58,12 +36,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		}
     }
     
-    /**
-     * 是否包含字符串
-     * @param str 验证字符串
-     * @param strs 字符串组
-     * @return 包含返回true
-     */
     public static boolean inString(String str, String... strs){
     	if (str != null){
         	for (String s : strs){
@@ -74,10 +46,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     	}
     	return false;
     }
-    
-	/**
-	 * 替换掉HTML标签方法
-	 */
+
 	public static String replaceHtml(String html) {
 		if (isBlank(html)){
 			return "";
@@ -89,11 +58,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		return s;
 	}
 	
-	/**
-	 * 替换为手机识别的HTML，去掉样式及属性，保留回车。
-	 * @param html
-	 * @return
-	 */
 	public static String replaceMobileHtml(String html){
 		if (html == null){
 			return "";
@@ -101,11 +65,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		return html.replaceAll("<([a-z]+?)\\s+?.*?>", "<$1>");
 	}
 	
-	/**
-	 * 替换为手机识别的HTML，去掉样式及属性，保留回车。
-	 * @param txt
-	 * @return
-	 */
 	public static String toHtml(String txt){
 		if (txt == null){
 			return "";
@@ -113,12 +72,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		return replace(replace(Encodes.escapeHtml(txt), "\n", "<br/>"), "\t", "&nbsp; &nbsp; ");
 	}
 
-	/**
-	 * 缩略字符串（不区分中英文字符）
-	 * @param str 目标字符串
-	 * @param length 截取长度
-	 * @return
-	 */
 	public static String abbr(String str, int length) {
 		if (str == null) {
 			return "";
@@ -205,9 +158,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		return result.toString();
 	}
 	
-	/**
-	 * 转换为Double类型
-	 */
 	public static Double toDouble(Object val){
 		if (val == null){
 			return 0D;
@@ -219,30 +169,18 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		}
 	}
 
-	/**
-	 * 转换为Float类型
-	 */
 	public static Float toFloat(Object val){
 		return toDouble(val).floatValue();
 	}
 
-	/**
-	 * 转换为Long类型
-	 */
 	public static Long toLong(Object val){
 		return toDouble(val).longValue();
 	}
 
-	/**
-	 * 转换为Integer类型
-	 */
 	public static Integer toInteger(Object val){
 		return toLong(val).intValue();
 	}
 	
-	/**
-	 * 获得i18n字符串
-	 */
 	public static String getMessage(String code, Object[] args) {
 		LocaleResolver localLocaleResolver = (LocaleResolver) SpringContextHolder.getBean(LocaleResolver.class);
 		HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();  
@@ -250,9 +188,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		return SpringContextHolder.getApplicationContext().getMessage(code, args, localLocale);
 	}
 	
-	/**
-	 * 获得用户远程地址
-	 */
 	public static String getRemoteAddr(HttpServletRequest request){
 		String remoteAddr = request.getHeader("X-Real-IP");
         if (isNotBlank(remoteAddr)) {
@@ -266,11 +201,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 	}
 
 	/**
-	 * 驼峰命名法工具
+	 * 驼峰命名1
 	 * @return
 	 * 		toCamelCase("hello_world") == "helloWorld" 
-	 * 		toCapitalizeCamelCase("hello_world") == "HelloWorld"
-	 * 		toUnderScoreCase("helloWorld") = "hello_world"
 	 */
     public static String toCamelCase(String s) {
         if (s == null) {
@@ -298,11 +231,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     }
 
     /**
-	 * 驼峰命名法工具
+	 * 驼峰命名2
 	 * @return
-	 * 		toCamelCase("hello_world") == "helloWorld" 
 	 * 		toCapitalizeCamelCase("hello_world") == "HelloWorld"
-	 * 		toUnderScoreCase("helloWorld") = "hello_world"
 	 */
     public static String toCapitalizeCamelCase(String s) {
         if (s == null) {
@@ -313,10 +244,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     }
     
     /**
-	 * 驼峰命名法工具
+	 * 驼峰命名3
 	 * @return
-	 * 		toCamelCase("hello_world") == "helloWorld" 
-	 * 		toCapitalizeCamelCase("hello_world") == "HelloWorld"
 	 * 		toUnderScoreCase("helloWorld") = "hello_world"
 	 */
     public static String toUnderScoreCase(String s) {
@@ -350,11 +279,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
         return sb.toString();
     }
     
-    /**
-     * 如果不为空，则设置值
-     * @param target
-     * @param source
-     */
     public static void setValueIfNotBlank(String target, String source) {
 		if (isNotBlank(source)){
 			target = source;

@@ -5,7 +5,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">    
     <!-- 加载配置属性文件 -->
-	<context:property-placeholder ignore-unresolvable="true" location="classpath:jeesite.properties" />
+	<context:property-placeholder ignore-unresolvable="true" location="classpath:project-config.properties" />
 	
 	<!-- 使用Annotation自动注册Bean,只扫描@Controller,base-package 如果多个，用","分隔  -->
 	<context:component-scan base-package="com.thinkgem.jeesite" use-default-filters="false">
@@ -15,21 +15,27 @@
 	<!-- 默认的注解映射的支持 -->
 	<mvc:annotation-driven content-negotiation-manager="contentNegotiationManager">
 		<mvc:message-converters register-defaults="true">
-			<!-- 将StringHttpMessageConverter的默认编码设为UTF-8 -->
 			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
 		    	<constructor-arg value="UTF-8" />
 			</bean>
-			<!-- 将Jackson2HttpMessageConverter的默认格式化输出为false -->
 			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                 <property name="supportedMediaTypes">
-                	<list><value>application/json;charset=UTF-8</value></list>
+                	<list>
+                	  <value>application/json;charset=UTF-8</value>
+                	  <value>text/json;charset=UTF-8</value>
+                	</list>
                 </property>
-                <property name="prettyPrint" value="false"/>
-                <property name="objectMapper">  
-                    <bean class="com.thinkgem.jeesite.common.mapper.JsonMapper"></bean>  
-                </property> 
+                <property name="prettyPrint" value="true"/>
+                <property name="objectMapper">
+					<bean class="com.fasterxml.jackson.databind.ObjectMapper">
+						<property name="dateFormat">
+							<bean class="java.text.SimpleDateFormat">
+								<constructor-arg value="yyyy-MM-dd HH:mm:ss"/>
+							</bean>
+						</property>
+					</bean>
+				</property>
             </bean>
-            <!-- 使用XML格式输出数据 -->
             <bean class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
 		        <constructor-arg>
 		        	<bean class="org.springframework.oxm.xstream.XStreamMarshaller">
@@ -55,25 +61,36 @@
 	<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
 	    <property name="mediaTypes" >
 	        <map> 
-                <entry key="xml" value="application/xml"/> 
-                <entry key="json" value="application/json"/> 
+                <entry key="sxml" value="application/xml"/> 
+                <entry key="sjson" value="application/json"/>
+                <entry key="shtml" value="text/html"/>
             </map>
 	    </property>
 	    <!-- 是否忽略Accept Header -->
-        <property name="ignoreAcceptHeader" value="true"/>
-        <!-- 根据扩展名,即 /userinfo.json => application/json -->
+        <property name="ignoreAcceptHeader" value="false"/>
+        <!-- 根据扩展名,即 /userinfo.sjson => application/json -->
         <property name="favorPathExtension" value="true"/>
         <!-- 用于开启 /userinfo?format=json 的支持 --> 
         <property name="favorParameter" value="true"/>
         <property name="parameterName" value="format"/>
-        <!-- 默认的content-type --> 
-        <property name= "defaultContentType" value="text/html" />
 	</bean>
 	
-	<!-- 定义视图文件解析 -->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/views/"/>
-		<property name="suffix" value=".jsp"/>
+	<!-- 视图解析 -->	
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="viewResolvers">
+			<list>
+			    	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+					<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+						<property name="prefix" value="/WEB-INF/views/"/>
+						<property name="suffix" value=".jsp"/>
+					</bean>
+			</list>
+		</property>
+		<property name="defaultViews">
+		    <list>
+		        <bean class="com.alibaba.fastjson.support.spring.FastJsonJsonView"/>
+		    </list>
+		</property>
 	</bean>
 	
 	<!-- 对静态资源文件的访问， 将无法mapping到Controller的path交给default servlet handler处理 -->
@@ -104,7 +121,7 @@
 	</mvc:interceptors>
 	
 	<!-- 支持Shiro对Controller的方法级AOP安全控制 begin-->
-	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor">
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator">
 		<property name="proxyTargetClass" value="true" />
 	</bean>
 	
@@ -114,13 +131,17 @@
 				<prop key="org.apache.shiro.authz.UnauthorizedException">error/403</prop>
 				<prop key="java.lang.Throwable">error/500</prop>
 			</props>
-			</property>
+		</property>
 	</bean>
 	<!-- 支持Shiro对Controller的方法级AOP安全控制 end -->
 	
-	<!-- 上传文件拦截，设置最大上传文件大小   10M=10*1024*1024(B)=10485760 bytes -->  
+	<!-- 上传文件拦截，设置最大上传文件大小   100M=100*1024*1024(B)=104857600 bytes -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
-		<property name="maxUploadSize" value="${web.maxUploadSize}" />  
+		 <property name="defaultEncoding" value="utf-8"/>
+		 <!-- 上传完成之前内存中最大缓存0.4M -->
+		 <property name="maxInMemorySize" value="4096"/>
+		 <!-- 设置最大上传允许100M -->
+		 <property name="maxUploadSize" value="104857600"/>
 	</bean>
 	
 </beans>

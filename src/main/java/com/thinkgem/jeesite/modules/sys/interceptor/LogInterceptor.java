@@ -1,6 +1,3 @@
-/**
- * Copyright &copy; 2012-2014 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
- */
 package com.thinkgem.jeesite.modules.sys.interceptor;
 
 import java.text.SimpleDateFormat;
@@ -15,11 +12,12 @@ import org.springframework.web.servlet.ModelAndView;
 import com.thinkgem.jeesite.common.service.BaseService;
 import com.thinkgem.jeesite.common.utils.DateUtils;
 import com.thinkgem.jeesite.modules.sys.utils.LogUtils;
-
 /**
  * 日志拦截器
- * @author ThinkGem
- * @version 2014-8-19
+ * @ClassName:  LogInterceptor   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月5日 上午11:06:58
  */
 public class LogInterceptor extends BaseService implements HandlerInterceptor {
 
