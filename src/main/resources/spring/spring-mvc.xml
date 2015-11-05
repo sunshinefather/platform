@@ -8,7 +8,7 @@
 	<context:property-placeholder ignore-unresolvable="true" location="classpath:project-config.properties" />
 	
 	<!-- 使用Annotation自动注册Bean,只扫描@Controller,base-package 如果多个，用","分隔  -->
-	<context:component-scan base-package="com.thinkgem.jeesite" use-default-filters="false">
+	<context:component-scan base-package="com.platform" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
     
@@ -44,10 +44,10 @@
 				        </property>
 				        <property name="annotatedClasses">
 				            <list>
-				                <value>com.thinkgem.jeesite.common.persistence.BaseEntity</value>
-				                <value>com.thinkgem.jeesite.common.supcan.treelist.TreeList</value>
-				                <value>com.thinkgem.jeesite.common.supcan.treelist.cols.Col</value>
-				                <value>com.thinkgem.jeesite.common.supcan.treelist.cols.Group</value>
+				                <value>com.platform.common.persistence.BaseEntity</value>
+				                <value>com.platform.common.supcan.treelist.TreeList</value>
+				                <value>com.platform.common.supcan.treelist.cols.Col</value>
+				                <value>com.platform.common.supcan.treelist.cols.Group</value>
 				            </list>
 				        </property>
 				    </bean>
@@ -111,12 +111,12 @@
 			<mvc:exclude-mapping path="${adminPath}/sys/menu/tree"/>
 			<mvc:exclude-mapping path="${adminPath}/sys/menu/treeData"/>
 			<mvc:exclude-mapping path="${adminPath}/oa/oaNotify/self/count"/>
-			<bean class="com.thinkgem.jeesite.modules.sys.interceptor.LogInterceptor" />
+			<bean class="com.platform.modules.sys.interceptor.LogInterceptor" />
 		</mvc:interceptor>
 		<!-- 手机视图拦截器 -->
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
-			<bean class="com.thinkgem.jeesite.modules.sys.interceptor.MobileInterceptor" />
+			<bean class="com.platform.modules.sys.interceptor.MobileInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 	

@@ -19,7 +19,7 @@
     <util:properties id="APP_PROP" location="classpath:project-config.properties" local-override="true"/>
 	
 	<!-- 使用Annotation自动注册Bean,不扫描@Controller注解,base-package 如果多个用","分隔  -->
-	<context:component-scan base-package="com.thinkgem.jeesite">
+	<context:component-scan base-package="com.platform">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 	
@@ -63,9 +63,9 @@
 	<!-- SqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="com.thinkgem.jeesite"/>
-        <property name="typeAliasesSuperType" value="com.thinkgem.jeesite.common.persistence.BaseEntity"/>
-        <property name="mapperLocations" value="classpath:com/thinkgem/jeesite/**/mappers/*.xml"/>
+        <property name="typeAliasesPackage" value="com.platform"/>
+        <property name="typeAliasesSuperType" value="com.platform.common.persistence.BaseEntity"/>
+        <property name="mapperLocations" value="classpath:com/platform/**/mappers/*.xml"/>
 		<property name="configLocation" value="classpath:/mybatis/mybatis-config.xml"></property>
     </bean>
     
@@ -77,8 +77,8 @@
     <!-- 扫描basePackage下所有以@MyBatisDao注解的接口 -->
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-        <property name="basePackage" value="com.thinkgem.jeesite"/>
-        <property name="annotationClass" value="com.thinkgem.jeesite.common.persistence.annotation.MyBatisDao"/>
+        <property name="basePackage" value="com.platform"/>
+        <property name="annotationClass" value="com.platform.common.persistence.annotation.MyBatisDao"/>
     </bean>
 	
 	<!-- 配置 Annotation 驱动，扫描@Transactional注解的类定义事务  -->

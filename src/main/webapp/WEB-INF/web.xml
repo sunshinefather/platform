@@ -10,7 +10,7 @@
 	</context-param>
 	
 	<listener>
-		<listener-class>com.thinkgem.jeesite.modules.sys.listener.WebContextListener</listener-class>
+		<listener-class>com.platform.modules.sys.listener.WebContextListener</listener-class>
 	</listener>
 	
 	<listener>
@@ -87,7 +87,7 @@
 		<servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
 		<init-param>
 			<param-name>org.restlet.application</param-name>
-			<param-value>com.thinkgem.jeesite.modules.act.rest.ActRestApplication</param-value>
+			<param-value>com.platform.modules.act.rest.ActRestApplication</param-value>
 		</init-param>
 	</servlet>
 	
@@ -114,7 +114,7 @@
 	<!-- CKFinder -->
 	<servlet>
 		<servlet-name>CKFinderConnectorServlet</servlet-name>
-		<servlet-class>com.thinkgem.jeesite.common.web.CKFinderConnectorServlet</servlet-class>
+		<servlet-class>com.platform.common.web.CKFinderConnectorServlet</servlet-class>
 		<init-param>
 			<param-name>XMLConfig</param-name>
 			<param-value>/WEB-INF/ckfinder.xml</param-value>
@@ -125,7 +125,7 @@
 		</init-param>
 		<init-param>
 			<param-name>configuration</param-name>
-			<param-value>com.thinkgem.jeesite.common.web.CKFinderConfig</param-value>
+			<param-value>com.platform.common.web.CKFinderConfig</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -156,7 +156,7 @@
 	<!-- Userfiles download -->
 	<servlet>
 	  	<servlet-name>UserfilesDownloadServlet</servlet-name>
-	  	<servlet-class>com.thinkgem.jeesite.common.servlet.UserfilesDownloadServlet</servlet-class>
+	  	<servlet-class>com.platform.common.servlet.UserfilesDownloadServlet</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
@@ -167,7 +167,7 @@
 	<!-- Validate code -->
 	<servlet>
 		<servlet-name>ValidateCodeServlet</servlet-name>
-		<servlet-class>com.thinkgem.jeesite.common.servlet.ValidateCodeServlet</servlet-class>
+		<servlet-class>com.platform.common.servlet.ValidateCodeServlet</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
