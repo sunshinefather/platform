@@ -4,9 +4,7 @@ package com.platform.common.security.shiro.cache;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.UnavailableSecurityManagerException;
 import org.apache.shiro.cache.Cache;
@@ -17,12 +15,12 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import com.google.common.collect.Sets;
 import com.platform.common.web.Servlets;
 
 /**
- * 自定义授权缓存管理类 * @author sunshine
+ * 自定义授权缓存管理类
+ * @author sunshine
  * @version 2014-7-21
  */
 public class SessionCacheManager implements CacheManager {

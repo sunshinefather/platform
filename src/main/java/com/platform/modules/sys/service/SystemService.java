@@ -65,8 +65,6 @@ public class SystemService extends BaseService implements InitializingBean {
 
 	@Autowired
 	private IdentityService identityService;
-
-	//-- User Service --//
 	
 	/**
 	 * 获取用户

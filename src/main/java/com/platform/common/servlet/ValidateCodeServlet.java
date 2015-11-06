@@ -1,4 +1,3 @@
-
 package com.platform.common.servlet;
 
 import java.awt.Color;
@@ -8,23 +7,25 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Random;
-
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.commons.lang3.StringUtils;
-
 /**
- * 生成随机验证码 * @author sunshine
- * @version 2014-7-27
+ * 随机验证码
+ * @ClassName:  ValidateCodeServlet   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月6日 上午10:38:18
  */
-@SuppressWarnings("serial")
+
 public class ValidateCodeServlet extends HttpServlet {
 	
+	private static final long serialVersionUID = 1L;
+
 	public static final String VALIDATE_CODE = "validateCode";
 	
 	private int w = 70;
@@ -78,15 +79,7 @@ public class ValidateCodeServlet extends HttpServlet {
 		
 		BufferedImage image = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
 		Graphics g = image.getGraphics();
-
-		/*
-		 * 生成背景
-		 */
 		createBackground(g);
-
-		/*
-		 * 生成字符
-		 */
 		String s = createCharacter(g);
 		request.getSession().setAttribute(VALIDATE_CODE, s);
 
@@ -111,10 +104,8 @@ public class ValidateCodeServlet extends HttpServlet {
 	}
 	
 	private void createBackground(Graphics g) {
-		// 填充背景
 		g.setColor(getRandColor(220,250)); 
 		g.fillRect(0, 0, w, h);
-		// 加入干扰线条
 		for (int i = 0; i < 8; i++) {
 			g.setColor(getRandColor(40,150));
 			Random random = new Random();
@@ -134,11 +125,10 @@ public class ValidateCodeServlet extends HttpServlet {
 		Random random = new Random();
 		StringBuilder s = new StringBuilder();
 		for (int i = 0; i < 4; i++) {
-			String r = String.valueOf(codeSeq[random.nextInt(codeSeq.length)]);//random.nextInt(10));
+			String r = String.valueOf(codeSeq[random.nextInt(codeSeq.length)]);
 			g.setColor(new Color(50 + random.nextInt(100), 50 + random.nextInt(100), 50 + random.nextInt(100)));
 			g.setFont(new Font(fontTypes[random.nextInt(fontTypes.length)],Font.BOLD,26)); 
 			g.drawString(r, 15 * i + 5, 19 + random.nextInt(8));
-//			g.drawString(r, i*w/4, h-5);
 			s.append(r);
 		}
 		return s.toString();

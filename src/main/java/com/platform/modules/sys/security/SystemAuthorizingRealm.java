@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.security;
 
 import java.io.Serializable;
@@ -36,26 +35,33 @@ import com.platform.modules.sys.service.SystemService;
 import com.platform.modules.sys.utils.LogUtils;
 import com.platform.modules.sys.utils.UserUtils;
 import com.platform.modules.sys.web.LoginController;
-
 /**
- * 系统安全认证实现类 * @author sunshine
- * @version 2014-7-5
+ * shiro系统认证实现类
+ * @ClassName:  SystemAuthorizingRealm   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月6日 下午2:10:01
  */
 @Service
-//@DependsOn({"userDao","roleDao","menuDao"})
 public class SystemAuthorizingRealm extends AuthorizingRealm {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
 	private SystemService systemService;
 
-	/**
-	 * 认证回调函数, 登录时调用
-	 */
+    /**
+     * 验证当前登录的Subject
+     * <p>Title: doGetAuthenticationInfo</p>   
+     * <p>Description: </p>   
+     * @param authcToken
+     * @return   
+     * @see org.apache.shiro.realm.AuthenticatingRealm#doGetAuthenticationInfo(org.apache.shiro.authc.AuthenticationToken)
+     */
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) {
-		UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
 		
+		//实际上这个authcToken是从LoginController里面currentUser.login(token)传过来的
+		UPCToken token = (UPCToken) authcToken;
 		int activeSessionSize = getSystemService().getSessionDao().getActiveSessions(false).size();
 		if (logger.isDebugEnabled()){
 			logger.debug("login submit, active session size: {}, username: {}", activeSessionSize, token.getUsername());
@@ -85,7 +91,12 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 	}
 
 	/**
-	 * 授权查询回调函数, 进行鉴权但缓存中无用户的授权信息时调用
+	 * 为当前登录的Subject授予角色和权限,缓存中无用户的授权信息时调用
+	 * <p>Title: doGetAuthorizationInfo</p>   
+	 * <p>Description: </p>   
+	 * @param principals
+	 * @return   
+	 * @see org.apache.shiro.realm.AuthorizingRealm#doGetAuthorizationInfo(org.apache.shiro.subject.PrincipalCollection)
 	 */
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
@@ -184,28 +195,6 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 		matcher.setHashIterations(SystemService.HASH_INTERATIONS);
 		setCredentialsMatcher(matcher);
 	}
-	
-//	/**
-//	 * 清空用户关联权限认证，待下次使用时重新加载
-//	 */
-//	public void clearCachedAuthorizationInfo(Principal principal) {
-//		SimplePrincipalCollection principals = new SimplePrincipalCollection(principal, getName());
-//		clearCachedAuthorizationInfo(principals);
-//	}
-
-	/**
-	 * 清空所有关联认证
-	 * @Deprecated 不需要清空，授权缓存保存到session中
-	 */
-	@Deprecated
-	public void clearAllCachedAuthorizationInfo() {
-//		Cache<Object, AuthorizationInfo> cache = getAuthorizationCache();
-//		if (cache != null) {
-//			for (Object key : cache.keys()) {
-//				cache.remove(key);
-//			}
-//		}
-	}
 
 	/**
 	 * 获取系统业务对象
@@ -253,14 +242,6 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 		public boolean isMobileLogin() {
 			return mobileLogin;
 		}
-
-//		@JsonIgnore
-//		public Map<String, Object> getCacheMap() {
-//			if (cacheMap==null){
-//				cacheMap = new HashMap<String, Object>();
-//			}
-//			return cacheMap;
-//		}
 
 		/**
 		 * 获取SESSIONID

@@ -5,6 +5,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -86,7 +87,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 			StringBuilder sb = new StringBuilder();
 			int currentLength = 0;
 			for (char c : replaceHtml(StringEscapeUtils.unescapeHtml4(str)).toCharArray()) {
-				currentLength += String.valueOf(c).getBytes("GBK").length;
+				currentLength += String.valueOf(c).getBytes("UTF-8").length;
 				if (currentLength <= length - 3) {
 					sb.append(c);
 				} else {
@@ -108,8 +109,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		StringBuffer result = new StringBuffer();
 		int n = 0;
 		char temp;
-		boolean isCode = false; // 是不是HTML代码
-		boolean isHTML = false; // 是不是HTML特殊字符,如&nbsp;
+		boolean isCode = false;
+		boolean isHTML = false;
 		for (int i = 0; i < param.length(); i++) {
 			temp = param.charAt(i);
 			if (temp == '<') {
@@ -124,7 +125,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 			}
 			try {
 				if (!isCode && !isHTML) {
-					n += String.valueOf(temp).getBytes("GBK").length;
+					n += String.valueOf(temp).getBytes("UTF-8").length;
 				}
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
@@ -137,10 +138,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 				break;
 			}
 		}
-		// 取出截取字符串中的HTML标记
+		// 取出字符串中的HTML标记
 		String temp_result = result.toString().replaceAll("(>)[^<>]*(<?)",
 				"$1$2");
-		// 去掉不需要结素标记的HTML标记
+		// 去掉不需要结束标记的HTML标记
 		temp_result = temp_result
 				.replaceAll(
 						"</?(AREA|BASE|BASEFONT|BODY|BR|COL|COLGROUP|DD|DT|FRAME|HEAD|HR|HTML|IMG|INPUT|ISINDEX|LI|LINK|META|OPTION|P|PARAM|TBODY|TD|TFOOT|TH|THEAD|TR|area|base|basefont|body|br|col|colgroup|dd|dt|frame|head|hr|html|img|input|isindex|li|link|meta|option|p|param|tbody|td|tfoot|th|thead|tr)[^<>]*/?>",
@@ -324,7 +325,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     	result.append(val.substring(1));
     	return result.toString();
     }
-    
+
 	public  static String toUTF8(String str) throws Exception {
 		if (isEmpty(str)) {
 			return "";
@@ -349,5 +350,92 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 	
 	public static String getUUIDCode() {
 		return UUID.randomUUID().toString().replaceAll("-", "");
+	}
+	
+	public static String getRandomCode(int type, int length, String excludeChars) {
+		if (length <= 0) {
+			return "";
+		}
+		StringBuffer code = new StringBuffer();
+		int i = 0;
+		Random r = new Random();
+
+		switch (type) {
+		case 0://纯数字
+			while (i < length) {
+				int t = r.nextInt(10);
+				if ((excludeChars == null) || (excludeChars.indexOf(String.valueOf(t)) < 0)) {
+					code.append(t);
+					i++;
+				}
+			}
+			break;
+		case 1://大写字母+小写字母
+			while (i < length) {
+				int t = r.nextInt(123);
+				if (((t < 97) && ((t < 65) || (t > 90)))
+						|| ((excludeChars != null) && (excludeChars.indexOf((char) t) >= 0)))
+					continue;
+				code.append((char) t);
+				i++;
+			}
+
+			break;
+		case 2://数字+大写字母+小写字母
+			while (i < length) {
+				int t = r.nextInt(123);
+				if (((t < 97) && ((t < 65) || (t > 90)) && ((t < 48) || (t > 57)))
+						|| ((excludeChars != null) && (excludeChars.indexOf((char) t) >= 0)))
+					continue;
+				code.append((char) t);
+				i++;
+			}
+
+			break;
+		case 3://数字+大写字母
+			while (i < length) {
+				int t = r.nextInt(91);
+				if (((t < 65) && ((t < 48) || (t > 57)))
+						|| ((excludeChars != null) && (excludeChars.indexOf((char) t) >= 0)))
+					continue;
+				code.append((char) t);
+				i++;
+			}
+
+			break;
+		case 4://数字+小写字母
+			while (i < length) {
+				int t = r.nextInt(123);
+				if (((t < 97) && ((t < 48) || (t > 57)))
+						|| ((excludeChars != null) && (excludeChars.indexOf((char) t) >= 0)))
+					continue;
+				code.append((char) t);
+				i++;
+			}
+			break;
+		case 5://纯大写
+			while (i < length) {
+				int t = r.nextInt(91);
+				if ((t < 65)
+						|| ((excludeChars != null) && (excludeChars.indexOf((char) t) >= 0)))
+					continue;
+				code.append((char) t);
+				i++;
+			}
+
+			break;
+		case 6://纯小写
+			while (i < length) {
+				int t = r.nextInt(123);
+				if ((t < 97)
+						|| ((excludeChars != null) && (excludeChars.indexOf((char) t) >= 0)))
+					continue;
+				code.append((char) t);
+				i++;
+			}
+
+		}
+
+		return code.toString();
 	}
 }

@@ -1,22 +1,21 @@
-
 package com.platform.modules.sys.security;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.web.util.WebUtils;
 import org.springframework.stereotype.Service;
-
 import com.platform.common.utils.StringUtils;
-
 /**
- * 表单验证（包含验证码）过滤类 * @author sunshine
- * @version 2014-5-19
+ * 表单登陆验证过滤器
+ * @ClassName:  FormAuthenticationFilter   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月6日 下午2:23:35
  */
 @Service
 public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.FormAuthenticationFilter {
@@ -39,7 +38,7 @@ public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.
 		String host = StringUtils.getRemoteAddr((HttpServletRequest)request);
 		String captcha = getCaptcha(request);
 		boolean mobile = isMobileLogin(request);
-		return new UsernamePasswordToken(username, password.toCharArray(), rememberMe, host, captcha, mobile);
+		return new UPCToken(username, password, rememberMe, host, captcha, mobile);
 	}
 
 	public String getCaptchaParam() {

@@ -1,23 +1,23 @@
-
 package com.platform.modules.sys.security;
-
 /**
- * 用户和密码（包含验证码）令牌类 * @author sunshine
- * @version 2013-5-19
+ * 用户名,密码和验证码  认证类
+ * @ClassName:  UsernamePasswordToken   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月6日 下午2:15:27
  */
-public class UsernamePasswordToken extends org.apache.shiro.authc.UsernamePasswordToken {
+public class UPCToken extends org.apache.shiro.authc.UsernamePasswordToken {
 
 	private static final long serialVersionUID = 1L;
 
 	private String captcha;
 	private boolean mobileLogin;
 	
-	public UsernamePasswordToken() {
+	public UPCToken() {
 		super();
 	}
 
-	public UsernamePasswordToken(String username, char[] password,
-			boolean rememberMe, String host, String captcha, boolean mobileLogin) {
+	public UPCToken(String username,String password,boolean rememberMe,String host,String captcha,boolean mobileLogin) {
 		super(username, password, rememberMe, host);
 		this.captcha = captcha;
 		this.mobileLogin = mobileLogin;

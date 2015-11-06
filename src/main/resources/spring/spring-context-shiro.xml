@@ -7,9 +7,28 @@
     <!-- 加载配置属性文件 -->
 	<context:property-placeholder ignore-unresolvable="true" location="classpath:project-config.properties" />
 	
-	<!-- Shiro权限过滤过滤器定义 -->
-	<bean name="shiroFilterChainDefinitions" class="java.lang.String">
-		<constructor-arg>
+	<!-- 定义Shiro安全管理配置 -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="systemAuthorizingRealm" />
+		<property name="sessionManager" ref="sessionManager" />
+		<property name="cacheManager" ref="shiroCacheManager" />
+	</bean>
+	
+	<!-- 安全认证过滤器 -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+        <!-- 	<property name="loginUrl" value="${cas.server.url}?service=${cas.project.url}${adminPath}/cas" /> -->
+		<property name="loginUrl" value="${adminPath}/login" />
+		<property name="successUrl" value="${adminPath}?login" />
+		<property name="unauthorizedUrl" value="${adminPath}/login"/>
+		<property name="filters">
+            <map>
+                <entry key="cas" value-ref="casFilter"/>
+                <entry key="authc" value-ref="formAuthenticationFilter"/>
+            </map>
+        </property>
+		<property name="filterChainDefinitions">
+		<!-- anon：匿名访问,authc：认证后才能访问(由拦截器org.apache.shiro.web.filter.authc.FormAuthenticationFilter验证) -->
 			<value>
 				/static/** = anon
 				/userfiles/** = anon
@@ -22,36 +41,12 @@
 				/act/rest/service/** = user
 				/ReportServer/** = user
 			</value>
-		</constructor-arg>
-	</bean>
-	
-	<!-- 安全认证过滤器 -->
-	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
-		<property name="securityManager" ref="securityManager" /><!-- 
-		<property name="loginUrl" value="${cas.server.url}?service=${cas.project.url}${adminPath}/cas" /> -->
-		<property name="loginUrl" value="${adminPath}/login" />
-		<property name="successUrl" value="${adminPath}?login" />
-		<property name="filters">
-            <map>
-                <entry key="cas" value-ref="casFilter"/>
-                <entry key="authc" value-ref="formAuthenticationFilter"/>
-            </map>
-        </property>
-		<property name="filterChainDefinitions">
-			<ref bean="shiroFilterChainDefinitions"/>
 		</property>
 	</bean>
 	
 	<!-- CAS认证过滤器 -->  
 	<bean id="casFilter" class="org.apache.shiro.cas.CasFilter">  
 		<property name="failureUrl" value="${adminPath}/login"/>
-	</bean>
-	
-	<!-- 定义Shiro安全管理配置 -->
-	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-		<property name="realm" ref="systemAuthorizingRealm" />
-		<property name="sessionManager" ref="sessionManager" />
-		<property name="cacheManager" ref="shiroCacheManager" />
 	</bean>
 	
 	<!-- 自定义会话管理配置 -->
@@ -69,17 +64,12 @@
 		<property name="sessionIdCookieEnabled" value="true"/>
 	</bean>
 	
-	<!-- 指定本系统SESSIONID, 默认为: JSESSIONID 问题: 与SERVLET容器名冲突, 如JETTY, TOMCAT 等默认JSESSIONID,
-		当跳出SHIRO SERVLET时如ERROR-PAGE容器会为JSESSIONID重新分配值导致登录会话丢失! -->
+	<!-- 指定本系统sessionid, 默认为: JSESSIONID不建议使用默认值,因为与SERVLET容器冲突,可能导致登录会话丢失! -->
 	<bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
-	    <constructor-arg name="name" value="jeesite.session.id"/>
+	    <constructor-arg name="name" value="platform_session_id"/>
 	</bean>
 
 	<!-- 自定义Session存储容器 -->
-<!-- 	<bean id="sessionDAO" class="com.platform.common.security.shiro.session.JedisSessionDAO"> -->
-<!-- 		<property name="sessionIdGenerator" ref="idGen" /> -->
-<!-- 		<property name="sessionKeyPrefix" value="${redis.keyPrefix}_session_" /> -->
-<!-- 	</bean> -->
 	<bean id="sessionDAO" class="com.platform.common.security.shiro.session.CacheSessionDAO">
 		<property name="sessionIdGenerator" ref="idGen" />
 		<property name="activeSessionsCacheName" value="activeSessionsCache" />
@@ -87,7 +77,6 @@
 	</bean>
 	
 	<!-- 定义授权缓存管理器 -->
-<!-- 	<bean id="shiroCacheManager" class="com.platform.common.security.shiro.cache.SessionCacheManager" /> -->
 	<bean id="shiroCacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
 		<property name="cacheManager" ref="cacheManager"/>
 	</bean>
@@ -95,12 +84,11 @@
 	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
 	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
 	
-	<!-- AOP式方法级权限检查  -->
+	<!-- 开启Shiro的注解(@RequiresRoles,@RequiresPermissions),方法级权限检查  -->
 	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor">
 		<property name="proxyTargetClass" value="true" />
 	</bean>
 	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
     	<property name="securityManager" ref="securityManager"/>
 	</bean>
-	
 </beans>
