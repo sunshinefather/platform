@@ -39,6 +39,15 @@ public class Global {
 		return value;
 	}
 	
+	public static String getConfig(String key,String defaultValue) {
+		String value = map.get(key);
+		if (value == null){
+			value = loader.getProperty(key,defaultValue);
+			map.put(key, value != null ? value : StringUtils.EMPTY);
+		}
+		return value;
+	}
+	
 	/**
 	 * 获取管理端根路径
 	 */

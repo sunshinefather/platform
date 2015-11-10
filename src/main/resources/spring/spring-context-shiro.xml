@@ -9,7 +9,14 @@
 	
 	<!-- 定义Shiro安全管理配置 -->
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+	    <!-- Shiro从从Realm获取安全数据（如用户、角色、权限） -->
 		<property name="realm" ref="systemAuthorizingRealm" />
+		<!-- 认证器  认证通过策略,
+		   默认实现 ModularRealmAuthenticator(调用AuthenticationStrategy进行多Realm(将按照相应的顺序及策略进行访问)身份验证,Authenticator会把相应的token传入Realm，从Realm获取身份验证信息,如果没有返回或抛出异常表示身份验证失败)
+		<property name="authenticator" ref=""/>	
+		-->
+		
+		<!-- 授权器 决定主体是否有权限访问应用中的哪些功能	<property name="authorizer" ref=""/> -->
 		<property name="sessionManager" ref="sessionManager" />
 		<property name="cacheManager" ref="shiroCacheManager" />
 	</bean>
@@ -64,7 +71,7 @@
 		<property name="sessionIdCookieEnabled" value="true"/>
 	</bean>
 	
-	<!-- 指定本系统sessionid, 默认为: JSESSIONID不建议使用默认值,因为与SERVLET容器冲突,可能导致登录会话丢失! -->
+	<!-- 指定系统sessionid, 默认为: JSESSIONID不建议使用默认值,因为与SERVLET容器冲突,可能导致登录会话丢失! -->
 	<bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
 	    <constructor-arg name="name" value="platform_session_id"/>
 	</bean>
@@ -81,7 +88,7 @@
 		<property name="cacheManager" ref="cacheManager"/>
 	</bean>
 	
-	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+	<!-- Shiro内部lifecycle函数的bean执行 -->
 	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
 	
 	<!-- 开启Shiro的注解(@RequiresRoles,@RequiresPermissions),方法级权限检查  -->

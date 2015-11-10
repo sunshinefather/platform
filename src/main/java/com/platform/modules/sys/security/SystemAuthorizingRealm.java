@@ -3,9 +3,7 @@ package com.platform.modules.sys.security;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
-
 import javax.annotation.PostConstruct;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -22,7 +20,6 @@ import org.apache.shiro.util.ByteSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
 import com.platform.common.config.Global;
 import com.platform.common.servlet.ValidateCodeServlet;
 import com.platform.common.utils.Encodes;
@@ -36,7 +33,7 @@ import com.platform.modules.sys.utils.LogUtils;
 import com.platform.modules.sys.utils.UserUtils;
 import com.platform.modules.sys.web.LoginController;
 /**
- * shiro系统认证实现类
+ * shiro 系统提供安全数据(用户、角色、权限)
  * @ClassName:  SystemAuthorizingRealm   
  * @Description:TODO   
  * @author: sunshine  
@@ -48,9 +45,8 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
 	private SystemService systemService;
-
     /**
-     * 验证当前登录的Subject
+     * 认证当前登录的Subject
      * <p>Title: doGetAuthenticationInfo</p>   
      * <p>Description: </p>   
      * @param authcToken
@@ -91,7 +87,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 	}
 
 	/**
-	 * 为当前登录的Subject授予角色和权限,缓存中无用户的授权信息时调用
+	 * 为当前登录的Subject授予权限,缓存中无用户的授权信息时调用
 	 * <p>Title: doGetAuthorizationInfo</p>   
 	 * <p>Description: </p>   
 	 * @param principals

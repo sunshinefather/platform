@@ -1,11 +1,8 @@
-
 package com.platform.modules.sys.web;
 
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.web.util.WebUtils;
@@ -15,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import com.google.common.collect.Maps;
 import com.platform.common.config.Global;
 import com.platform.common.security.shiro.session.SessionDAO;
@@ -28,10 +24,12 @@ import com.platform.common.web.BaseController;
 import com.platform.modules.sys.security.FormAuthenticationFilter;
 import com.platform.modules.sys.security.SystemAuthorizingRealm.Principal;
 import com.platform.modules.sys.utils.UserUtils;
-
 /**
- * 登录Controller * @author sunshine
- * @version 2013-5-31
+ * 登录Controller
+ * @ClassName:  LoginController   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月9日 下午4:06:45
  */
 @Controller
 public class LoginController extends BaseController{
@@ -40,7 +38,16 @@ public class LoginController extends BaseController{
 	private SessionDAO sessionDAO;
 	
 	/**
-	 * 管理登录
+	 * 登陆页面
+	 * @Title: login
+	 * @Description: TODO  
+	 * @param: @param request
+	 * @param: @param response
+	 * @param: @param model
+	 * @param: @return      
+	 * @return: String
+	 * @author: sunshine  
+	 * @throws
 	 */
 	@RequestMapping(value = "${adminPath}/login", method = RequestMethod.GET)
 	public String login(HttpServletRequest request, HttpServletResponse response, Model model) {
@@ -65,18 +72,20 @@ public class LoginController extends BaseController{
 		if(principal != null && !principal.isMobileLogin()){
 			return "redirect:" + adminPath;
 		}
-//		String view;
-//		view = "/WEB-INF/views/modules/sys/sysLogin.jsp";
-//		view = "classpath:";
-//		view += "jar:file:/D:/GitHub/jeesite/src/main/webapp/WEB-INF/lib/jeesite.jar!";
-//		view += "/"+getClass().getName().replaceAll("\\.", "/").replace(getClass().getSimpleName(), "")+"view/sysLogin";
-//		view += ".jsp";
 		return "modules/sys/sysLogin";
 	}
-
-	/**
-	 * 登录失败，真正登录的POST请求由Filter完成
-	 */
+    /**
+     * 登陆
+     * @Title: loginFail
+     * @Description: TODO  
+     * @param: @param request
+     * @param: @param response
+     * @param: @param model
+     * @param: @return      
+     * @return: String
+     * @author: sunshine  
+     * @throws
+     */
 	@RequestMapping(value = "${adminPath}/login", method = RequestMethod.POST)
 	public String loginFail(HttpServletRequest request, HttpServletResponse response, Model model) {
 		Principal principal = UserUtils.getPrincipal();
@@ -159,24 +168,6 @@ public class LoginController extends BaseController{
 			}
 			return "redirect:" + adminPath + "/login";
 		}
-		
-//		// 登录成功后，获取上次登录的当前站点ID
-//		UserUtils.putCache("siteId", StringUtils.toLong(CookieUtils.getCookie(request, "siteId")));
-
-//		System.out.println("==========================a");
-//		try {
-//			byte[] bytes = com.platform.common.utils.FileUtils.readFileToByteArray(
-//					com.platform.common.utils.FileUtils.getFile("c:\\sxt.dmp"));
-//			UserUtils.getSession().setAttribute("kkk", bytes);
-//			UserUtils.getSession().setAttribute("kkk2", bytes);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-////		for (int i=0; i<1000000; i++){
-////			//UserUtils.getSession().setAttribute("a", "a");
-////			request.getSession().setAttribute("aaa", "aa");
-////		}
-//		System.out.println("==========================b");
 		return "modules/sys/sysIndex";
 	}
 	

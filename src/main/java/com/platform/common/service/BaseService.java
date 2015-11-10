@@ -1,45 +1,32 @@
-
 package com.platform.common.service;
 
 import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.google.common.collect.Lists;
 import com.platform.common.persistence.BaseEntity;
 import com.platform.common.utils.StringUtils;
 import com.platform.modules.sys.entity.Role;
 import com.platform.modules.sys.entity.User;
-
 /**
- * Service基类 * @author sunshine
- * @version 2014-05-16
+ * Service基类 
+ * @ClassName:  BaseService   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月9日 下午4:59:45
  */
 @Transactional(readOnly = true)
 public abstract class BaseService {
 	
-	/**
-	 * 日志对象
-	 */
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 
-	/**
-	 * 数据范围过滤
-	 * @param user 当前用户对象，通过“entity.getCurrentUser()”获取
-	 * @param officeAlias 机构表别名，多个用“,”逗号隔开。
-	 * @param userAlias 用户表别名，多个用“,”逗号隔开，传递空，忽略此参数
-	 * @return 标准连接条件对象
-	 */
 	public static String dataScopeFilter(User user, String officeAlias, String userAlias) {
 
 		StringBuilder sqlString = new StringBuilder();
 		
-		// 进行权限过滤，多个角色权限范围之间为或者关系。
 		List<String> dataScope = Lists.newArrayList();
 		
-		// 超级管理员，跳过权限过滤
 		if (!user.isAdmin()){
 			boolean isDataScopeAll = false;
 			for (Role r : user.getRoleList()){
@@ -65,14 +52,9 @@ public abstract class BaseService {
 							sqlString.append(" OR " + oa + ".id = '" + user.getOffice().getId() + "'");
 						}
 						else if (Role.DATA_SCOPE_CUSTOM.equals(r.getDataScope())){
-//							String officeIds =  StringUtils.join(r.getOfficeIdList(), "','");
-//							if (StringUtils.isNotEmpty(officeIds)){
-//								sqlString.append(" OR " + oa + ".id IN ('" + officeIds + "')");
-//							}
 							sqlString.append(" OR EXISTS (SELECT 1 FROM sys_role_office WHERE role_id = '" + r.getId() + "'");
 							sqlString.append(" AND office_id = " + oa +".id)");
 						}
-						//else if (Role.DATA_SCOPE_SELF.equals(r.getDataScope())){
 						dataScope.add(r.getDataScope());
 					}
 				}
@@ -180,8 +162,6 @@ public abstract class BaseService {
 				sqlString.append(" AND " + where + ")");
 			}
 		}
-
-//		System.out.println("dataScopeFilter: " + sqlString.toString());
 
 		// 设置到自定义SQL对象
 		entity.getSqlMap().put(sqlMapKey, sqlString.toString());
