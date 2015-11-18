@@ -9,14 +9,11 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.LocaleResolver;
-
 import com.google.common.collect.Lists;
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
 	
@@ -301,18 +298,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
         return sb.toString();
     }
-    
-    public static void setValueIfNotBlank(String target, String source) {
-		if (isNotBlank(source)){
-			target = source;
-		}
-	}
  
     /**
      * 转换为JS获取对象值，生成三目运算返回结果
-     * @param objectString 对象串
-     *   例如：row.user.id
-     *   返回：!row?'':!row.user?'':!row.user.id?'':row.user.id
+     * 例如：row.user.id
+     * 返回：!row?'':!row.user?'':!row.user.id?'':row.user.id
      */
     public static String jsGetVal(String objectString){
     	StringBuilder result = new StringBuilder();
@@ -437,5 +427,50 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		}
 
 		return code.toString();
+	}
+	/**
+	 * 清除字符串前的零
+	 */
+	public static String clearZeroBefore(String str){
+		if(str == null || "".equals(str))
+			return str;
+		int len = calcZeroBefore(str);
+        if(len>0){
+        	return str.replaceAll("^(0{"+len+"})", "");
+        }else{
+        	return str;
+        }
+        
+	}
+	
+	/**
+	 * 字符串前面补零
+	 */
+	public static String fillZeroBefore(String str,int len){
+		if(str == null || "".equals(str))
+			return str;
+		if(str.length() < len){
+			StringBuffer buffer = new StringBuffer();
+			for (int i = 0; i < len - str.length(); i++) {
+				buffer.append("0");
+			}
+			str = buffer.append(str).toString();
+		}
+		return str;
+	}
+	
+	/**
+	 * 计算字符串前面有几个0
+	 */
+	public static int calcZeroBefore(String str){
+		if(str == null || "".equals(str))
+			return 0;
+		char[] arr = str.toCharArray();
+		for (int i = 0; i < arr.length; i++) {
+			if((int)arr[i] != 48){
+				return i;
+			}
+		}
+		return 0;
 	}
 }
