@@ -1,4 +1,3 @@
-
 package com.platform.modules.oa.entity;
 
 import java.util.List;
@@ -13,7 +12,8 @@ import com.platform.common.utils.StringUtils;
 import com.platform.modules.sys.entity.User;
 
 /**
- * 通知通告Entity * @author sunshine
+ * 通知通告Entity 
+ * @author sunshine
  * @version 2014-05-16
  */
 public class OaNotify extends DataEntity<OaNotify> {

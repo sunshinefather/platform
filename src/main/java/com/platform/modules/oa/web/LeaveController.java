@@ -1,7 +1,6 @@
 /**
  * There are <a href="https://github.com/platform">JeeSite</a> code generation
- */
-package com.platform.modules.oa.web;
+ */package com.platform.modules.oa.web;
 
 import java.util.List;
 import java.util.Map;

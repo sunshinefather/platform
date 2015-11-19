@@ -1,4 +1,3 @@
-
 package com.platform.modules.gen.entity;
 
 import java.util.List;
@@ -10,7 +9,8 @@ import com.platform.common.persistence.DataEntity;
 import com.platform.common.utils.StringUtils;
 
 /**
- * 业务表Entity * @author sunshine
+ * 业务表Entity 
+ * @author sunshine
  * @version 2013-10-15
  */
 public class GenTable extends DataEntity<GenTable> {

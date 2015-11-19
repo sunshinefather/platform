@@ -1,4 +1,3 @@
-
 package com.platform.common.web;
 
 import java.beans.PropertyEditorSupport;
@@ -29,7 +28,8 @@ import com.platform.common.mapper.JsonMapper;
 import com.platform.common.utils.DateUtils;
 
 /**
- * 控制器支持类 * @author sunshine
+ * 控制器支持类 
+ * @author sunshine
  * @version 2013-3-23
  */
 public abstract class BaseController {

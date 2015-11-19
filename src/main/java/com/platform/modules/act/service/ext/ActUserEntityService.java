@@ -1,4 +1,3 @@
-
 package com.platform.modules.act.service.ext;
 
 import java.util.List;
@@ -21,7 +20,8 @@ import com.platform.modules.sys.entity.Role;
 import com.platform.modules.sys.service.SystemService;
 
 /**
- * Activiti User Entity Service * @author sunshine
+ * Activiti User Entity Service 
+ * @author sunshine
  * @version 2013-11-03
  */
 @Service

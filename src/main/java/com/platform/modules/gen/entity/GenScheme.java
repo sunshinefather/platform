@@ -1,4 +1,3 @@
-
 package com.platform.modules.gen.entity;
 
 import org.hibernate.validator.constraints.Length;
@@ -6,7 +5,8 @@ import org.hibernate.validator.constraints.Length;
 import com.platform.common.persistence.DataEntity;
 
 /**
- * 生成方案Entity * @author sunshine
+ * 生成方案Entity 
+ * @author sunshine
  * @version 2013-10-15
  */
 public class GenScheme extends DataEntity<GenScheme> {

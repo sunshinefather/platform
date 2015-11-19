@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.web.front;
 
 import java.util.Date;
@@ -23,7 +22,8 @@ import com.platform.modules.cms.service.GuestbookService;
 import com.platform.modules.cms.utils.CmsUtils;
 
 /**
- * 留言板Controller * @author sunshine
+ * 留言板Controller 
+ * @author sunshine
  * @version 2013-3-15
  */
 @Controller

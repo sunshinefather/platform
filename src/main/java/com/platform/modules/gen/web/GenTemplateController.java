@@ -1,4 +1,3 @@
-
 package com.platform.modules.gen.web;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +21,8 @@ import com.platform.modules.gen.entity.GenTemplate;
 import com.platform.modules.gen.service.GenTemplateService;
 
 /**
- * 代码模板Controller * @author sunshine
+ * 代码模板Controller 
+ * @author sunshine
  * @version 2013-10-15
  */
 @Controller

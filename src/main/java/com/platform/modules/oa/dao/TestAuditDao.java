@@ -1,4 +1,3 @@
-
 package com.platform.modules.oa.dao;
 
 import com.platform.common.persistence.CrudDao;
@@ -6,7 +5,8 @@ import com.platform.common.persistence.annotation.MyBatisDao;
 import com.platform.modules.oa.entity.TestAudit;
 
 /**
- * 审批DAO接口 * @author sunshine
+ * 审批DAO接口 
+ * @author sunshine
  * @version 2014-05-16
  */
 @MyBatisDao

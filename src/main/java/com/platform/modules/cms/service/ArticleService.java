@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.service;
 
 import java.util.ArrayList;
@@ -26,7 +25,8 @@ import com.platform.modules.cms.entity.Category;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 文章Service * @author sunshine
+ * 文章Service 
+ * @author sunshine
  * @version 2013-05-15
  */
 @Service

@@ -1,4 +1,3 @@
-
 package com.platform.test.service;
 
 import java.util.List;
@@ -12,7 +11,8 @@ import com.platform.test.entity.TestTree;
 import com.platform.test.dao.TestTreeDao;
 
 /**
- * 树结构生成Service * @author sunshine
+ * 树结构生成Service 
+ * @author sunshine
  * @version 2015-04-06
  */
 @Service

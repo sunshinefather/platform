@@ -1,7 +1,6 @@
 /**
  * There are <a href="https://github.com/platform">JeeSite</a> code generation
- */
-package com.platform.modules.oa.dao;
+ */package com.platform.modules.oa.dao;
 
 import com.platform.common.persistence.CrudDao;
 import com.platform.common.persistence.annotation.MyBatisDao;

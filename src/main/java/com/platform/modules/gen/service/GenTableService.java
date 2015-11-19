@@ -1,4 +1,3 @@
-
 package com.platform.modules.gen.service;
 
 import java.util.List;
@@ -18,7 +17,8 @@ import com.platform.modules.gen.dao.GenTableColumnDao;
 import com.platform.modules.gen.dao.GenTableDao;
 
 /**
- * 业务表Service * @author sunshine
+ * 业务表Service 
+ * @author sunshine
  * @version 2013-10-15
  */
 @Service

@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.web;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.platform.common.web.BaseController;
 
 /**
- * 标签Controller * @author sunshine
+ * 标签Controller 
+ * @author sunshine
  * @version 2013-3-23
  */
 @Controller

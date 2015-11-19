@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.entity;
 
 import java.util.Date;
@@ -15,7 +14,8 @@ import com.platform.common.persistence.DataEntity;
 import com.platform.modules.cms.utils.CmsUtils;
 
 /**
- * 文章Entity * @author sunshine
+ * 文章Entity 
+ * @author sunshine
  * @version 2013-05-15
  */
 public class Article extends DataEntity<Article> {

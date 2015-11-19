@@ -1,4 +1,3 @@
-
 package com.platform.modules.act.service.ext;
 
 import java.util.List;
@@ -20,7 +19,8 @@ import com.platform.modules.sys.entity.User;
 import com.platform.modules.sys.service.SystemService;
 
 /**
- * Activiti Group Entity Service * @author sunshine
+ * Activiti Group Entity Service 
+ * @author sunshine
  * @version 2013-12-05
  */
 @Service

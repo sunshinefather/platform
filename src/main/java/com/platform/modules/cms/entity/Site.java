@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.entity;
 
 import org.apache.commons.lang3.StringUtils;
@@ -8,7 +7,8 @@ import com.platform.common.persistence.DataEntity;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 站点Entity * @author sunshine
+ * 站点Entity 
+ * @author sunshine
  * @version 2013-05-15
  */
 public class Site extends DataEntity<Site> {

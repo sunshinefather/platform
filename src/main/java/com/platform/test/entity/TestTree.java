@@ -1,4 +1,3 @@
-
 package com.platform.test.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -8,7 +7,8 @@ import org.hibernate.validator.constraints.Length;
 import com.platform.common.persistence.TreeEntity;
 
 /**
- * 树结构生成Entity * @author sunshine
+ * 树结构生成Entity 
+ * @author sunshine
  * @version 2015-04-06
  */
 public class TestTree extends TreeEntity<TestTree> {

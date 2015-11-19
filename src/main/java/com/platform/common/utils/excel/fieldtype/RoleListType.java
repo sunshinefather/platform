@@ -1,4 +1,3 @@
-
 package com.platform.common.utils.excel.fieldtype;
 
 import java.util.List;
@@ -11,7 +10,8 @@ import com.platform.modules.sys.entity.Role;
 import com.platform.modules.sys.service.SystemService;
 
 /**
- * 字段类型转换 * @author sunshine
+ * 字段类型转换 
+ * @author sunshine
  * @version 2013-5-29
  */
 public class RoleListType {

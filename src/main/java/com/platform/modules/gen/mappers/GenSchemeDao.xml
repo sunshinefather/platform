@@ -47,8 +47,7 @@
 		INSERT INTO gen_scheme(
 			id, 
 			name, 
-			category, 
-			package_name, 
+			category, package_name, 
 			module_name, 
 			sub_module_name, 
 			function_name, 
@@ -84,8 +83,7 @@
 	<update id="update">
 		UPDATE gen_scheme SET 
 			name = #{name}, 
-			category = #{category},  
-			package_name = #{packageName},  
+			category = #{category},  package_name = #{packageName},  
 			module_name = #{moduleName},  
 			sub_module_name = #{subModuleName},  
 			function_name = #{functionName},  

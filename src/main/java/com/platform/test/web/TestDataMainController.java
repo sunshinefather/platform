@@ -1,4 +1,3 @@
-
 package com.platform.test.web;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +20,8 @@ import com.platform.test.entity.TestDataMain;
 import com.platform.test.service.TestDataMainService;
 
 /**
- * 主子表生成Controller * @author sunshine
+ * 主子表生成Controller 
+ * @author sunshine
  * @version 2015-04-06
  */
 @Controller

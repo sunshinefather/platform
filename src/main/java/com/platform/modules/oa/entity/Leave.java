@@ -1,7 +1,6 @@
 /**
  * There are <a href="https://github.com/platform">JeeSite</a> code generation
- */
-package com.platform.modules.oa.entity;
+ */package com.platform.modules.oa.entity;
 
 import java.util.Date;
 import java.util.List;

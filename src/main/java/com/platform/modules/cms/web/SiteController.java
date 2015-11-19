@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.web;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +22,8 @@ import com.platform.modules.cms.service.SiteService;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 站点Controller * @author sunshine
+ * 站点Controller 
+ * @author sunshine
  * @version 2013-3-23
  */
 @Controller

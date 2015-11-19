@@ -1,4 +1,3 @@
-
 package com.platform.common.security.shiro;
 
 import org.apache.shiro.subject.Subject;

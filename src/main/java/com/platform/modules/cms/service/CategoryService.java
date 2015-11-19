@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.service;
 
 import java.util.List;
@@ -23,7 +22,8 @@ import com.platform.modules.sys.entity.User;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 栏目Service * @author sunshine
+ * 栏目Service 
+ * @author sunshine
  * @version 2013-5-31
  */
 @Service

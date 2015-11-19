@@ -1,4 +1,3 @@
-
 package com.platform.common.utils;
 
 import java.io.ByteArrayInputStream;

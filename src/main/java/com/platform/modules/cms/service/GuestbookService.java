@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.service;
 
 import org.springframework.stereotype.Service;
@@ -10,7 +9,8 @@ import com.platform.modules.cms.dao.GuestbookDao;
 import com.platform.modules.cms.entity.Guestbook;
 
 /**
- * 留言Service * @author sunshine
+ * 留言Service 
+ * @author sunshine
  * @version 2013-01-15
  */
 @Service

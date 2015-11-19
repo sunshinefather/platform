@@ -1,4 +1,3 @@
-
 package com.platform.common.supcan.freeform;
 
 import com.platform.common.supcan.common.Common;

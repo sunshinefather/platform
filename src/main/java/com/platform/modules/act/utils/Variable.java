@@ -1,4 +1,3 @@
-
 package com.platform.modules.act.utils;
 
 import java.util.Map;
@@ -10,7 +9,8 @@ import com.google.common.collect.Maps;
 import com.platform.common.utils.StringUtils;
 
 /**
- * 流程变量对象 * @author sunshine
+ * 流程变量对象 
+ * @author sunshine
  * @version 2013-11-03
  */
 public class Variable {

@@ -1,4 +1,3 @@
-
 package com.platform.common.persistence;
 
 import java.io.Serializable;
@@ -18,7 +17,8 @@ import com.platform.modules.sys.entity.User;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * Entity支持类 * @author sunshine
+ * Entity支持类 
+ * @author sunshine
  * @version 2014-05-16
  */
 @SupTreeList

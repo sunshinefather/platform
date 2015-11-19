@@ -1,4 +1,3 @@
-
 package com.platform.test.entity;
 
 import com.platform.modules.sys.entity.User;
@@ -11,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.platform.common.persistence.DataEntity;
 
 /**
- * 单表生成Entity * @author sunshine
+ * 单表生成Entity 
+ * @author sunshine
  * @version 2015-04-06
  */
 public class TestData extends DataEntity<TestData> {

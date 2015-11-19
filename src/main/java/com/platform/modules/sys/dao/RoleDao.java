@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.dao;
 
 import com.platform.common.persistence.CrudDao;
@@ -6,7 +5,8 @@ import com.platform.common.persistence.annotation.MyBatisDao;
 import com.platform.modules.sys.entity.Role;
 
 /**
- * 角色DAO接口 * @author sunshine
+ * 角色DAO接口 
+ * @author sunshine
  * @version 2013-12-05
  */
 @MyBatisDao

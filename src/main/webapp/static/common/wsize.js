@@ -1,7 +1,8 @@
 /*!
  * Copyright &copy; 2012-2014 <a href="https://github.com/platform">JeeSite</a> All rights reserved.
  * 
- * 主框架窗口大小调整 * @author sunshine
+ * 主框架窗口大小调整 
+ * @author sunshine
  * @version 2013-11-09
  */
 

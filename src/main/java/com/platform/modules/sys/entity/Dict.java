@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.entity;
 
 import javax.validation.constraints.NotNull;
@@ -9,7 +8,8 @@ import org.hibernate.validator.constraints.Length;
 import com.platform.common.persistence.DataEntity;
 
 /**
- * 字典Entity * @author sunshine
+ * 字典Entity 
+ * @author sunshine
  * @version 2013-05-15
  */
 public class Dict extends DataEntity<Dict> {

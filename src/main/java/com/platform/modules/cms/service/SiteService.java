@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.service;
 
 import org.apache.commons.lang3.StringEscapeUtils;
@@ -12,7 +11,8 @@ import com.platform.modules.cms.entity.Site;
 import com.platform.modules.cms.utils.CmsUtils;
 
 /**
- * 站点Service * @author sunshine
+ * 站点Service 
+ * @author sunshine
  * @version 2013-01-15
  */
 @Service

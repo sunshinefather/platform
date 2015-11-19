@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.utils;
 
 import java.lang.reflect.Method;
@@ -24,7 +23,8 @@ import com.platform.modules.sys.entity.Menu;
 import com.platform.modules.sys.entity.User;
 
 /**
- * 字典工具类 * @author sunshine
+ * 字典工具类 
+ * @author sunshine
  * @version 2014-11-7
  */
 public class LogUtils {

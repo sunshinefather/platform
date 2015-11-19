@@ -1,4 +1,3 @@
-
 package com.platform.common.persistence;
 
 import javax.validation.constraints.NotNull;
@@ -10,7 +9,8 @@ import com.platform.common.utils.Reflections;
 import com.platform.common.utils.StringUtils;
 
 /**
- * 数据Entity类 * @author sunshine
+ * 数据Entity类 
+ * @author sunshine
  * @version 2014-05-16
  */
 public abstract class TreeEntity<T> extends DataEntity<T> {

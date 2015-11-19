@@ -1,4 +1,3 @@
-
 package com.platform.modules.gen.entity;
 
 import java.util.List;
@@ -13,7 +12,8 @@ import com.platform.common.persistence.DataEntity;
 import com.platform.common.utils.StringUtils;
 
 /**
- * 生成方案Entity * @author sunshine
+ * 生成方案Entity 
+ * @author sunshine
  * @version 2013-10-15
  */
 @XmlRootElement(name="template")

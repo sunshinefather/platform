@@ -1,4 +1,3 @@
-
 package com.platform.common.supcan.annotation.treelist;
 
 import java.lang.annotation.ElementType;

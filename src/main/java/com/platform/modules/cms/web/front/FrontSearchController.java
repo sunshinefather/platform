@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.web.front;
 
 
@@ -23,7 +22,8 @@ import com.platform.modules.cms.utils.CmsUtils;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 网站搜索Controller * @author sunshine
+ * 网站搜索Controller 
+ * @author sunshine
  * @version 2013-5-29
  */
 @Controller

@@ -1,4 +1,3 @@
-
 package com.platform.common.supcan.common;
 
 import java.util.List;

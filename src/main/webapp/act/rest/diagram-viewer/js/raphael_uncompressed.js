@@ -621,8 +621,7 @@
         }
         
         return [r, g, b];
-    },
-    packageRGB = function (r, g, b, o) {
+    },packageRGB = function (r, g, b, o) {
         r *= 255;
         g *= 255;
         b *= 255;

@@ -1,4 +1,3 @@
-
 package com.platform.modules.oa.web;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +20,8 @@ import com.platform.modules.oa.entity.OaNotify;
 import com.platform.modules.oa.service.OaNotifyService;
 
 /**
- * 通知通告Controller * @author sunshine
+ * 通知通告Controller 
+ * @author sunshine
  * @version 2014-05-16
  */
 @Controller

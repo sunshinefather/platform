@@ -3,9 +3,7 @@
 	<name>dao</name>
 	<filePath>src/main/java/${packageName}/${moduleName}/dao/${subModuleName}</filePath>
 	<fileName>${ClassName}Dao.java</fileName>
-	<content><![CDATA[
-
-package ${packageName}.${moduleName}.dao<#if subModuleName != "">.${subModuleName}</#if>;
+	<content><![CDATA[package ${packageName}.${moduleName}.dao<#if subModuleName != "">.${subModuleName}</#if>;
 
 import com.platform.common.persistence.CrudDao;
 import com.platform.common.persistence.annotation.MyBatisDao;

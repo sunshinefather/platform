@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.service;
 
 import java.util.List;
@@ -12,7 +11,8 @@ import com.platform.modules.sys.entity.Office;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 机构Service * @author sunshine
+ * 机构Service 
+ * @author sunshine
  * @version 2014-05-16
  */
 @Service

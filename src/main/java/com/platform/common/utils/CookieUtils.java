@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Cookie工具类 * @author sunshine
+ * Cookie工具类 
+ * @author sunshine
  * @version 2013-01-15
  */
 public class CookieUtils {

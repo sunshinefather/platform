@@ -1,4 +1,3 @@
-
 package com.platform.modules.act.utils;
 
 import java.util.List;
@@ -13,7 +12,8 @@ import com.platform.common.utils.CacheUtils;
 import com.platform.common.utils.SpringContextHolder;
 
 /**
- * 流程定义缓存 * @author sunshine
+ * 流程定义缓存 
+ * @author sunshine
  * @version 2013-12-05
  */
 public class ProcessDefCache {

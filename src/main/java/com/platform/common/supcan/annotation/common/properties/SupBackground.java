@@ -1,4 +1,3 @@
-
 package com.platform.common.supcan.annotation.common.properties;
 
 import java.lang.annotation.ElementType;

@@ -1,4 +1,3 @@
-
 package com.platform.common.supcan.common.properties;
 
 import com.platform.common.supcan.annotation.common.properties.SupExpress;

@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.web;
 
 import java.util.List;
@@ -26,7 +25,8 @@ import com.platform.modules.sys.service.SystemService;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 菜单Controller * @author sunshine
+ * 菜单Controller 
+ * @author sunshine
  * @version 2013-3-23
  */
 @Controller

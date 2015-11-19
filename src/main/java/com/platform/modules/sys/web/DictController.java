@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.web;
 
 import java.util.List;
@@ -27,7 +26,8 @@ import com.platform.modules.sys.entity.Dict;
 import com.platform.modules.sys.service.DictService;
 
 /**
- * 字典Controller * @author sunshine
+ * 字典Controller 
+ * @author sunshine
  * @version 2014-05-16
  */
 @Controller

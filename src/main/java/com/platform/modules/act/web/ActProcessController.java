@@ -1,4 +1,3 @@
-
 package com.platform.modules.act.web;
 
 import java.io.IOException;
@@ -29,7 +28,8 @@ import com.platform.common.web.BaseController;
 import com.platform.modules.act.service.ActProcessService;
 
 /**
- * 流程定义相关Controller * @author sunshine
+ * 流程定义相关Controller 
+ * @author sunshine
  * @version 2013-11-03
  */
 @Controller

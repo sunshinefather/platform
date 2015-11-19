@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.web;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +15,8 @@ import com.platform.modules.sys.entity.Log;
 import com.platform.modules.sys.service.LogService;
 
 /**
- * 日志Controller * @author sunshine
+ * 日志Controller 
+ * @author sunshine
  * @version 2013-6-2
  */
 @Controller

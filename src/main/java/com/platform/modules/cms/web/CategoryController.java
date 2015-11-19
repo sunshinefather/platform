@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.web;
 
 import java.util.List;
@@ -31,7 +30,8 @@ import com.platform.modules.cms.service.SiteService;
 import com.platform.modules.cms.utils.TplUtils;
 
 /**
- * 栏目Controller * @author sunshine
+ * 栏目Controller 
+ * @author sunshine
  * @version 2013-4-21
  */
 @Controller

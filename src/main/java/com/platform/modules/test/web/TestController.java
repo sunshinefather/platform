@@ -1,4 +1,3 @@
-
 package com.platform.modules.test.web;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +22,8 @@ import com.platform.modules.test.entity.Test;
 import com.platform.modules.test.service.TestService;
 
 /**
- * 测试Controller * @author sunshine
+ * 测试Controller 
+ * @author sunshine
  * @version 2013-10-17
  */
 @Controller

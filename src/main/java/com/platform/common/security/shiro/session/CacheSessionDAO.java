@@ -1,4 +1,3 @@
-
 package com.platform.common.security.shiro.session;
 
 import java.io.Serializable;
@@ -23,7 +22,8 @@ import com.platform.common.utils.StringUtils;
 import com.platform.common.web.Servlets;
 
 /**
- * 系统安全认证实现类 * @author sunshine
+ * 系统安全认证实现类 
+ * @author sunshine
  * @version 2014-7-24
  */
 public class CacheSessionDAO extends EnterpriseCacheSessionDAO implements SessionDAO {

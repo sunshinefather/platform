@@ -1,4 +1,3 @@
-
 package com.platform.common.utils;
 
 import java.io.ByteArrayInputStream;
@@ -10,7 +9,8 @@ import java.lang.reflect.Method;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * 对象操作工具类, 继承org.apache.commons.lang3.ObjectUtils类 * @author sunshine
+ * 对象操作工具类, 继承org.apache.commons.lang3.ObjectUtils类 
+ * @author sunshine
  * @version 2014-6-29
  */
 public class ObjectUtils extends org.apache.commons.lang3.ObjectUtils {

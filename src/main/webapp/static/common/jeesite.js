@@ -1,7 +1,8 @@
 /*!
  * Copyright &copy; 2012-2014 <a href="https://github.com/platform">JeeSite</a> All rights reserved.
  * 
- * 通用公共方法 * @author sunshine
+ * 通用公共方法 
+ * @author sunshine
  * @version 2014-4-29
  */
 $(document).ready(function() {

@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.service;
 
 import java.util.Date;
@@ -17,7 +16,8 @@ import com.platform.modules.cms.dao.LinkDao;
 import com.platform.modules.cms.entity.Link;
 
 /**
- * 链接Service * @author sunshine
+ * 链接Service 
+ * @author sunshine
  * @version 2013-01-15
  */
 @Service

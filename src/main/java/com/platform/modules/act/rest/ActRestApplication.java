@@ -1,4 +1,3 @@
-
 package com.platform.modules.act.rest;
 
 import org.activiti.rest.common.api.DefaultResource;
@@ -10,7 +9,8 @@ import org.restlet.Restlet;
 import org.restlet.routing.Router;
 
 /**
- * Activit Rest * @author sunshine
+ * Activit Rest 
+ * @author sunshine
  * @version 2013-11-03
  */
 public class ActRestApplication extends ActivitiRestApplication {

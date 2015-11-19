@@ -1,4 +1,3 @@
-
 package com.platform.common.web;
 
 import javax.servlet.ServletConfig;
@@ -14,7 +13,8 @@ import com.ckfinder.connector.data.AccessControlLevel;
 import com.ckfinder.connector.utils.AccessControlUtil;
 
 /**
- * CKFinder配置 * @author sunshine
+ * CKFinder配置 
+ * @author sunshine
  * @version 2014-06-25
  */
 public class CKFinderConfig extends Configuration {

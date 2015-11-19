@@ -1,4 +1,3 @@
-
 package com.platform.common.persistence;
 
 import java.util.Date;
@@ -13,7 +12,8 @@ import com.platform.modules.sys.entity.User;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 数据Entity类 * @author sunshine
+ * 数据Entity类 
+ * @author sunshine
  * @version 2014-05-16
  */
 public abstract class DataEntity<T> extends BaseEntity<T> {

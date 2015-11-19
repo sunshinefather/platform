@@ -1,4 +1,3 @@
-
 package com.platform.common.supcan;
 
 import java.lang.reflect.Method;
@@ -28,7 +27,8 @@ import com.platform.common.utils.StringUtils;
 import com.platform.common.web.BaseController;
 
 /**
- * 硕正Controller * @author sunshine
+ * 硕正Controller 
+ * @author sunshine
  * @version 2013-11-13
  */
 @Controller

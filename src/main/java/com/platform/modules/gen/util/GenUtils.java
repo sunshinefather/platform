@@ -1,4 +1,3 @@
-
 package com.platform.modules.gen.util;
 
 import java.io.BufferedReader;
@@ -35,7 +34,8 @@ import com.platform.modules.sys.entity.User;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 代码生成工具类 * @author sunshine
+ * 代码生成工具类 
+ * @author sunshine
  * @version 2013-11-16
  */
 public class GenUtils {

@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.web.front;
 
 import java.util.Date;
@@ -36,7 +35,8 @@ import com.platform.modules.cms.service.SiteService;
 import com.platform.modules.cms.utils.CmsUtils;
 
 /**
- * 网站Controller * @author sunshine
+ * 网站Controller 
+ * @author sunshine
  * @version 2013-5-29
  */
 @Controller

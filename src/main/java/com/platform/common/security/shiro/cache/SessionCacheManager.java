@@ -1,4 +1,3 @@
-
 package com.platform.common.security.shiro.cache;
 
 import java.util.Collection;
@@ -20,6 +19,7 @@ import com.platform.common.web.Servlets;
 
 /**
  * 自定义授权缓存管理类
+ 
  * @author sunshine
  * @version 2014-7-21
  */

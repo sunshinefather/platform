@@ -1,4 +1,3 @@
-
 package com.platform.common.persistence.interceptor;
 
 import org.apache.ibatis.logging.Log;

@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.entity;
 
 import java.util.Date;
@@ -10,7 +9,8 @@ import com.platform.common.persistence.DataEntity;
 import com.platform.common.utils.StringUtils;
 
 /**
- * 日志Entity * @author sunshine
+ * 日志Entity 
+ * @author sunshine
  * @version 2014-8-19
  */
 public class Log extends DataEntity<Log> {

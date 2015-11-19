@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.web;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -11,7 +10,8 @@ import com.platform.common.web.BaseController;
 import com.platform.modules.cms.service.CategoryService;
 
 /**
- * 内容管理Controller * @author sunshine
+ * 内容管理Controller 
+ * @author sunshine
  * @version 2013-4-21
  */
 @Controller

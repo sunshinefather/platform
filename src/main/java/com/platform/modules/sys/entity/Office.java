@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.entity;
 
 import java.util.List;
@@ -10,7 +9,8 @@ import org.hibernate.validator.constraints.Length;
 import com.platform.common.persistence.TreeEntity;
 
 /**
- * 机构Entity * @author sunshine
+ * 机构Entity 
+ * @author sunshine
  * @version 2013-05-15
  */
 public class Office extends TreeEntity<Office> {

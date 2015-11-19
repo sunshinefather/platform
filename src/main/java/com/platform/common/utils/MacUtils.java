@@ -1,4 +1,3 @@
-
 package com.platform.common.utils;
 
 import java.io.BufferedReader;
@@ -7,7 +6,8 @@ import java.io.InputStreamReader;
 
 /**
  * MAC地址工具
- * * @author sunshine
+ * 
+ * @author sunshine
  * @version 2013-12-21
  */
 public class MacUtils {

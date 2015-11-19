@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.web;
 
 import java.util.List;
@@ -37,7 +36,8 @@ import com.platform.modules.sys.service.SystemService;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 用户Controller * @author sunshine
+ * 用户Controller 
+ * @author sunshine
  * @version 2013-8-29
  */
 @Controller

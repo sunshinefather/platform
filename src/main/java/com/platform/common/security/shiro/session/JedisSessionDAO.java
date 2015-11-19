@@ -1,4 +1,3 @@
-
 package com.platform.common.security.shiro.session;
 
 import java.io.Serializable;
@@ -29,6 +28,7 @@ import com.platform.common.web.Servlets;
 
 /**
  * 自定义授权会话管理类 
+ 
  * @author sunshine
  * @version 2014-7-20
  */

@@ -1,7 +1,6 @@
 /**
 \ * Copyright &copy; 2012-2013 <a href="https://github.com/platform">JeeSite</a> All rights reserved.
- */
-package com.platform.modules.cms.entity;
+ */package com.platform.modules.cms.entity;
 
 import java.util.Date;
 
@@ -13,7 +12,8 @@ import com.platform.common.persistence.DataEntity;
 import com.platform.modules.sys.entity.User;
 
 /**
- * 链接Entity * @author sunshine
+ * 链接Entity 
+ * @author sunshine
  * @version 2013-05-15
  */
 public class Link extends DataEntity<Link> {

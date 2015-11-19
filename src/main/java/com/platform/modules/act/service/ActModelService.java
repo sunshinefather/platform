@@ -1,4 +1,3 @@
-
 package com.platform.modules.act.service;
 
 import java.io.ByteArrayInputStream;
@@ -31,7 +30,8 @@ import com.platform.common.persistence.Page;
 import com.platform.common.service.BaseService;
 
 /**
- * 流程模型相关Controller * @author sunshine
+ * 流程模型相关Controller 
+ * @author sunshine
  * @version 2013-11-03
  */
 @Service

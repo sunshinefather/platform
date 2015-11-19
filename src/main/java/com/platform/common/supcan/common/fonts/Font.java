@@ -1,4 +1,3 @@
-
 package com.platform.common.supcan.common.fonts;
 
 import com.platform.common.supcan.annotation.common.fonts.SupFont;

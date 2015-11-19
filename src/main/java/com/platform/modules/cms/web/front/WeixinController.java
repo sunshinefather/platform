@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.web.front;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +11,8 @@ import com.platform.common.web.BaseController;
 import com.platform.modules.cms.utils.WiexinSignUtil;
 
 /**
- * 测试Controller * @author sunshine
+ * 测试Controller 
+ * @author sunshine
  * @version 2014-02-28
  */
 @Controller

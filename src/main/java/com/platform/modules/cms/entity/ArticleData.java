@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.entity;
 
 import org.hibernate.validator.constraints.Length;
@@ -8,7 +7,8 @@ import com.platform.common.config.Global;
 import com.platform.common.persistence.DataEntity;
 
 /**
- * 文章Entity * @author sunshine
+ * 文章Entity 
+ * @author sunshine
  * @version 2013-01-15
  */
 public class ArticleData extends DataEntity<ArticleData> {

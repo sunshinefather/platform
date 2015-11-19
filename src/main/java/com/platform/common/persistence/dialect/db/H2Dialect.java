@@ -1,4 +1,3 @@
-
 package com.platform.common.persistence.dialect.db;
 
 import com.platform.common.persistence.dialect.Dialect;

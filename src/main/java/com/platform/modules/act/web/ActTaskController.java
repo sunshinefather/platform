@@ -1,4 +1,3 @@
-
 package com.platform.modules.act.web;
 
 import java.io.InputStream;
@@ -26,7 +25,8 @@ import com.platform.modules.act.utils.ActUtils;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 流程个人任务相关Controller * @author sunshine
+ * 流程个人任务相关Controller 
+ * @author sunshine
  * @version 2013-11-03
  */
 @Controller

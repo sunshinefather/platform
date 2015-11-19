@@ -1,4 +1,3 @@
-
 package com.platform.modules.gen.web;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +23,8 @@ import com.platform.modules.gen.service.GenTableService;
 import com.platform.modules.gen.util.GenUtils;
 
 /**
- * 生成方案Controller * @author sunshine
+ * 生成方案Controller 
+ * @author sunshine
  * @version 2013-10-15
  */
 @Controller

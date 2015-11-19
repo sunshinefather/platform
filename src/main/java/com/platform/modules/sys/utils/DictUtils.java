@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.utils;
 
 import java.util.List;
@@ -15,7 +14,8 @@ import com.platform.modules.sys.dao.DictDao;
 import com.platform.modules.sys.entity.Dict;
 
 /**
- * 字典工具类 * @author sunshine
+ * 字典工具类 
+ * @author sunshine
  * @version 2013-5-29
  */
 public class DictUtils {

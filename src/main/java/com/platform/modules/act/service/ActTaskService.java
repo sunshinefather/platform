@@ -1,4 +1,3 @@
-
 package com.platform.modules.act.service;
 
 import java.io.InputStream;
@@ -56,7 +55,8 @@ import com.platform.modules.sys.entity.User;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 流程定义相关Service * @author sunshine
+ * 流程定义相关Service 
+ * @author sunshine
  * @version 2013-11-03
  */
 @Service

@@ -1,4 +1,3 @@
-
 package com.platform.common.web;
 
 import java.io.IOException;
@@ -15,7 +14,8 @@ import com.platform.modules.sys.utils.UserUtils;
 import com.ckfinder.connector.ConnectorServlet;
 
 /**
- * CKFinderConnectorServlet * @author sunshine
+ * CKFinderConnectorServlet 
+ * @author sunshine
  * @version 2014-06-25
  */
 public class CKFinderConnectorServlet extends ConnectorServlet {

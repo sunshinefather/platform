@@ -1,4 +1,3 @@
-
 package com.platform.modules.gen.web;
 
 import java.util.List;
@@ -25,7 +24,8 @@ import com.platform.modules.gen.service.GenTableService;
 import com.platform.modules.gen.util.GenUtils;
 
 /**
- * 业务表Controller * @author sunshine
+ * 业务表Controller 
+ * @author sunshine
  * @version 2013-10-15
  */
 @Controller

@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.web;
 
 import java.util.List;
@@ -26,7 +25,8 @@ import com.platform.modules.sys.service.AreaService;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 区域Controller * @author sunshine
+ * 区域Controller 
+ * @author sunshine
  * @version 2013-5-15
  */
 @Controller

@@ -1,4 +1,3 @@
-
 package com.platform.modules.oa.entity;
 
 import com.platform.common.persistence.ActEntity;
@@ -6,7 +5,8 @@ import com.platform.modules.sys.entity.Office;
 import com.platform.modules.sys.entity.User;
 
 /**
- * 审批Entity * @author sunshine
+ * 审批Entity 
+ * @author sunshine
  * @version 2014-05-16
  */
 public class TestAudit extends ActEntity<TestAudit> {

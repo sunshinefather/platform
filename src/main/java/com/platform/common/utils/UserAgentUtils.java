@@ -1,4 +1,3 @@
-
 package com.platform.common.utils;
 
 import javax.servlet.http.HttpServletRequest;

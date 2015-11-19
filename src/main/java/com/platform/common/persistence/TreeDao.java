@@ -1,10 +1,10 @@
-
 package com.platform.common.persistence;
 
 import java.util.List;
 
 /**
- * DAO支持类实现 * @author sunshine
+ * DAO支持类实现 
+ * @author sunshine
  * @version 2014-05-16
  * @param <T>
  */

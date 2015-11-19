@@ -1,4 +1,3 @@
-
 package com.platform.modules.act.service;
 
 import java.io.File;
@@ -40,7 +39,8 @@ import com.platform.common.service.BaseService;
 import com.platform.common.utils.StringUtils;
 
 /**
- * 流程定义相关Controller * @author sunshine
+ * 流程定义相关Controller 
+ * @author sunshine
  * @version 2013-11-03
  */
 @Service

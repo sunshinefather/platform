@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.entity;
 
 import java.util.Date;
@@ -13,7 +12,8 @@ import com.platform.common.utils.IdGen;
 import com.platform.modules.sys.entity.User;
 
 /**
- * 留言Entity * @author sunshine
+ * 留言Entity 
+ * @author sunshine
  * @version 2013-05-15
  */
 public class Guestbook extends DataEntity<Guestbook> {

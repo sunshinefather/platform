@@ -1,4 +1,3 @@
-
 package com.platform.common.persistence.proxy;
 
 import org.apache.ibatis.binding.MapperRegistry;

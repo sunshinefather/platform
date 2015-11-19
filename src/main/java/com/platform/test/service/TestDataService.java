@@ -1,4 +1,3 @@
-
 package com.platform.test.service;
 
 import java.util.List;
@@ -12,7 +11,8 @@ import com.platform.test.entity.TestData;
 import com.platform.test.dao.TestDataDao;
 
 /**
- * 单表生成Service * @author sunshine
+ * 单表生成Service 
+ * @author sunshine
  * @version 2015-04-06
  */
 @Service

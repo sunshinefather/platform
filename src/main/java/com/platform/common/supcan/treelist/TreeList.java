@@ -1,4 +1,3 @@
-
 package com.platform.common.supcan.treelist;
 
 import java.util.List;

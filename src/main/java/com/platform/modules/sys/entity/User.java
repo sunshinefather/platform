@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.entity;
 
 import java.util.Date;
@@ -20,7 +19,8 @@ import com.platform.common.utils.excel.annotation.ExcelField;
 import com.platform.common.utils.excel.fieldtype.RoleListType;
 
 /**
- * 用户Entity * @author sunshine
+ * 用户Entity 
+ * @author sunshine
  * @version 2013-12-05
  */
 public class User extends DataEntity<User> {

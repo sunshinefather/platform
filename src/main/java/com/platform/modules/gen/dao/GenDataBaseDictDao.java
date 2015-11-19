@@ -1,4 +1,3 @@
-
 package com.platform.modules.gen.dao;
 
 import java.util.List;
@@ -9,7 +8,8 @@ import com.platform.modules.gen.entity.GenTable;
 import com.platform.modules.gen.entity.GenTableColumn;
 
 /**
- * 业务表字段DAO接口 * @author sunshine
+ * 业务表字段DAO接口 
+ * @author sunshine
  * @version 2013-10-15
  */
 @MyBatisDao

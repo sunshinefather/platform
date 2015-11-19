@@ -1,4 +1,3 @@
-
 package com.platform.common.utils.excel.fieldtype;
 
 import com.platform.common.utils.StringUtils;
@@ -6,7 +5,8 @@ import com.platform.modules.sys.entity.Office;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
- * 字段类型转换 * @author sunshine
+ * 字段类型转换 
+ * @author sunshine
  * @version 2013-03-10
  */
 public class OfficeType {

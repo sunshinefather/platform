@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.utils;
 
 import java.util.List;
@@ -25,7 +24,8 @@ import com.platform.modules.sys.entity.User;
 import com.platform.modules.sys.security.SystemAuthorizingRealm.Principal;
 
 /**
- * 用户工具类 * @author sunshine
+ * 用户工具类 
+ * @author sunshine
  * @version 2013-12-05
  */
 public class UserUtils {

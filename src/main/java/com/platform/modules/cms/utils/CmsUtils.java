@@ -1,4 +1,3 @@
-
 package com.platform.modules.cms.utils;
 
 import java.util.Collections;
@@ -27,7 +26,8 @@ import javax.servlet.ServletContext;
 import org.springframework.ui.Model;
 
 /**
- * 内容管理工具类 * @author sunshine
+ * 内容管理工具类 
+ * @author sunshine
  * @version 2013-5-29
  */
 public class CmsUtils {

@@ -1,4 +1,3 @@
-
 package com.platform.common.supcan.treelist.cols;
 
 import com.platform.common.supcan.annotation.treelist.cols.SupCol;

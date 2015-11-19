@@ -1,4 +1,3 @@
-
 package com.platform.modules.gen.service;
 
 import org.apache.commons.lang3.StringEscapeUtils;
@@ -13,7 +12,8 @@ import com.platform.modules.gen.entity.GenTemplate;
 import com.platform.modules.gen.dao.GenTemplateDao;
 
 /**
- * 代码模板Service * @author sunshine
+ * 代码模板Service 
+ * @author sunshine
  * @version 2013-10-15
  */
 @Service

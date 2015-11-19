@@ -1,7 +1,6 @@
 /**
  * Copyright &copy; 2012-2013 <a href="httparamMap://github.com/platform">JeeSite</a> All rights reserved.
- */
-package com.platform.modules.sys.service;
+ */package com.platform.modules.sys.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +12,8 @@ import com.platform.modules.sys.dao.LogDao;
 import com.platform.modules.sys.entity.Log;
 
 /**
- * 日志Service * @author sunshine
+ * 日志Service 
+ * @author sunshine
  * @version 2014-05-16
  */
 @Service

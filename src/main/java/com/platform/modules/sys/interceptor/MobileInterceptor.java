@@ -1,4 +1,3 @@
-
 package com.platform.modules.sys.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +12,7 @@ import com.platform.common.utils.UserAgentUtils;
 
 /**
  * 手机端视图拦截器
+ 
  * @author sunshine
  * @version 2014-9-1
  */

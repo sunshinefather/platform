@@ -1,4 +1,3 @@
-
 package com.platform.common.service;
 
 import java.util.List;
@@ -11,7 +10,8 @@ import com.platform.common.utils.Reflections;
 import com.platform.common.utils.StringUtils;
 
 /**
- * Service基类 * @author sunshine
+ * Service基类 
+ * @author sunshine
  * @version 2014-05-16
  */
 @Transactional(readOnly = true)

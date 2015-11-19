@@ -1,7 +1,8 @@
 /*!
  * Copyright &copy; 2012-2014 <a href="https://github.com/platform">JeeSite</a> All rights reserved.
  * 
- * 硕正组件封装 * @author sunshine
+ * 硕正组件封装 
+ * @author sunshine
  * @version 2013-11-09
  */
 
