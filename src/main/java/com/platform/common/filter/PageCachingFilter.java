@@ -16,5 +16,4 @@ public class PageCachingFilter extends SimplePageCachingFilter {
 	protected CacheManager getCacheManager() {
 		return CacheUtils.getCacheManager();
 	}
-	
 }

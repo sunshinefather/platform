@@ -1,9 +1,7 @@
 package com.platform.modules.gen.entity;
 
 import java.util.List;
-
 import org.hibernate.validator.constraints.Length;
-
 import com.google.common.collect.Lists;
 import com.platform.common.persistence.DataEntity;
 import com.platform.common.utils.StringUtils;

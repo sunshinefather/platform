@@ -20,16 +20,22 @@ public class Global {
 	private static Global global = new Global();
 	private static Map<String, String> map = Maps.newHashMap();
 	private static PropertiesLoader loader = new PropertiesLoader("project-config.properties");
+	
 	public static final String SHOW = "1";
 	public static final String HIDE = "0";
+	
 	public static final String YES = "1";
 	public static final String NO = "0";
+	
 	public static final String TRUE = "true";
 	public static final String FALSE = "false";
+	
 	public static final String USERFILES_BASE_URL = "/userfiles/";
+	
 	public static Global getInstance() {
 		return global;
 	}
+	
 	public static String getConfig(String key) {
 		String value = map.get(key);
 		if (value == null){

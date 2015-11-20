@@ -73,11 +73,10 @@ public class CacheUtils {
 		getCache(cacheName).remove(key);
 	}
 	
-	/**
-	 * 获得一个Cache，没有则创建一个。
-	 * @param cacheName
-	 * @return
-	 */
+    /**
+     * 获得一个Cache，没有则创建一个
+     * @param: @param cacheName
+     */
 	private static Cache getCache(String cacheName){
 		Cache cache = cacheManager.getCache(cacheName);
 		if (cache == null){
@@ -91,5 +90,4 @@ public class CacheUtils {
 	public static CacheManager getCacheManager() {
 		return cacheManager;
 	}
-	
 }
