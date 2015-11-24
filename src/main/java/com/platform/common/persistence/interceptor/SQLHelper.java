@@ -1,8 +1,15 @@
 package com.platform.common.persistence.interceptor;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.apache.ibatis.executor.ErrorContext;
 import org.apache.ibatis.executor.ExecutorException;
-import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.ParameterMapping;
@@ -13,36 +20,34 @@ import org.apache.ibatis.scripting.xmltags.ForEachSqlNode;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.type.TypeHandler;
 import org.apache.ibatis.type.TypeHandlerRegistry;
+import org.slf4j.Logger;
 
 import com.platform.common.config.Global;
 import com.platform.common.persistence.Page;
 import com.platform.common.persistence.dialect.Dialect;
 import com.platform.common.utils.Reflections;
 import com.platform.common.utils.StringUtils;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
  * SQL工具类
- * @author poplar.yfyang
- * @version 2013-8-28
+ * @ClassName:  SQLHelper   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月24日 上午10:34:15
  */
 public class SQLHelper {
 	
     /**
-     * 对SQL参数(?)设值,参考org.apache.ibatis.executor.parameter.DefaultParameterHandler
-     *
-     * @param ps              表示预编译的 SQL 语句的对象。
-     * @param mappedStatement MappedStatement
-     * @param boundSql        SQL
-     * @param parameterObject 参数对象
-     * @throws java.sql.SQLException 数据库异常
+     * 对SQL预编译参数赋值,参考org.apache.ibatis.executor.parameter.DefaultParameterHandler
+     * @Title: setParameters
+     * @Description: TODO  
+     * @param: @param ps
+     * @param: @param mappedStatement
+     * @param: @param boundSql
+     * @param: @param parameterObject
+     * @param: @throws SQLException      
+     * @return: void
+     * @author: sunshine  
+     * @throws
      */
     @SuppressWarnings("unchecked")
     public static void setParameters(PreparedStatement ps, MappedStatement mappedStatement, BoundSql boundSql, Object parameterObject) throws SQLException {
@@ -87,44 +92,43 @@ public class SQLHelper {
 
     /**
      * 查询总纪录数
-     * @param sql             SQL语句
-     * @param connection      数据库连接
-     * @param mappedStatement mapped
-     * @param parameterObject 参数
-     * @param boundSql        boundSql
-     * @return 总记录数
-     * @throws SQLException sql查询错误
+     * @Title: getCount
+     * @Description: TODO  
+     * @param: @param sql
+     * @param: @param mappedStatement
+     * @param: @param parameterObject
+     * @param: @param boundSql
+     * @param: @param log
+     * @param: @return
+     * @param: @throws SQLException      
+     * @return: int
+     * @author: sunshine  
+     * @throws
      */
-    public static int getCount(final String sql, final Connection connection,
-    							final MappedStatement mappedStatement, final Object parameterObject,
-    							final BoundSql boundSql, Log log) throws SQLException {
+    public static int getCount(final String sql,final MappedStatement mappedStatement, final Object parameterObject,
+    							final BoundSql boundSql, Logger log) throws SQLException {
     	String dbName = Global.getConfig("jdbc.type");
 		final String countSql;
 		if("oracle".equals(dbName)){
 			countSql = "select count(1) from (" + sql + ") tmp_count";
 		}else{
 			countSql = "select count(1) from (" + removeOrders(sql) + ") tmp_count";
-//	        countSql = "select count(1) " + removeSelect(removeOrders(sql));
 		}
-        Connection conn = connection;
+        Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
         	if (log.isDebugEnabled()) {
                 log.debug("COUNT SQL: " + StringUtils.replaceEach(countSql, new String[]{"\n","\t"}, new String[]{" "," "}));
             }
-        	if (conn == null){
-        		conn = mappedStatement.getConfiguration().getEnvironment().getDataSource().getConnection();
-            }
+        	conn = mappedStatement.getConfiguration().getEnvironment().getDataSource().getConnection();
         	ps = conn.prepareStatement(countSql);
             BoundSql countBS = new BoundSql(mappedStatement.getConfiguration(), countSql,
                     boundSql.getParameterMappings(), parameterObject);
-            //解决MyBatis 分页foreach 参数失效 start
 			if (Reflections.getFieldValue(boundSql, "metaParameters") != null) {
 				MetaObject mo = (MetaObject) Reflections.getFieldValue(boundSql, "metaParameters");
 				Reflections.setFieldValue(countBS, "metaParameters", mo);
 			}
-			//解决MyBatis 分页foreach 参数失效 end 
             SQLHelper.setParameters(ps, mappedStatement, countBS, parameterObject);
             rs = ps.executeQuery();
             int count = 0;
@@ -144,14 +148,17 @@ public class SQLHelper {
             }
         }
     }
-
-
     /**
-     * 根据数据库方言，生成特定的分页sql
-     * @param sql     Mapper中的Sql语句
-     * @param page    分页对象
-     * @param dialect 方言类型
-     * @return 分页SQL
+     * 生成分页sql
+     * @Title: generatePageSql
+     * @Description: TODO  
+     * @param: @param sql
+     * @param: @param page
+     * @param: @param dialect
+     * @param: @return      
+     * @return: String
+     * @author: sunshine  
+     * @throws
      */
     public static String generatePageSql(String sql, Page<Object> page, Dialect dialect) {
         if (dialect.supportsLimit()) {
@@ -162,27 +169,26 @@ public class SQLHelper {
     }
     
     /** 
-     * 去除qlString的select子句。 
-     * @param hql 
+     * 去除sql的select子句。 
+     * @param sql 
      * @return 
      */  
     @SuppressWarnings("unused")
-	private static String removeSelect(String qlString){  
-        int beginPos = qlString.toLowerCase().indexOf("from");  
-        return qlString.substring(beginPos);  
+	private static String removeSelect(String sql){  
+        int beginPos = sql.toLowerCase().indexOf("from");  
+        return sql.substring(beginPos);  
     }  
       
     /** 
-     * 去除hql的orderBy子句。 
-     * @param hql 
+     * 去除orderBy子句。 
+     * @param sql 
      * @return 
-     */  
-    @SuppressWarnings("unused")
-	private static String removeOrders(String qlString) {  
+     */
+	private static String removeOrders(String sql) {  
         Pattern p = Pattern.compile("order\\s*by[\\w|\\W|\\s|\\S]*", Pattern.CASE_INSENSITIVE);  
-        Matcher m = p.matcher(qlString);  
+        Matcher m = p.matcher(sql);  
         StringBuffer sb = new StringBuffer();  
-        while (m.find()) {  
+        while (m.find()) {
             m.appendReplacement(sb, "");  
         }
         m.appendTail(sb);

@@ -3,28 +3,27 @@ package com.platform.common.persistence;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.commons.lang3.StringUtils;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.platform.common.config.Global;
 import com.platform.common.utils.CookieUtils;
 
 /**
- * 分页类 
- * @author sunshine
- * @version 2013-7-2
+ * 分页POJO
+ * @ClassName:  Page   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月23日 下午5:47:22
  * @param <T>
  */
 public class Page<T> {
 	
 	private int pageNo = 1; // 当前页码
-	private int pageSize = Integer.valueOf(Global.getConfig("page.pageSize")); // 页面大小，设置为“-1”表示不进行分页（分页无效）
+	private int pageSize = Integer.valueOf(Global.getConfig("page.pageSize")); //每页显示条数
 	
-	private long count;// 总记录数，设置为“-1”表示不查询总数
+	private long count;// 总记录数
 	
 	private int first;// 首页索引
 	private int last;// 尾页索引
@@ -39,9 +38,9 @@ public class Page<T> {
 	
 	private List<T> list = new ArrayList<T>();
 	
-	private String orderBy = ""; // 标准查询有效， 实例： updatedate desc, name asc
+	private String orderBy = "";
 
-	private String funcName = "page"; // 设置点击页码调用的js函数名称，默认为page，在一页有多个分页对象时使用。
+	private String funcName = "page"; //设置点击页码调用的js函数名称，默认为page，在一页有多个分页对象时使用。
 	
 	private String funcParam = ""; // 函数的附加参数，第三个参数值。
 	
@@ -62,9 +61,9 @@ public class Page<T> {
 
 	/**
 	 * 构造方法
-	 * @param request 传递 repage 参数，来记住页码
-	 * @param response 用于设置 Cookie，记住页码
-	 * @param defaultPageSize 默认分页大小，如果传递 -1 则为不分页，返回所有数据
+	 * @param request
+	 * @param response
+	 * @param defaultPageSize 默认分页大小，如果传递 -1 则为不分页
 	 */
 	public Page(HttpServletRequest request, HttpServletResponse response, int defaultPageSize){
 		// 设置页码参数（传递repage参数，来记住页码）
@@ -135,8 +134,7 @@ public class Page<T> {
 	 * 初始化参数
 	 */
 	public void initialize(){
-				
-		//1
+		
 		this.first = 1;
 		
 		this.last = (int)(count / (this.pageSize < 1 ? 20 : this.pageSize) + first - 1);
@@ -261,8 +259,6 @@ public class Page<T> {
 		sb.insert(0,"<ul>\n").append("</ul>\n");
 		
 		sb.append("<div style=\"clear:both;\"></div>");
-
-//		sb.insert(0,"<div class=\"page\">\n").append("</div>\n");
 		
 		return sb.toString();
 	}
@@ -274,16 +270,6 @@ public class Page<T> {
 	public String getHtml(){
 		return toString();
 	}
-	
-//	public static void main(String[] args) {
-//		Page<String> p = new Page<String>(3, 3);
-//		System.out.println(p);
-//		System.out.println("首页："+p.getFirst());
-//		System.out.println("尾页："+p.getLast());
-//		System.out.println("上页："+p.getPrev());
-//		System.out.println("下页："+p.getNext());
-//	}
-
 	/**
 	 * 获取设置总数
 	 * @return
@@ -524,37 +510,5 @@ public class Page<T> {
 	public int getMaxResults(){
 		return getPageSize();
 	}
-
-//	/**
-//	 * 获取 Spring data JPA 分页对象
-//	 */
-//	public Pageable getSpringPage(){
-//		List<Order> orders = new ArrayList<Order>();
-//		if (orderBy!=null){
-//			for (String order : StringUtils.split(orderBy, ",")){
-//				String[] o = StringUtils.split(order, " ");
-//				if (o.length==1){
-//					orders.add(new Order(Direction.ASC, o[0]));
-//				}else if (o.length==2){
-//					if ("DESC".equals(o[1].toUpperCase())){
-//						orders.add(new Order(Direction.DESC, o[0]));
-//					}else{
-//						orders.add(new Order(Direction.ASC, o[0]));
-//					}
-//				}
-//			}
-//		}
-//		return new PageRequest(this.pageNo - 1, this.pageSize, new Sort(orders));
-//	}
-//	
-//	/**
-//	 * 设置 Spring data JPA 分页对象，转换为本系统分页对象
-//	 */
-//	public void setSpringPage(org.springframework.data.domain.Page<T> page){
-//		this.pageNo = page.getNumber();
-//		this.pageSize = page.getSize();
-//		this.count = page.getTotalElements();
-//		this.list = page.getContent();
-//	}
 	
 }

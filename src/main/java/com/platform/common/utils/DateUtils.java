@@ -124,7 +124,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
      * @throws
      */
 	public static Date parseDate(Object str) {
-		if (str!=null && StringUtils.isEmpty(str.toString())){
+		if (str==null || StringUtils.isEmpty(str.toString())){
 			return null;
 		}
 		try {

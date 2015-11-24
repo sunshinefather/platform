@@ -1,5 +1,6 @@
 package com.platform.common.persistence.interceptor;
 
+import java.util.Properties;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
@@ -11,15 +12,15 @@ import org.apache.ibatis.plugin.Signature;
 import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
-
 import com.platform.common.persistence.Page;
-import com.platform.common.utils.Reflections;
 import com.platform.common.utils.StringUtils;
-
-import java.util.Properties;
-
+import com.platform.common.utils.reflection.ReflectionUtils;
 /**
- * 数据库分页插件，只拦截查询语句
+ * 数据库分页插件
+ * @ClassName:  PaginationInterceptor   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月23日 下午5:57:57
  */
 @Intercepts({@Signature(type = Executor.class, method = "query",args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class})})
 public class PaginationInterceptor extends BaseInterceptor {
@@ -28,12 +29,8 @@ public class PaginationInterceptor extends BaseInterceptor {
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
-
         final MappedStatement mappedStatement = (MappedStatement) invocation.getArgs()[0];
         
-//        //拦截需要分页的SQL
-////        if (mappedStatement.getId().matches(_SQL_PATTERN)) {
-//        if (StringUtils.indexOfIgnoreCase(mappedStatement.getId(), _SQL_PATTERN) != -1) {
             Object parameter = invocation.getArgs()[1];
             BoundSql boundSql = mappedStatement.getBoundSql(parameter);
             Object parameterObject = boundSql.getParameterObject();
@@ -53,26 +50,20 @@ public class PaginationInterceptor extends BaseInterceptor {
                 String originalSql = boundSql.getSql().trim();
             	
                 //得到总记录数
-                page.setCount(SQLHelper.getCount(originalSql, null, mappedStatement, parameterObject, boundSql, log));
-
-                //分页查询 本地化对象 修改数据库注意修改实现
+                page.setCount(SQLHelper.getCount(originalSql, mappedStatement, parameterObject, boundSql, log));
+                
                 String pageSql = SQLHelper.generatePageSql(originalSql, page, DIALECT);
-//                if (log.isDebugEnabled()) {
-//                    log.debug("PAGE SQL:" + StringUtils.replace(pageSql, "\n", ""));
-//                }
                 invocation.getArgs()[2] = new RowBounds(RowBounds.NO_ROW_OFFSET, RowBounds.NO_ROW_LIMIT);
                 BoundSql newBoundSql = new BoundSql(mappedStatement.getConfiguration(), pageSql, boundSql.getParameterMappings(), boundSql.getParameterObject());
-                //解决MyBatis 分页foreach 参数失效 start
-                if (Reflections.getFieldValue(boundSql, "metaParameters") != null) {
-                    MetaObject mo = (MetaObject) Reflections.getFieldValue(boundSql, "metaParameters");
-                    Reflections.setFieldValue(newBoundSql, "metaParameters", mo);
+                Object obj=ReflectionUtils.getFieldValue(boundSql, "metaParameters");
+                if (obj!= null) {
+                    MetaObject mo = (MetaObject) obj;
+                    ReflectionUtils.setFieldValue(newBoundSql, "metaParameters", mo);
                 }
-                //解决MyBatis 分页foreach 参数失效 end
-                MappedStatement newMs = copyFromMappedStatement(mappedStatement, new BoundSqlSqlSource(newBoundSql));
+                MappedStatement newMappedStatement= recombineMappedStatement(mappedStatement, new BoundSqlSqlSource(newBoundSql));
+                invocation.getArgs()[0] = newMappedStatement;
 
-                invocation.getArgs()[0] = newMs;
             }
-//        }
         return invocation.proceed();
     }
 
@@ -87,8 +78,7 @@ public class PaginationInterceptor extends BaseInterceptor {
         super.initProperties(properties);
     }
 
-    private MappedStatement copyFromMappedStatement(MappedStatement ms,
-                                                    SqlSource newSqlSource) {
+    private MappedStatement recombineMappedStatement(MappedStatement ms,SqlSource newSqlSource) {
         MappedStatement.Builder builder = new MappedStatement.Builder(ms.getConfiguration(),
                 ms.getId(), newSqlSource, ms.getSqlCommandType());
         builder.resource(ms.getResource());
@@ -113,7 +103,6 @@ public class PaginationInterceptor extends BaseInterceptor {
         public BoundSqlSqlSource(BoundSql boundSql) {
             this.boundSql = boundSql;
         }
-
         public BoundSql getBoundSql(Object parameterObject) {
             return boundSql;
         }

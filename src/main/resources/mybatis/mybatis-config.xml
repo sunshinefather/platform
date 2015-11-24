@@ -39,12 +39,12 @@
 	
 	<!-- 类型别名 -->
 	<typeAliases>
-		<typeAlias alias="Page" type="com.platform.common.persistence.Page" /><!--分页  -->
+		<typeAlias alias="Page" type="com.platform.common.persistence.Page" />
 	</typeAliases>
 	
 	<!-- 插件配置 -->
 	<plugins>
-		<plugin interceptor="com.platform.common.persistence.interceptor.PaginationInterceptor" />
+		<plugin interceptor="com.platform.common.persistence.interceptor.PreparePaginationInterceptor" />
     </plugins>
 	
 </configuration>

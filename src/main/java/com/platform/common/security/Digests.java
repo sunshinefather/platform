@@ -5,9 +5,7 @@ import java.io.InputStream;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
-
 import org.apache.commons.lang3.Validate;
-
 import com.platform.common.utils.Exceptions;
 
 /**
@@ -25,11 +23,14 @@ public class Digests {
 	private static SecureRandom random = new SecureRandom();
 
 	/**
-	 * 对输入字符串进行md5散列.
+	 * 对输入字符串进行1次md5散列.
 	 */
 	public static byte[] md5(byte[] input) {
 		return digest(input, MD5, null, 1);
 	}
+	/**
+	 * 对输入字符串进行iterations次md5散列.
+	 */
 	public static byte[] md5(byte[] input, int iterations) {
 		return digest(input, MD5, null, iterations);
 	}
@@ -116,5 +117,4 @@ public class Digests {
 			throw Exceptions.unchecked(e);
 		}
 	}
-	
 }
