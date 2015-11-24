@@ -34,9 +34,6 @@ import com.platform.common.utils.DateUtils;
  */
 public abstract class BaseController {
 
-	/**
-	 * 日志对象
-	 */
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 
 	/**
@@ -202,11 +199,6 @@ public abstract class BaseController {
 			public void setAsText(String text) {
 				setValue(DateUtils.parseDate(text));
 			}
-//			@Override
-//			public String getAsText() {
-//				Object value = getValue();
-//				return value != null ? DateUtils.formatDateTime((Date)value) : "";
-//			}
 		});
 	}
 	

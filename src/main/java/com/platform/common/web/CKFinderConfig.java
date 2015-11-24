@@ -2,20 +2,19 @@ package com.platform.common.web;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.http.HttpServletRequest;
-
 import com.platform.common.config.Global;
 import com.platform.common.utils.FileUtils;
 import com.platform.modules.sys.security.SystemAuthorizingRealm.Principal;
 import com.platform.modules.sys.utils.UserUtils;
-
 import com.ckfinder.connector.configuration.Configuration;
 import com.ckfinder.connector.data.AccessControlLevel;
 import com.ckfinder.connector.utils.AccessControlUtil;
-
 /**
- * CKFinder配置 
- * @author sunshine
- * @version 2014-06-25
+ * CKFinder配置
+ * @ClassName:  CKFinderConfig   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月24日 下午6:03:10
  */
 public class CKFinderConfig extends Configuration {
 
