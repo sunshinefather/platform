@@ -3,17 +3,13 @@ package com.platform.common.security.shiro.cache;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;
 import org.apache.shiro.cache.CacheManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import redis.clients.jedis.Jedis;
-
 import com.google.common.collect.Sets;
 import com.platform.common.utils.JedisUtils;
 import com.platform.common.web.Servlets;
@@ -53,11 +49,6 @@ public class JedisCacheManager implements CacheManager {
 
 		public JedisCache(String cacheKeyName) {
 			this.cacheKeyName = cacheKeyName;
-//			if (!JedisUtils.exists(cacheKeyName)){
-//				Map<String, Object> map = Maps.newHashMap();
-//				JedisUtils.setObjectMap(cacheKeyName, map, 60 * 60 * 24);
-//			}
-//			logger.debug("Init: cacheKeyName {} ", cacheKeyName);
 		}
 		
 		@SuppressWarnings("unchecked")

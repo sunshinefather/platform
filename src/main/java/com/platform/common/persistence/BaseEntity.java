@@ -2,11 +2,8 @@ package com.platform.common.persistence;
 
 import java.io.Serializable;
 import java.util.Map;
-
 import javax.xml.bind.annotation.XmlTransient;
-
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.Maps;
 import com.platform.common.config.Global;
@@ -15,11 +12,13 @@ import com.platform.common.supcan.annotation.treelist.cols.SupCol;
 import com.platform.common.utils.StringUtils;
 import com.platform.modules.sys.entity.User;
 import com.platform.modules.sys.utils.UserUtils;
-
 /**
- * Entity支持类 
- * @author sunshine
- * @version 2014-05-16
+ * Entity
+ * @ClassName:  BaseEntity   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月26日 下午2:10:32
+ * @param <T>
  */
 @SupTreeList
 public abstract class BaseEntity<T> implements Serializable {

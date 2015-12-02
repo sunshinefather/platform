@@ -34,8 +34,8 @@ import org.slf4j.LoggerFactory;
 
 import com.google.common.collect.Lists;
 import com.platform.common.utils.Encodes;
-import com.platform.common.utils.Reflections;
 import com.platform.common.utils.excel.annotation.ExcelField;
+import com.platform.common.utils.reflection.ReflectionUtils;
 import com.platform.modules.sys.utils.DictUtils;
 
 /**
@@ -370,12 +370,12 @@ public class ExportExcel {
 				// Get entity value
 				try{
 					if (StringUtils.isNotBlank(ef.value())){
-						val = Reflections.invokeGetter(e, ef.value());
+						val = ReflectionUtils.invokeGetter(e, ef.value());
 					}else{
 						if (os[1] instanceof Field){
-							val = Reflections.invokeGetter(e, ((Field)os[1]).getName());
+							val = ReflectionUtils.invokeGetter(e, ((Field)os[1]).getName());
 						}else if (os[1] instanceof Method){
-							val = Reflections.invokeMethod(e, ((Method)os[1]).getName(), new Class[] {}, new Object[] {});
+							val = ReflectionUtils.invokeMethod(e, ((Method)os[1]).getName(), new Class[] {}, new Object[] {});
 						}
 					}
 					// If is dict, get dict label

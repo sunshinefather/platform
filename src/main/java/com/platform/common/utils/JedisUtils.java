@@ -3,27 +3,24 @@ package com.platform.common.utils;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.platform.common.config.Global;
-
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.exceptions.JedisException;
-
 /**
- * Jedis Cache 工具类
- * 
- * @author sunshine
- * @version 2014-6-29
+ * Jedis 工具类
+ * @ClassName:  JedisUtils   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月26日 下午2:17:44
  */
 public class JedisUtils {
-
+	
 	private static Logger logger = LoggerFactory.getLogger(JedisUtils.class);
 	
 	private static JedisPool jedisPool = SpringContextHolder.getBean(JedisPool.class);
@@ -768,7 +765,6 @@ public class JedisUtils {
 		Jedis jedis = null;
 		try {
 			jedis = jedisPool.getResource();
-//			logger.debug("getResource.", jedis);
 		} catch (JedisException e) {
 			logger.warn("getResource.", e);
 			returnBrokenResource(jedis);

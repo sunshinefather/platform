@@ -3,11 +3,6 @@ package com.platform.common.security.shiro;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.tags.PermissionTag;
 
-/**
- * Shiro HasAnyPermissions Tag.
- * 
- * @author calvin
- */
 public class HasAnyPermissionsTag extends PermissionTag {
 
 	private static final long serialVersionUID = 1L;
@@ -20,7 +15,6 @@ public class HasAnyPermissionsTag extends PermissionTag {
 		Subject subject = getSubject();
 
 		if (subject != null) {
-			// Iterate through permissions and check to see if the user has one of the permissions
 			for (String permission : permissionNames.split(PERMISSION_NAMES_DELIMETER)) {
 
 				if (subject.isPermitted(permission.trim())) {

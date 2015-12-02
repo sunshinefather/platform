@@ -1,6 +1,6 @@
 package com.platform.modules.sys.security;
 /**
- * 用户名,密码和验证码  认证类
+ * 用户名,密码和验证码 TOKEN
  * @ClassName:  UsernamePasswordToken   
  * @Description:TODO   
  * @author: sunshine  

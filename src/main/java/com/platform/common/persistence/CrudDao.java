@@ -1,14 +1,15 @@
 package com.platform.common.persistence;
 
 import java.util.List;
-
 /**
- * DAO支持类实现 
- * @author sunshine
- * @version 2014-05-16
+ * DAO层接口
+ * @ClassName:  CrudDao   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月26日 上午11:59:56
  * @param <T>
  */
-public interface CrudDao<T> extends BaseDao {
+public interface CrudDao<T> {
 
 	/**
 	 * 获取单条数据
@@ -37,14 +38,6 @@ public interface CrudDao<T> extends BaseDao {
 	 * @return
 	 */
 	public List<T> findAllList(T entity);
-	
-	/**
-	 * 查询所有数据列表
-	 * @see public List<T> findAllList(T entity)
-	 * @return
-	 */
-	@Deprecated
-	public List<T> findAllList();
 	
 	/**
 	 * 插入数据

@@ -1,20 +1,22 @@
 package com.platform.common.persistence;
 
 import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.platform.modules.act.entity.Act;
-
 /**
- * Activiti Entity类 
- * @author sunshine
- * @version 2013-05-28
+ * Activiti Entity
+ * @ClassName:  ActEntity   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月26日 下午2:11:28
+ * @param <T>
  */
 public abstract class ActEntity<T> extends DataEntity<T> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
-	protected Act act; 		// 流程任务对象
+	
+    /**流程任务对象*/
+	protected Act act;
 
 	public ActEntity() {
 		super();

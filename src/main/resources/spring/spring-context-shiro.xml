@@ -9,7 +9,7 @@
 	
 	<!-- 定义Shiro安全管理配置 -->
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-	    <!-- Shiro从从Realm获取安全数据（如用户、角色、权限） -->
+	    <!-- Shiro从Realm获取安全数据（如用户、角色、权限） -->
 		<property name="realm" ref="systemAuthorizingRealm" />
 		<!-- 认证器  认证通过策略,
 		   默认实现 ModularRealmAuthenticator(调用AuthenticationStrategy进行多Realm(将按照相应的顺序及策略进行访问)身份验证,Authenticator会把相应的token传入Realm，从Realm获取身份验证信息,如果没有返回或抛出异常表示身份验证失败)
@@ -35,7 +35,7 @@
             </map>
         </property>
 		<property name="filterChainDefinitions">
-		<!-- anon：匿名访问,authc：认证后才能访问(由拦截器org.apache.shiro.web.filter.authc.FormAuthenticationFilter验证) -->
+		<!-- anon：匿名访问,authc：需认证,user:记住过登录状态就可以访问(默认拦截器枚举定义org.apache.shiro.web.filter.mgt.DefaultFilter) -->
 			<value>
 				/static/** = anon
 				/userfiles/** = anon

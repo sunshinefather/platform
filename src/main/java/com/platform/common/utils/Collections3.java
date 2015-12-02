@@ -10,6 +10,8 @@ import java.util.Map;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import com.platform.common.utils.reflection.ReflectionUtils;
+
 /**
  * Collections工具集.
  * 在JDK的Collections和Guava的Collections2后, 命名为Collections3.
@@ -37,9 +39,8 @@ public class Collections3 {
 						PropertyUtils.getProperty(obj, valuePropertyName));
 			}
 		} catch (Exception e) {
-			throw Reflections.convertReflectionExceptionToUnchecked(e);
+			throw ReflectionUtils.convertReflectionExceptionToUnchecked(e);
 		}
-
 		return map;
 	}
 
@@ -58,9 +59,8 @@ public class Collections3 {
 				list.add(PropertyUtils.getProperty(obj, propertyName));
 			}
 		} catch (Exception e) {
-			throw Reflections.convertReflectionExceptionToUnchecked(e);
+			throw ReflectionUtils.convertReflectionExceptionToUnchecked(e);
 		}
-
 		return list;
 	}
 

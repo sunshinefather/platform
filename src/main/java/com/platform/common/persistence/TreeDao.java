@@ -1,11 +1,12 @@
 package com.platform.common.persistence;
 
 import java.util.List;
-
 /**
- * DAO支持类实现 
- * @author sunshine
- * @version 2014-05-16
+ * TreeDAO
+ * @ClassName:  TreeDao   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月26日 下午2:07:06
  * @param <T>
  */
 public interface TreeDao<T extends TreeEntity<T>> extends CrudDao<T> {
@@ -23,5 +24,4 @@ public interface TreeDao<T extends TreeEntity<T>> extends CrudDao<T> {
 	 * @return
 	 */
 	public int updateParentIds(T entity);
-	
 }

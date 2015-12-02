@@ -234,10 +234,8 @@ public class JedisSessionDAO extends AbstractSessionDAO implements SessionDAO {
 		Jedis jedis = null;
 		try {
 			jedis = JedisUtils.getResource();
-//			if (jedis.exists(sessionKeyPrefix + sessionId)){
 				session = (Session)JedisUtils.toObject(jedis.get(
 						JedisUtils.getBytesKey(sessionKeyPrefix + sessionId)));
-//			}
 			logger.debug("doReadSession {} {}", sessionId, request != null ? request.getRequestURI() : "");
 		} catch (Exception e) {
 			logger.error("doReadSession {} {}", sessionId, request != null ? request.getRequestURI() : "", e);

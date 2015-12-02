@@ -1,12 +1,10 @@
 package com.platform.common.persistence;
 
 import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.Length;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.platform.common.utils.Reflections;
 import com.platform.common.utils.StringUtils;
+import com.platform.common.utils.reflection.ReflectionUtils;
 
 /**
  * 数据Entity类 
@@ -16,11 +14,14 @@ import com.platform.common.utils.StringUtils;
 public abstract class TreeEntity<T> extends DataEntity<T> {
 
 	private static final long serialVersionUID = 1L;
-
-	protected T parent;	// 父级编号
-	protected String parentIds; // 所有父级编号
-	protected String name; 	// 机构名称
-	protected Integer sort;		// 排序
+    /**父级编号*/
+	protected T parent;
+	/**所有父级编号*/
+	protected String parentIds;
+	/**节点名称*/
+	protected String name;
+	/**排序*/
+	protected Integer sort;
 	
 	public TreeEntity() {
 		super();
@@ -74,9 +75,8 @@ public abstract class TreeEntity<T> extends DataEntity<T> {
 	public String getParentId() {
 		String id = null;
 		if (parent != null){
-			id = (String)Reflections.getFieldValue(parent, "id");
+			id = (String)ReflectionUtils.getFieldValue(parent, "id");
 		}
 		return StringUtils.isNotBlank(id) ? id : "0";
-	}
-	
+	}	
 }

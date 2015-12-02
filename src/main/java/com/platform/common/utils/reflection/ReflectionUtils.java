@@ -7,11 +7,10 @@ import java.lang.reflect.Modifier;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
-
 import org.apache.commons.lang3.Validate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.util.Assert;
 import com.platform.common.utils.StringUtils;
 /**
  * 反射工具类
@@ -448,6 +447,19 @@ public class ReflectionUtils {
 			return (RuntimeException) e;
 		}
 		return new RuntimeException(e);
+	}
+	
+	public static Class<?> getOriginalClass(Object instance) {
+		Assert.notNull(instance, "Instance must not be null");
+		Class<?> clazz = instance.getClass();
+		if (clazz != null && clazz.getName().contains("$$")) {
+			Class<?> superClass = clazz.getSuperclass();
+			if (superClass != null && !Object.class.equals(superClass)) {
+				return superClass;
+			}
+		}
+		return clazz;
+
 	}
 
 	public static void main(String[] args) {

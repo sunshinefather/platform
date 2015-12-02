@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import org.apache.ibatis.executor.ErrorContext;
 import org.apache.ibatis.executor.ExecutorException;
 import org.apache.ibatis.mapping.BoundSql;
@@ -21,12 +20,11 @@ import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.type.TypeHandler;
 import org.apache.ibatis.type.TypeHandlerRegistry;
 import org.slf4j.Logger;
-
 import com.platform.common.config.Global;
 import com.platform.common.persistence.Page;
 import com.platform.common.persistence.dialect.Dialect;
-import com.platform.common.utils.Reflections;
 import com.platform.common.utils.StringUtils;
+import com.platform.common.utils.reflection.ReflectionUtils;
 /**
  * SQL工具类
  * @ClassName:  SQLHelper   
@@ -125,9 +123,9 @@ public class SQLHelper {
         	ps = conn.prepareStatement(countSql);
             BoundSql countBS = new BoundSql(mappedStatement.getConfiguration(), countSql,
                     boundSql.getParameterMappings(), parameterObject);
-			if (Reflections.getFieldValue(boundSql, "metaParameters") != null) {
-				MetaObject mo = (MetaObject) Reflections.getFieldValue(boundSql, "metaParameters");
-				Reflections.setFieldValue(countBS, "metaParameters", mo);
+			if (ReflectionUtils.getFieldValue(boundSql, "metaParameters") != null) {
+				MetaObject mo = (MetaObject) ReflectionUtils.getFieldValue(boundSql, "metaParameters");
+				ReflectionUtils.setFieldValue(countBS, "metaParameters", mo);
 			}
             SQLHelper.setParameters(ps, mappedStatement, countBS, parameterObject);
             rs = ps.executeQuery();

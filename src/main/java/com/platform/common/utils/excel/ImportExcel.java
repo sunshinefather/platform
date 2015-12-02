@@ -10,7 +10,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -23,10 +22,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.google.common.collect.Lists;
-import com.platform.common.utils.Reflections;
 import com.platform.common.utils.excel.annotation.ExcelField;
+import com.platform.common.utils.reflection.ReflectionUtils;
 import com.platform.modules.sys.utils.DictUtils;
 
 /**
@@ -329,13 +327,13 @@ public class ImportExcel {
 					}
 					// set entity value
 					if (os[1] instanceof Field){
-						Reflections.invokeSetter(e, ((Field)os[1]).getName(), val);
+						ReflectionUtils.invokeSetter(e, ((Field)os[1]).getName(), val);
 					}else if (os[1] instanceof Method){
 						String mthodName = ((Method)os[1]).getName();
 						if ("get".equals(mthodName.substring(0, 3))){
 							mthodName = "set"+StringUtils.substringAfter(mthodName, "get");
 						}
-						Reflections.invokeMethod(e, mthodName, new Class[] {valType}, new Object[] {val});
+						ReflectionUtils.invokeMethod(e, mthodName, new Class[] {valType}, new Object[] {val});
 					}
 				}
 				sb.append(val+", ");

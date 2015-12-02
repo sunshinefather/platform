@@ -1,13 +1,11 @@
 package com.platform.common.service;
 
 import java.util.List;
-
 import org.springframework.transaction.annotation.Transactional;
-
 import com.platform.common.persistence.TreeDao;
 import com.platform.common.persistence.TreeEntity;
-import com.platform.common.utils.Reflections;
 import com.platform.common.utils.StringUtils;
+import com.platform.common.utils.reflection.ReflectionUtils;
 
 /**
  * Service基类 
@@ -21,7 +19,7 @@ public abstract class TreeService<D extends TreeDao<T>, T extends TreeEntity<T>>
 	public void save(T entity) {
 		
 		@SuppressWarnings("unchecked")
-		Class<T> entityClass = Reflections.getClassGenricType(getClass(), 1);
+		Class<T> entityClass = ReflectionUtils.getClassGenericType(getClass(), 1);
 		
 		// 如果没有设置父节点，则代表为跟节点，有则获取父节点实体
 		if (entity.getParent() == null || StringUtils.isBlank(entity.getParentId()) 

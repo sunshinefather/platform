@@ -5,7 +5,6 @@ import java.io.StringWriter;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
@@ -13,13 +12,11 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.namespace.QName;
-
 import org.springframework.http.converter.HttpMessageConversionException;
 import org.springframework.util.Assert;
-
 import com.platform.common.utils.Exceptions;
-import com.platform.common.utils.Reflections;
 import com.platform.common.utils.StringUtils;
+import com.platform.common.utils.reflection.ReflectionUtils;
 
 /**
  * 使用Jaxb2.0实现XML<->Java Object的Mapper.
@@ -39,7 +36,7 @@ public class JaxbMapper {
 	 * Java Object->Xml without encoding.
 	 */
 	public static String toXml(Object root) {
-		Class clazz = Reflections.getUserClass(root);
+		Class clazz = ReflectionUtils.getOriginalClass(root);
 		return toXml(root, clazz, null);
 	}
 
@@ -47,7 +44,7 @@ public class JaxbMapper {
 	 * Java Object->Xml with encoding.
 	 */
 	public static String toXml(Object root, String encoding) {
-		Class clazz = Reflections.getUserClass(root);
+		Class clazz = ReflectionUtils.getOriginalClass(root);
 		return toXml(root, clazz, encoding);
 	}
 

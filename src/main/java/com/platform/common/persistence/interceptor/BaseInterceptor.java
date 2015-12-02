@@ -2,11 +2,9 @@ package com.platform.common.persistence.interceptor;
 
 import java.io.Serializable;
 import java.util.Properties;
-
 import org.apache.ibatis.plugin.Interceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import com.platform.common.config.Global;
 import com.platform.common.persistence.Page;
 import com.platform.common.persistence.dialect.Dialect;
@@ -16,7 +14,7 @@ import com.platform.common.persistence.dialect.db.MySQLDialect;
 import com.platform.common.persistence.dialect.db.OracleDialect;
 import com.platform.common.persistence.dialect.db.PostgreSQLDialect;
 import com.platform.common.persistence.dialect.db.SQLServer2005Dialect;
-import com.platform.common.utils.Reflections;
+import com.platform.common.utils.reflection.ReflectionUtils;
 
 /**
  * Mybatis分页拦截器基类
@@ -52,7 +50,7 @@ public abstract class BaseInterceptor implements Interceptor, Serializable {
             if (parameterObject instanceof Page) {
                 return (Page<Object>) parameterObject;
             } else {
-                return (Page<Object>)Reflections.getFieldValue(parameterObject, PAGE);
+                return (Page<Object>)ReflectionUtils.getFieldValue(parameterObject, PAGE);
             }
     	}catch (Exception e) {
 			return null;

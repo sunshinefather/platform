@@ -5,23 +5,21 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.util.UriUtils;
-
 import com.platform.common.config.Global;
-
 /**
  * 查看CK上传的图片 
- * @author sunshine
- * @version 2014-06-25
+ * @ClassName:  UserfilesDownloadServlet   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月26日 下午4:15:02
  */
 public class UserfilesDownloadServlet extends HttpServlet {
 

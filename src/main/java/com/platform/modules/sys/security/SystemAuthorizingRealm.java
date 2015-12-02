@@ -33,7 +33,7 @@ import com.platform.modules.sys.utils.LogUtils;
 import com.platform.modules.sys.utils.UserUtils;
 import com.platform.modules.sys.web.LoginController;
 /**
- * shiro 系统提供安全数据(用户、角色、权限)
+ * shiro 提供系统安全数据(用户、角色、权限)
  * @ClassName:  SystemAuthorizingRealm   
  * @Description:TODO   
  * @author: sunshine  

@@ -16,12 +16,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.google.common.collect.Sets;
 import com.platform.common.web.Servlets;
-
 /**
- * 自定义授权缓存管理类
- 
- * @author sunshine
- * @version 2014-7-21
+ * 授权缓存管理类
+ * @ClassName:  SessionCacheManager   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年11月26日 下午2:15:25
  */
 public class SessionCacheManager implements CacheManager {
 
