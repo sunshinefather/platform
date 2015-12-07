@@ -3,7 +3,9 @@ package com.platform.common.security.shiro.cache;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.UnavailableSecurityManagerException;
 import org.apache.shiro.cache.Cache;
@@ -14,10 +16,11 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import com.google.common.collect.Sets;
-import com.platform.common.web.Servlets;
+import com.platform.common.web.ServletUtils;
 /**
- * 授权缓存管理类
+ * 缓存管理器
  * @ClassName:  SessionCacheManager   
  * @Description:TODO   
  * @author: sunshine  
@@ -67,7 +70,7 @@ public class SessionCacheManager implements CacheManager {
 			}
 			
 			V v = null;
-			HttpServletRequest request = Servlets.getRequest();
+			HttpServletRequest request = ServletUtils.getRequest();
 			if (request != null){
 				v = (V)request.getAttribute(cacheKeyName);
 				if (v != null){
@@ -94,7 +97,7 @@ public class SessionCacheManager implements CacheManager {
 			getSession().setAttribute(cacheKeyName, value);
 			
 			if (logger.isDebugEnabled()){
-				HttpServletRequest request = Servlets.getRequest();
+				HttpServletRequest request = ServletUtils.getRequest();
 				logger.debug("put {} {} {}", cacheKeyName, key, request != null ? request.getRequestURI() : "");
 			}
 			

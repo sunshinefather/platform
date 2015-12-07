@@ -22,7 +22,7 @@ import com.platform.common.service.ServiceException;
 import com.platform.common.utils.CacheUtils;
 import com.platform.common.utils.Encodes;
 import com.platform.common.utils.StringUtils;
-import com.platform.common.web.Servlets;
+import com.platform.common.web.ServletUtils;
 import com.platform.modules.sys.dao.MenuDao;
 import com.platform.modules.sys.dao.RoleDao;
 import com.platform.modules.sys.dao.UserDao;
@@ -194,7 +194,7 @@ public class SystemService extends BaseService implements InitializingBean {
 		user.setOldLoginIp(user.getLoginIp());
 		user.setOldLoginDate(user.getLoginDate());
 		// 更新本次登录信息
-		user.setLoginIp(StringUtils.getRemoteAddr(Servlets.getRequest()));
+		user.setLoginIp(StringUtils.getRemoteAddr(ServletUtils.getRequest()));
 		user.setLoginDate(new Date());
 		userDao.updateLoginInfo(user);
 	}

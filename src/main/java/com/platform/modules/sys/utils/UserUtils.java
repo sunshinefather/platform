@@ -1,13 +1,11 @@
 package com.platform.modules.sys.utils;
 
 import java.util.List;
-
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.UnavailableSecurityManagerException;
 import org.apache.shiro.session.InvalidSessionException;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
-
 import com.platform.common.service.BaseService;
 import com.platform.common.utils.CacheUtils;
 import com.platform.common.utils.SpringContextHolder;
@@ -22,11 +20,11 @@ import com.platform.modules.sys.entity.Office;
 import com.platform.modules.sys.entity.Role;
 import com.platform.modules.sys.entity.User;
 import com.platform.modules.sys.security.SystemAuthorizingRealm.Principal;
-
 /**
- * 用户工具类 
- * @author sunshine
- * @version 2013-12-05
+ * 用户工具类
+ * @ClassName:  UserUtils   
+ * @Description:TODO   
+ * @author: sunshine  
  */
 public class UserUtils {
 
@@ -46,12 +44,16 @@ public class UserUtils {
 	public static final String CACHE_AREA_LIST = "areaList";
 	public static final String CACHE_OFFICE_LIST = "officeList";
 	public static final String CACHE_OFFICE_ALL_LIST = "officeAllList";
-	
-	/**
-	 * 根据ID获取用户
-	 * @param id
-	 * @return 取不到返回null
-	 */
+    /**
+     * 根据用户ID获取用户
+     * @Title: get
+     * @Description: TODO  
+     * @param: @param id
+     * @param: @return      
+     * @return: User
+     * @author: sunshine  
+     * @throws
+     */
 	public static User get(String id){
 		User user = (User)CacheUtils.get(USER_CACHE, USER_CACHE_ID_ + id);
 		if (user ==  null){
@@ -65,11 +67,15 @@ public class UserUtils {
 		}
 		return user;
 	}
-	
 	/**
 	 * 根据登录名获取用户
-	 * @param loginName
-	 * @return 取不到返回null
+	 * @Title: getByLoginName
+	 * @Description: TODO  
+	 * @param: @param loginName
+	 * @param: @return      
+	 * @return: User
+	 * @author: sunshine  
+	 * @throws
 	 */
 	public static User getByLoginName(String loginName){
 		User user = (User)CacheUtils.get(USER_CACHE, USER_CACHE_LOGIN_NAME_ + loginName);
@@ -123,7 +129,6 @@ public class UserUtils {
 			}
 			return new User();
 		}
-		// 如果没有登录，则返回实例化空的User对象。
 		return new User();
 	}
 
@@ -216,17 +221,27 @@ public class UserUtils {
 		}
 		return officeList;
 	}
-	
 	/**
-	 * 获取授权主要对象
+	 * 获取当前授权对象
+	 * @Title: getSubject
+	 * @Description: TODO  
+	 * @param: @return      
+	 * @return: Subject
+	 * @author: sunshine  
+	 * @throws
 	 */
 	public static Subject getSubject(){
 		return SecurityUtils.getSubject();
 	}
-	
-	/**
-	 * 获取当前登录者对象
-	 */
+    /**
+     * 获取当前登录者对象
+     * @Title: getPrincipal
+     * @Description: TODO  
+     * @param: @return      
+     * @return: Principal
+     * @author: sunshine  
+     * @throws
+     */
 	public static Principal getPrincipal(){
 		try{
 			Subject subject = SecurityUtils.getSubject();
@@ -234,7 +249,6 @@ public class UserUtils {
 			if (principal != null){
 				return principal;
 			}
-//			subject.logout();
 		}catch (UnavailableSecurityManagerException e) {
 			
 		}catch (InvalidSessionException e){
@@ -253,41 +267,28 @@ public class UserUtils {
 			if (session != null){
 				return session;
 			}
-//			subject.logout();
 		}catch (InvalidSessionException e){
 			
 		}
 		return null;
 	}
-	
-	// ============== User Cache ==============
+
 	
 	public static Object getCache(String key) {
 		return getCache(key, null);
 	}
 	
 	public static Object getCache(String key, Object defaultValue) {
-//		Object obj = getCacheMap().get(key);
 		Object obj = getSession().getAttribute(key);
 		return obj==null?defaultValue:obj;
 	}
 
 	public static void putCache(String key, Object value) {
-//		getCacheMap().put(key, value);
 		getSession().setAttribute(key, value);
 	}
 
 	public static void removeCache(String key) {
-//		getCacheMap().remove(key);
 		getSession().removeAttribute(key);
 	}
-	
-//	public static Map<String, Object> getCacheMap(){
-//		Principal principal = getPrincipal();
-//		if(principal!=null){
-//			return principal.getCacheMap();
-//		}
-//		return new HashMap<String, Object>();
-//	}
 	
 }

@@ -3,16 +3,20 @@ package com.platform.common.security.shiro.cache;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;
 import org.apache.shiro.cache.CacheManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import redis.clients.jedis.Jedis;
+
 import com.google.common.collect.Sets;
 import com.platform.common.utils.JedisUtils;
-import com.platform.common.web.Servlets;
+import com.platform.common.web.ServletUtils;
 
 /**
  * 自定义授权缓存管理类 
@@ -59,7 +63,7 @@ public class JedisCacheManager implements CacheManager {
 			}
 			
 			V v = null;
-			HttpServletRequest request = Servlets.getRequest();
+			HttpServletRequest request = ServletUtils.getRequest();
 			if (request != null){
 				v = (V)request.getAttribute(cacheKeyName);
 				if (v != null){

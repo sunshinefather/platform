@@ -3,7 +3,9 @@ package com.platform.modules.sys.security;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
+
 import javax.annotation.PostConstruct;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -24,7 +26,7 @@ import com.platform.common.config.Global;
 import com.platform.common.servlet.ValidateCodeServlet;
 import com.platform.common.utils.Encodes;
 import com.platform.common.utils.SpringContextHolder;
-import com.platform.common.web.Servlets;
+import com.platform.common.web.ServletUtils;
 import com.platform.modules.sys.entity.Menu;
 import com.platform.modules.sys.entity.Role;
 import com.platform.modules.sys.entity.User;
@@ -46,7 +48,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 	
 	private SystemService systemService;
     /**
-     * 认证当前登录的Subject
+     * 认证当前收集的的Subject
      * <p>Title: doGetAuthenticationInfo</p>   
      * <p>Description: </p>   
      * @param authcToken
@@ -135,7 +137,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 			// 更新登录IP和时间
 			getSystemService().updateUserLoginInfo(user);
 			// 记录登录日志
-			LogUtils.saveLog(Servlets.getRequest(), "系统登录");
+			LogUtils.saveLog(ServletUtils.getRequest(), "系统登录");
 			return info;
 		} else {
 			return null;

@@ -3,9 +3,7 @@ package com.platform.common.security.shiro.session;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Set;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.UnknownSessionException;
 import org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO;
@@ -13,18 +11,17 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.support.DefaultSubjectContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import com.google.common.collect.Sets;
-
 import com.platform.common.config.Global;
 import com.platform.common.utils.DateUtils;
 import com.platform.common.utils.StringUtils;
-import com.platform.common.web.Servlets;
-
+import com.platform.common.web.ServletUtils;
 /**
- * 系统安全认证实现类 
- * @author sunshine
- * @version 2014-7-24
+ * session持久化
+ * @ClassName:  CacheSessionDAO   
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年12月4日 下午3:47:27
  */
 public class CacheSessionDAO extends EnterpriseCacheSessionDAO implements SessionDAO {
 
@@ -40,11 +37,11 @@ public class CacheSessionDAO extends EnterpriseCacheSessionDAO implements Sessio
             return;
         }
     	
-    	HttpServletRequest request = Servlets.getRequest();
+    	HttpServletRequest request = ServletUtils.getRequest();
 		if (request != null){
 			String uri = request.getServletPath();
 			// 如果是静态文件，则不更新SESSION
-			if (Servlets.isStaticFile(uri)){
+			if (ServletUtils.isStaticFile(uri)){
 				return;
 			}
 			// 如果是视图文件，则不更新SESSION
@@ -74,11 +71,11 @@ public class CacheSessionDAO extends EnterpriseCacheSessionDAO implements Sessio
 
     @Override
     protected Serializable doCreate(Session session) {
-		HttpServletRequest request = Servlets.getRequest();
+		HttpServletRequest request = ServletUtils.getRequest();
 		if (request != null){
 			String uri = request.getServletPath();
 			// 如果是静态文件，则不创建SESSION
-			if (Servlets.isStaticFile(uri)){
+			if (ServletUtils.isStaticFile(uri)){
 		        return null;
 			}
 		}
@@ -96,11 +93,11 @@ public class CacheSessionDAO extends EnterpriseCacheSessionDAO implements Sessio
     public Session readSession(Serializable sessionId) throws UnknownSessionException {
     	try{
     		Session s = null;
-    		HttpServletRequest request = Servlets.getRequest();
+    		HttpServletRequest request = ServletUtils.getRequest();
     		if (request != null){
     			String uri = request.getServletPath();
     			// 如果是静态文件，则不获取SESSION
-    			if (Servlets.isStaticFile(uri)){
+    			if (ServletUtils.isStaticFile(uri)){
     				return null;
     			}
     			s = (Session)request.getAttribute("session_"+sessionId);

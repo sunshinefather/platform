@@ -188,7 +188,7 @@ public class LoginController extends BaseController{
 	 * 是否是验证码登录
 	 * @param useruame 用户名
 	 * @param isFail 计数加1
-	 * @param clean 计数清零
+	 * @param clean 计数器是否清零
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")

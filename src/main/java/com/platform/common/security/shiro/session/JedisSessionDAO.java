@@ -24,7 +24,7 @@ import com.platform.common.config.Global;
 import com.platform.common.utils.DateUtils;
 import com.platform.common.utils.JedisUtils;
 import com.platform.common.utils.StringUtils;
-import com.platform.common.web.Servlets;
+import com.platform.common.web.ServletUtils;
 
 /**
  * 自定义授权会话管理类 
@@ -44,11 +44,11 @@ public class JedisSessionDAO extends AbstractSessionDAO implements SessionDAO {
             return;
         }
 		
-		HttpServletRequest request = Servlets.getRequest();
+		HttpServletRequest request = ServletUtils.getRequest();
 		if (request != null){
 			String uri = request.getServletPath();
 			// 如果是静态文件，则不更新SESSION
-			if (Servlets.isStaticFile(uri)){
+			if (ServletUtils.isStaticFile(uri)){
 				return;
 			}
 			// 如果是视图文件，则不更新SESSION
@@ -199,11 +199,11 @@ public class JedisSessionDAO extends AbstractSessionDAO implements SessionDAO {
 
 	@Override
 	protected Serializable doCreate(Session session) {
-		HttpServletRequest request = Servlets.getRequest();
+		HttpServletRequest request = ServletUtils.getRequest();
 		if (request != null){
 			String uri = request.getServletPath();
 			// 如果是静态文件，则不创建SESSION
-			if (Servlets.isStaticFile(uri)){
+			if (ServletUtils.isStaticFile(uri)){
 		        return null;
 			}
 		}
@@ -217,11 +217,11 @@ public class JedisSessionDAO extends AbstractSessionDAO implements SessionDAO {
 	protected Session doReadSession(Serializable sessionId) {
 
 		Session s = null;
-		HttpServletRequest request = Servlets.getRequest();
+		HttpServletRequest request = ServletUtils.getRequest();
 		if (request != null){
 			String uri = request.getServletPath();
 			// 如果是静态文件，则不获取SESSION
-			if (Servlets.isStaticFile(uri)){
+			if (ServletUtils.isStaticFile(uri)){
 				return null;
 			}
 			s = (Session)request.getAttribute("session_"+sessionId);

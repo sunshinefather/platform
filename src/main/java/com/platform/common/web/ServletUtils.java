@@ -1,8 +1,4 @@
-/**
- * Copyright (c) 2005-2012 springside.org.cn
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- */package com.platform.common.web;
+package com.platform.common.web;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Enumeration;
@@ -11,45 +7,41 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
-
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.commons.lang3.Validate;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-
 import com.google.common.net.HttpHeaders;
 import com.platform.common.config.Global;
 import com.platform.common.utils.Encodes;
 import com.platform.common.utils.StringUtils;
 import com.platform.modules.sys.security.SystemAuthorizingRealm.Principal;
 import com.platform.modules.sys.utils.UserUtils;
-
 /**
- * Http与Servlet工具类.
- * @author calvin/thinkgem
- * @version 2014-8-19
+ * Http与Servlet工具类
+ * @ClassName:  Servlets
+ * @Description:TODO   
+ * @author: sunshine  
+ * @date:   2015年12月4日 下午3:40:45
  */
-public class Servlets {
+public class ServletUtils {
 
-	// -- 常用数值定义 --//
+	/**一年多少秒*/
 	public static final long ONE_YEAR_SECONDS = 60 * 60 * 24 * 365;
 	
-	// 静态文件后缀
+	/**静态文件后缀*/
 	private final static String[] staticFiles = StringUtils.split(Global.getConfig("web.staticFile"), ",");
 	
-	// 动态映射URL后缀
+	/**动态映射URL后缀*/
 	private final static String urlSuffix = Global.getUrlSuffix();
 
 	/**
 	 * 设置客户端缓存过期时间 的Header.
 	 */
 	public static void setExpiresHeader(HttpServletResponse response, long expiresSeconds) {
-		// Http 1.0 header, set a fix expires date.
 		response.setDateHeader(HttpHeaders.EXPIRES, System.currentTimeMillis() + expiresSeconds * 1000);
-		// Http 1.1 header, set a time after now.
 		response.setHeader(HttpHeaders.CACHE_CONTROL, "private, max-age=" + expiresSeconds);
 	}
 
@@ -57,10 +49,8 @@ public class Servlets {
 	 * 设置禁止客户端缓存的Header.
 	 */
 	public static void setNoCacheHeader(HttpServletResponse response) {
-		// Http 1.0 header
 		response.setDateHeader(HttpHeaders.EXPIRES, 1L);
 		response.addHeader(HttpHeaders.PRAGMA, "no-cache");
-		// Http 1.1 header
 		response.setHeader(HttpHeaders.CACHE_CONTROL, "no-cache, no-store, max-age=0");
 	}
 
@@ -130,12 +120,10 @@ public class Servlets {
 
 	/**
 	 * 设置让浏览器弹出下载对话框的Header.
-	 * 
 	 * @param fileName 下载后的文件名.
 	 */
 	public static void setFileDownloadHeader(HttpServletResponse response, String fileName) {
 		try {
-			// 中文文件名支持
 			String encodedfileName = new String(fileName.getBytes(), "ISO8859-1");
 			response.setHeader(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + encodedfileName + "\"");
 		} catch (UnsupportedEncodingException e) {
