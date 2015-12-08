@@ -48,7 +48,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 	
 	private SystemService systemService;
     /**
-     * 认证当前收集的的Subject
+     * 认证回调函数,登录时调用
      * <p>Title: doGetAuthenticationInfo</p>   
      * <p>Description: </p>   
      * @param authcToken
@@ -89,7 +89,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 	}
 
 	/**
-	 * 为当前登录的Subject授予权限,缓存中无用户的授权信息时调用
+	 * 授权查询回调函数, 进行鉴权但缓存中无用户的授权信息时调用
 	 * <p>Title: doGetAuthorizationInfo</p>   
 	 * <p>Description: </p>   
 	 * @param principals
