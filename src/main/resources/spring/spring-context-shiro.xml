@@ -21,6 +21,14 @@
 		<property name="cacheManager" ref="shiroCacheManager" />
 	</bean>
 	
+	<!-- 配置收集认证数据参数名 -->
+	<bean id="formAuthenticationFilter" class="com.platform.modules.sys.security.FormAuthenticationFilter">
+	    <property name="usernameParam" value="username"/>
+	    <property name="passwordParam" value="password"/>
+	    <property name="rememberMeParam" value="rememberMe"/>
+	    <property name="captchaParam" value="validateCode"/>
+	    <property name="mobileLoginParam" value="mobileLogin"/>
+	</bean>
 	<!-- 安全认证过滤器 -->
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<property name="securityManager" ref="securityManager" />

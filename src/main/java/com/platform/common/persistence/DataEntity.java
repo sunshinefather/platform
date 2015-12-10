@@ -125,5 +125,4 @@ public abstract class DataEntity<T> extends BaseEntity<T> {
 	public void setDelFlag(String delFlag) {
 		this.delFlag = delFlag;
 	}
-
 }

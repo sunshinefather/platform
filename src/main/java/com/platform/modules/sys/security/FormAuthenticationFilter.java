@@ -8,7 +8,6 @@ import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.web.util.WebUtils;
-import org.springframework.stereotype.Service;
 import com.platform.common.utils.StringUtils;
 /**
  * 表单登陆验证过滤器
@@ -17,7 +16,6 @@ import com.platform.common.utils.StringUtils;
  * @author: sunshine  
  * @date:   2015年11月6日 下午2:23:35
  */
-@Service
 public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.FormAuthenticationFilter {
 
 	public static final String DEFAULT_CAPTCHA_PARAM = "validateCode";
@@ -27,7 +25,8 @@ public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.
 	private String captchaParam = DEFAULT_CAPTCHA_PARAM;
 	private String mobileLoginParam = DEFAULT_MOBILE_PARAM;
 	private String messageParam = DEFAULT_MESSAGE_PARAM;
-
+	
+    @Override
 	protected AuthenticationToken createToken(ServletRequest request, ServletResponse response) {
 		String username = getUsername(request);
 		String password = getPassword(request);
@@ -58,18 +57,12 @@ public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.
 		return messageParam;
 	}
 	
-	/**
-	 * 登录成功之后跳转URL
-	 */
-	public String getSuccessUrl() {
-		return super.getSuccessUrl();
+	public void setCaptchaParam(String captchaParam) {
+		this.captchaParam = captchaParam;
 	}
-	
-	@Override
-	protected void issueSuccessRedirect(ServletRequest request,
-			ServletResponse response) throws Exception {
-			 WebUtils.issueRedirect(request, response, getSuccessUrl(), null, true);
 
+	public void setMobileLoginParam(String mobileLoginParam) {
+		this.mobileLoginParam = mobileLoginParam;
 	}
 
 	/**
@@ -81,18 +74,17 @@ public class FormAuthenticationFilter extends org.apache.shiro.web.filter.authc.
 		String className = e.getClass().getName(), message = "";
 		if (IncorrectCredentialsException.class.getName().equals(className)
 				|| UnknownAccountException.class.getName().equals(className)){
-			message = "用户或密码错误, 请重试.";
+			message = "用户或密码错误";
 		}
 		else if (e.getMessage() != null && StringUtils.startsWith(e.getMessage(), "msg:")){
 			message = StringUtils.replace(e.getMessage(), "msg:", "");
 		}
 		else{
-			message = "系统出现点问题，请稍后再试！";
+			message = "系统异常,请稍后再试！";
 			e.printStackTrace();
 		}
         request.setAttribute(getFailureKeyAttribute(), className);
         request.setAttribute(getMessageParam(), message);
         return true;
-	}
-	
+	}	
 }

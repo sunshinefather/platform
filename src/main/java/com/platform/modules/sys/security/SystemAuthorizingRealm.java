@@ -211,12 +211,10 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 
 		private static final long serialVersionUID = 1L;
 		
-		private String id; // 编号
+		private String id; //id
 		private String loginName; // 登录名
-		private String name; // 姓名
-		private boolean mobileLogin; // 是否手机登录
-		
-//		private Map<String, Object> cacheMap;
+		private String name; //真实姓名
+		private boolean mobileLogin; //手机登录
 
 		public Principal(User user, boolean mobileLogin) {
 			this.id = user.getId();
@@ -241,9 +239,6 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 			return mobileLogin;
 		}
 
-		/**
-		 * 获取SESSIONID
-		 */
 		public String getSessionid() {
 			try{
 				return (String) UserUtils.getSession().getId();
