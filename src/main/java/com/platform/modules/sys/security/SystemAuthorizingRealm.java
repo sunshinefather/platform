@@ -57,8 +57,6 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
      */
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) {
-		
-		//实际上这个authcToken是从LoginController里面currentUser.login(token)传过来的
 		UPCToken token = (UPCToken) authcToken;
 		int activeSessionSize = getSystemService().getSessionDao().getActiveSessions(false).size();
 		if (logger.isDebugEnabled()){
