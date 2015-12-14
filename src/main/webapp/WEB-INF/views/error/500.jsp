@@ -16,7 +16,7 @@ if (ex != null) {
 }
 
 // 如果是异步请求或是手机端，则直接返回信息
-if (Servlets.isAjaxRequest(request)) {
+if (ServletUtils.isAjaxRequest(request)) {
 	out.print(sb);
 }
 
@@ -24,7 +24,7 @@ if (Servlets.isAjaxRequest(request)) {
 else {
 %>
 <%@page import="org.slf4j.Logger,org.slf4j.LoggerFactory"%>
-<%@page import="com.platform.common.web.Servlets"%>
+<%@page import="com.platform.common.web.ServletUtils"%>
 <%@page import="com.platform.common.utils.Exceptions"%>
 <%@page import="com.platform.common.utils.StringUtils"%>
 <%@page contentType="text/html;charset=UTF-8" isErrorPage="true"%>

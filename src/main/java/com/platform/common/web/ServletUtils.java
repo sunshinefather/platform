@@ -21,7 +21,7 @@ import com.platform.modules.sys.security.SystemAuthorizingRealm.Principal;
 import com.platform.modules.sys.utils.UserUtils;
 /**
  * Http与Servlet工具类
- * @ClassName:  Servlets
+ * @ClassName:  ServletUtils
  * @Description:TODO   
  * @author: sunshine  
  * @date:   2015年12月4日 下午3:40:45

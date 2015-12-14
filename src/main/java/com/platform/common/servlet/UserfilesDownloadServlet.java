@@ -5,17 +5,20 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.util.UriUtils;
+
 import com.platform.common.config.Global;
 /**
- * 查看CK上传的图片 
+ * 文件下载
  * @ClassName:  UserfilesDownloadServlet   
  * @Description:TODO   
  * @author: sunshine  
@@ -42,6 +45,8 @@ public class UserfilesDownloadServlet extends HttpServlet {
 		try {
 			FileCopyUtils.copy(new FileInputStream(file), resp.getOutputStream());
 			resp.setHeader("Content-Type", "application/octet-stream");
+			resp.setHeader("Content-disposition", "attachment; filename="
+					+ new String(file.getName().getBytes("utf-8"), "ISO8859-1"));
 			return;
 		} catch (FileNotFoundException e) {
 			req.setAttribute("exception", new FileNotFoundException("请求的文件不存在"));

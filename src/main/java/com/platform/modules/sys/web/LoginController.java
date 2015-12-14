@@ -38,7 +38,7 @@ public class LoginController extends BaseController{
 	private SessionDAO sessionDAO;
 	
 	/**
-	 * 登陆页面
+	 * 登陆界面
 	 * @Title: login
 	 * @Description: TODO  
 	 * @param: @param request
@@ -52,19 +52,9 @@ public class LoginController extends BaseController{
 	@RequestMapping(value = "${adminPath}/login", method = RequestMethod.GET)
 	public String login(HttpServletRequest request, HttpServletResponse response, Model model) {
 		Principal principal = UserUtils.getPrincipal();
-
-//		// 默认页签模式
-//		String tabmode = CookieUtils.getCookie(request, "tabmode");
-//		if (tabmode == null){
-//			CookieUtils.setCookie(response, "tabmode", "1");
-//		}
-		
-		if (logger.isDebugEnabled()){
-			logger.debug("login, active session size: {}", sessionDAO.getActiveSessions(false).size());
-		}
 		
 		// 如果已登录，再次访问主页，则退出原账号。
-		if (Global.TRUE.equals(Global.getConfig("notAllowRefreshIndex"))){
+		if (Global.TRUE.equals(Global.getConfig("disableRefreshIndex"))){
 			CookieUtils.setCookie(response, "LOGINED", "false");
 		}
 		
@@ -75,7 +65,7 @@ public class LoginController extends BaseController{
 		return "modules/sys/sysLogin";
 	}
     /**
-     * 登陆
+     * 登陆失败
      * @Title: loginFail
      * @Description: TODO  
      * @param: @param request
@@ -90,7 +80,6 @@ public class LoginController extends BaseController{
 	public String loginFail(HttpServletRequest request, HttpServletResponse response, Model model) {
 		Principal principal = UserUtils.getPrincipal();
 		
-		// 如果已经登录，则跳转到管理首页
 		if(principal != null){
 			return "redirect:" + adminPath;
 		}
@@ -116,7 +105,7 @@ public class LoginController extends BaseController{
 					sessionDAO.getActiveSessions(false).size(), message, exception);
 		}
 		
-		// 非授权异常，登录失败，验证码加1。
+		//登录失败，失败计数器加1。
 		if (!UnauthorizedException.class.getName().equals(exception)){
 			model.addAttribute("isValidateCodeLogin", isValidateCodeLogin(username, true, false));
 		}
@@ -132,23 +121,25 @@ public class LoginController extends BaseController{
 		return "modules/sys/sysLogin";
 	}
 
-	/**
-	 * 登录成功，进入管理首页
-	 */
+    /**
+     * 登录成功
+     * @Title: index
+     * @Description: TODO  
+     * @param: @param request
+     * @param: @param response
+     * @param: @return      
+     * @return: String
+     * @author: sunshine  
+     * @throws
+     */
 	@RequiresPermissions("user")
 	@RequestMapping(value = "${adminPath}")
 	public String index(HttpServletRequest request, HttpServletResponse response) {
 		Principal principal = UserUtils.getPrincipal();
 
-		// 登录成功后，验证码计算器清零
 		isValidateCodeLogin(principal.getLoginName(), false, true);
 		
-		if (logger.isDebugEnabled()){
-			logger.debug("show index, active session size: {}", sessionDAO.getActiveSessions(false).size());
-		}
-		
-		// 如果已登录，再次访问主页，则退出原账号。
-		if (Global.TRUE.equals(Global.getConfig("notAllowRefreshIndex"))){
+		if (Global.TRUE.equals(Global.getConfig("disableRefreshIndex"))){
 			String logined = CookieUtils.getCookie(request, "LOGINED");
 			if (StringUtils.isBlank(logined) || "false".equals(logined)){
 				CookieUtils.setCookie(response, "LOGINED", "true");
@@ -158,7 +149,6 @@ public class LoginController extends BaseController{
 			}
 		}
 		
-		// 如果是手机登录，则返回JSON字符串
 		if (principal.isMobileLogin()){
 			if (request.getParameter("login") != null){
 				return renderString(response, principal);
@@ -171,9 +161,18 @@ public class LoginController extends BaseController{
 		return "modules/sys/sysIndex";
 	}
 	
-	/**
-	 * 获取主题方案
-	 */
+    /**
+     * 系统皮肤
+     * @Title: getThemeInCookie
+     * @Description: TODO  
+     * @param: @param theme
+     * @param: @param request
+     * @param: @param response
+     * @param: @return      
+     * @return: String
+     * @author: sunshine  
+     * @throws
+     */
 	@RequestMapping(value = "/theme/{theme}")
 	public String getThemeInCookie(@PathVariable String theme, HttpServletRequest request, HttpServletResponse response){
 		if (StringUtils.isNotBlank(theme)){
@@ -186,8 +185,9 @@ public class LoginController extends BaseController{
 	
 	/**
 	 * 是否是验证码登录
+	 * 登陆失败统计,登陆失败次数大于等于3次返回true
 	 * @param useruame 用户名
-	 * @param isFail 计数加1
+	 * @param isFail 失败计数加1
 	 * @param clean 计数器是否清零
 	 * @return
 	 */

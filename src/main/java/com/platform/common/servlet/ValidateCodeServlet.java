@@ -12,16 +12,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.commons.lang3.math.NumberUtils;
-import org.apache.commons.lang3.StringUtils;
+import com.platform.common.utils.StringUtils;
+
 /**
- * 随机验证码
+ * 验证码servlet(生成与校验)
  * @ClassName:  ValidateCodeServlet   
  * @Description:TODO   
  * @author: sunshine  
- * @date:   2015年11月6日 上午10:38:18
+ * @date:   2015年12月11日 上午11:34:43
  */
-
 public class ValidateCodeServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -46,7 +45,7 @@ public class ValidateCodeServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String validateCode = request.getParameter(VALIDATE_CODE); // AJAX验证，成功返回true
+		String validateCode = request.getParameter(VALIDATE_CODE);
 		if (StringUtils.isNotBlank(validateCode)){
 			response.getOutputStream().print(validate(request, validateCode)?"true":"false");
 		}else{
@@ -67,22 +66,19 @@ public class ValidateCodeServlet extends HttpServlet {
 		response.setDateHeader("Expires", 0);
 		response.setContentType("image/jpeg");
 		
-		/*
-		 * 得到参数高，宽，都为数字时，则使用设置高宽，否则使用默认值
-		 */
 		String width = request.getParameter("width");
 		String height = request.getParameter("height");
 		if (StringUtils.isNumeric(width) && StringUtils.isNumeric(height)) {
-			w = NumberUtils.toInt(width);
-			h = NumberUtils.toInt(height);
+			w = StringUtils.toInteger(width);
+			h = StringUtils.toInteger(height);
 		}
 		
 		BufferedImage image = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
 		Graphics g = image.getGraphics();
 		createBackground(g);
-		String s = createCharacter(g);
-		request.getSession().setAttribute(VALIDATE_CODE, s);
-
+		String code = StringUtils.getRandomCode(3, 4,null);
+		request.getSession().setAttribute(VALIDATE_CODE, code);
+		drawStr(g,code);
 		g.dispose();
 		OutputStream out = response.getOutputStream();
 		ImageIO.write(image, "JPEG", out);
@@ -117,21 +113,14 @@ public class ValidateCodeServlet extends HttpServlet {
 		}
 	}
 
-	private String createCharacter(Graphics g) {
-		char[] codeSeq = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J',
-				'K', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
-				'X', 'Y', 'Z', '2', '3', '4', '5', '6', '7', '8', '9' };
+	private void drawStr(Graphics g,String code) {
 		String[] fontTypes = {"Arial","Arial Black","AvantGarde Bk BT","Calibri"}; 
 		Random random = new Random();
-		StringBuilder s = new StringBuilder();
-		for (int i = 0; i < 4; i++) {
-			String r = String.valueOf(codeSeq[random.nextInt(codeSeq.length)]);
+		for (int i = 0; i < code.length(); i++) {
+			String r=code.substring(i,i+1);
 			g.setColor(new Color(50 + random.nextInt(100), 50 + random.nextInt(100), 50 + random.nextInt(100)));
 			g.setFont(new Font(fontTypes[random.nextInt(fontTypes.length)],Font.BOLD,26)); 
 			g.drawString(r, 15 * i + 5, 19 + random.nextInt(8));
-			s.append(r);
 		}
-		return s.toString();
-	}
-	
+	}	
 }
