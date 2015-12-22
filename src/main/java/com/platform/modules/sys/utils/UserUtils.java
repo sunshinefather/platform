@@ -118,7 +118,6 @@ public class UserUtils {
 	
 	/**
 	 * 获取当前用户
-	 * @return 取不到返回 new User()
 	 */
 	public static User getUser(){
 		Principal principal = getPrincipal();

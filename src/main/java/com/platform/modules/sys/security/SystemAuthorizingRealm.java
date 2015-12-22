@@ -43,12 +43,14 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 	
 	@Resource
 	private SystemService systemService;
+	
     /**
      * 认证回调函数,登录时调用
      */
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) {
-		UPCToken token = (UPCToken) authcToken;		
+		UPCToken token = (UPCToken) authcToken;	
+		
 		// 校验登录验证码
 		if (LoginController.isValidateCodeLogin(token.getUsername(), false, false)){
 			Session session = UserUtils.getSession();
@@ -64,9 +66,9 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 			if (Global.NO.equals(user.getLoginFlag())){
 				throw new AuthenticationException("msg:该已帐号禁止登录");
 			}
-			byte[] salt = Encodes.decodeHex(user.getPassword().substring(0,16));
-			return new SimpleAuthenticationInfo(new Principal(user, token.isMobileLogin()), 
-					user.getPassword().substring(16), ByteSource.Util.bytes(salt), getName());
+			String userPwd=user.getPassword();
+			byte[] salt = Encodes.decodeHex(userPwd.substring(0,16));
+			return new SimpleAuthenticationInfo(new Principal(user,token.isMobileLogin()),userPwd.substring(16), ByteSource.Util.bytes(salt),getName());
 		} else {
 			return null;
 		}
@@ -107,14 +109,18 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 					}
 				}
 			}
+			
 			// 添加用户权限
 			info.addStringPermission("user");
+			
 			// 添加用户角色信息
 			for (Role role : user.getRoleList()){
 				info.addRole(role.getEnname());
 			}
+			
 			// 更新登录IP和时间
 			systemService.updateUserLoginInfo(user);
+			
 			// 记录登录日志
 			LogUtils.saveLog(ServletUtils.getRequest(), "系统登录");
 			return info;
@@ -157,10 +163,9 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 	
 	/**
 	 * 授权验证方法
-	 * @param permission
 	 */
 	private void authorizationValidate(Permission permission){
-		// 模块授权预留接口
+		//模块授权预留接口
 	}
 	
 	/**
