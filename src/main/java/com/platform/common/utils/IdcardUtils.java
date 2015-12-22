@@ -6,14 +6,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.apache.commons.lang3.StringUtils;
 
 /**
  * 身份证工具类
- * 
- * @author June
- * @version 1.0, 2010-06-17
  */
 public class IdcardUtils extends StringUtils {
 
