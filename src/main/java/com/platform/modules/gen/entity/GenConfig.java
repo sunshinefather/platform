@@ -27,7 +27,7 @@ public class GenConfig implements Serializable {
 		super();
 	}
 
-	@XmlElementWrapper(name = "category")
+	@XmlElementWrapper(name = "categoryList")
 	@XmlElement(name = "category")
 	public List<GenCategory> getCategoryList() {
 		return categoryList;
