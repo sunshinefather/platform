@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
-	<!-- 生成分类 -->
+	<!-- 生成类型 -->
 	<categoryList>
 		<category value="curd" label="增删改查（单表）">
 			<template>curd/controller.xml</template>

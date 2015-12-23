@@ -10,17 +10,7 @@
 		<result property="dataScope" column="dataScope" />
 		<result property="remarks" column="remarks" />
 		<result property="useable" column="useable" />
-		<result property="sysData" column="sysData" /><!-- 
-		<collection property="userList" ofType="User">
-			<id property="id" column="userList.id" />
-			<id property="loginName" column="userList.loginName" />
-			<id property="name" column="userList.name" />
-			<id property="email" column="userList.email" />
-			<id property="phone" column="userList.phone" />
-			<id property="mobile" column="userList.mobile" />
-			<id property="office.name" column="userList.office.name" />
-			<id property="company.name" column="userList.company.name" />
-		</collection> -->
+		<result property="sysData" column="sysData" />
 		<collection property="menuList" ofType="Menu">
 			<id property="id" column="menuList.id" />
 		</collection>

@@ -28,7 +28,7 @@ public class Log extends DataEntity<Log> {
 	private Date beginDate;		// 开始日期
 	private Date endDate;		// 结束日期
 	
-	// 日志类型（1：接入日志；2：错误日志）
+	// 日志类型（1：访问日志；2：错误日志）
 	public static final String TYPE_ACCESS = "1";
 	public static final String TYPE_EXCEPTION = "2";
 	

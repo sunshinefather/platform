@@ -12,7 +12,7 @@ import com.platform.modules.sys.entity.Dict;
 /**
  * 生成方案Entity 
  * @author sunshine
- * @version 2013-10-15
+ * @version 2015-10-15
  */
 @XmlRootElement(name="config")
 public class GenConfig implements Serializable {
