@@ -223,21 +223,10 @@ public class GenUtils {
 			if (br != null) {
 				br.close();
 			}
-//			logger.debug("Read file content: {}", sb.toString());
 			return (T) JaxbMapper.fromXml(sb.toString(), clazz);
 		} catch (IOException e) {
 			logger.warn("Error file convert: {}", e.getMessage());
 		}
-//		String pathName = StringUtils.replace(getTemplatePath() + "/" + fileName, "/", File.separator);
-//		logger.debug("file to object: {}", pathName);
-//		String content = "";
-//		try {
-//			content = FileUtils.readFileToString(new File(pathName), "utf-8");
-////			logger.debug("read config content: {}", content);
-//			return (T) JaxbMapper.fromXml(content, clazz);
-//		} catch (IOException e) {
-//			logger.warn("error convert: {}", e.getMessage());
-//		}
 		return null;
 	}
 	
