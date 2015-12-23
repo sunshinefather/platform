@@ -298,8 +298,7 @@ public class GenUtils {
 		
 		model.put("urlPrefix", model.get("moduleName")+(StringUtils.isNotBlank(genScheme.getSubModuleName())
 				?"/"+StringUtils.lowerCase(genScheme.getSubModuleName()):"")+"/"+model.get("className"));
-		model.put("viewPrefix", //StringUtils.substringAfterLast(model.get("packageName"),".")+"/"+
-				model.get("urlPrefix"));
+		model.put("viewPrefix",model.get("urlPrefix"));
 		model.put("permissionPrefix", model.get("moduleName")+(StringUtils.isNotBlank(genScheme.getSubModuleName())
 				?":"+StringUtils.lowerCase(genScheme.getSubModuleName()):"")+":"+model.get("className"));
 		
