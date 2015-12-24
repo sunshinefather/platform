@@ -205,7 +205,6 @@ public class GenUtils {
 	public static <T> T fileToObject(String fileName, Class<?> clazz){
 		try {
 			String pathName = "/templates/modules/gen/" + fileName;
-//			logger.debug("File to object: {}", pathName);
 			Resource resource = new ClassPathResource(pathName); 
 			InputStream is = resource.getInputStream();
 			BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
@@ -317,16 +316,14 @@ public class GenUtils {
 	 * @return
 	 */
 	public static String generateToFile(GenTemplate tpl, Map<String, Object> model, boolean isReplaceFile){
-		// 获取生成文件
+		// 获取生成文件名
 		String fileName = Global.getProjectPath() + File.separator 
 				+ StringUtils.replaceEach(FreeMarkers.renderString(tpl.getFilePath() + "/", model), 
 						new String[]{"//", "/", "."}, new String[]{File.separator, File.separator, File.separator})
 				+ FreeMarkers.renderString(tpl.getFileName(), model);
-		logger.debug(" fileName === " + fileName);
 
 		// 获取生成文件内容
 		String content = FreeMarkers.renderString(StringUtils.trimToEmpty(tpl.getContent()), model);
-		logger.debug(" content === \r\n" + content);
 		
 		// 如果选择替换文件，则删除原文件
 		if (isReplaceFile){
@@ -336,22 +333,9 @@ public class GenUtils {
 		// 创建并写入文件
 		if (FileUtils.createFile(fileName)){
 			FileUtils.writeToFile(fileName, content, true);
-			logger.debug(" file create === " + fileName);
 			return "生成成功："+fileName+"<br/>";
 		}else{
-			logger.debug(" file extents === " + fileName);
 			return "文件已存在："+fileName+"<br/>";
 		}
 	}
-	
-	public static void main(String[] args) {
-		try {
-			GenConfig config = getConfig();
-			System.out.println(config);
-			System.out.println(JaxbMapper.toXml(config));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
 }

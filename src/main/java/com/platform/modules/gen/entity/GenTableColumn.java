@@ -186,7 +186,7 @@ public class GenTableColumn extends DataEntity<GenTableColumn> {
 	 */
 	public String getDataLength(){
 		String[] ss = StringUtils.split(StringUtils.substringBetween(getJdbcType(), "(", ")"), ",");
-		if (ss != null && ss.length == 1){// && "String".equals(getJavaType())){
+		if (ss != null && ss.length == 1){
 			return ss[0];
 		}
 		return "0";
