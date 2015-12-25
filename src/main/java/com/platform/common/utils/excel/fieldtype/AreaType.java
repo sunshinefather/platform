@@ -1,7 +1,7 @@
 package com.platform.common.utils.excel.fieldtype;
 
 import com.platform.common.utils.StringUtils;
-import com.platform.modules.sys.entity.Area;
+import com.platform.modules.sys.bean.Area;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**

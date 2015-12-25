@@ -10,10 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.platform.common.service.BaseService;
 import com.platform.common.utils.DateUtils;
+import com.platform.modules.cms.bean.Category;
+import com.platform.modules.cms.bean.Site;
 import com.platform.modules.cms.dao.ArticleDao;
-import com.platform.modules.cms.entity.Category;
-import com.platform.modules.cms.entity.Site;
-import com.platform.modules.sys.entity.Office;
+import com.platform.modules.sys.bean.Office;
 
 /**
  * 统计Service 

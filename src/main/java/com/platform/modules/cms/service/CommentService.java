@@ -5,8 +5,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.platform.common.persistence.Page;
 import com.platform.common.service.CrudService;
+import com.platform.modules.cms.bean.Comment;
 import com.platform.modules.cms.dao.CommentDao;
-import com.platform.modules.cms.entity.Comment;
 
 /**
  * 评论Service 

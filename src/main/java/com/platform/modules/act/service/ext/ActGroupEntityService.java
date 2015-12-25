@@ -2,7 +2,6 @@ package com.platform.modules.act.service.ext;
 
 import java.util.List;
 import java.util.Map;
-
 import org.activiti.engine.identity.Group;
 import org.activiti.engine.identity.GroupQuery;
 import org.activiti.engine.impl.GroupQueryImpl;
@@ -14,8 +13,8 @@ import org.springframework.stereotype.Service;
 import com.google.common.collect.Lists;
 import com.platform.common.utils.SpringContextHolder;
 import com.platform.modules.act.utils.ActUtils;
-import com.platform.modules.sys.entity.Role;
-import com.platform.modules.sys.entity.User;
+import com.platform.modules.sys.bean.Role;
+import com.platform.modules.sys.bean.User;
 import com.platform.modules.sys.service.SystemService;
 
 /**

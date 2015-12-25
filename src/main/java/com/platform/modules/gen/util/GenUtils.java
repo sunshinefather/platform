@@ -22,15 +22,15 @@ import com.platform.common.utils.DateUtils;
 import com.platform.common.utils.FileUtils;
 import com.platform.common.utils.FreeMarkers;
 import com.platform.common.utils.StringUtils;
-import com.platform.modules.gen.entity.GenCategory;
-import com.platform.modules.gen.entity.GenConfig;
-import com.platform.modules.gen.entity.GenScheme;
-import com.platform.modules.gen.entity.GenTable;
-import com.platform.modules.gen.entity.GenTableColumn;
-import com.platform.modules.gen.entity.GenTemplate;
-import com.platform.modules.sys.entity.Area;
-import com.platform.modules.sys.entity.Office;
-import com.platform.modules.sys.entity.User;
+import com.platform.modules.gen.bean.GenCategory;
+import com.platform.modules.gen.bean.GenConfig;
+import com.platform.modules.gen.bean.GenScheme;
+import com.platform.modules.gen.bean.GenTable;
+import com.platform.modules.gen.bean.GenTableColumn;
+import com.platform.modules.gen.bean.GenTemplate;
+import com.platform.modules.sys.bean.Area;
+import com.platform.modules.sys.bean.Office;
+import com.platform.modules.sys.bean.User;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**

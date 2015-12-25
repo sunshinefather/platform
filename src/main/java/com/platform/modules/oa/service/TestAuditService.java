@@ -12,7 +12,7 @@ import com.platform.common.service.CrudService;
 import com.platform.common.utils.StringUtils;
 import com.platform.modules.act.service.ActTaskService;
 import com.platform.modules.act.utils.ActUtils;
-import com.platform.modules.oa.entity.TestAudit;
+import com.platform.modules.oa.bean.TestAudit;
 import com.platform.modules.oa.dao.TestAuditDao;
 
 /**

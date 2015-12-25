@@ -8,8 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.platform.common.persistence.Page;
 import com.platform.common.service.CrudService;
-import com.platform.modules.oa.entity.OaNotify;
-import com.platform.modules.oa.entity.OaNotifyRecord;
+import com.platform.modules.oa.bean.OaNotify;
+import com.platform.modules.oa.bean.OaNotifyRecord;
 import com.platform.modules.oa.dao.OaNotifyDao;
 import com.platform.modules.oa.dao.OaNotifyRecordDao;
 

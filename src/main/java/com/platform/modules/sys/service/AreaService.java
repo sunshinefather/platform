@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.platform.common.service.TreeService;
+import com.platform.modules.sys.bean.Area;
 import com.platform.modules.sys.dao.AreaDao;
-import com.platform.modules.sys.entity.Area;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**

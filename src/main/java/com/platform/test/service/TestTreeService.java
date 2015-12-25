@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.platform.common.service.TreeService;
 import com.platform.common.utils.StringUtils;
-import com.platform.test.entity.TestTree;
+import com.platform.test.bean.TestTree;
 import com.platform.test.dao.TestTreeDao;
 
 /**

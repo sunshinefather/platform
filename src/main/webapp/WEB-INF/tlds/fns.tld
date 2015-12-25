@@ -52,7 +52,7 @@
     <description>获取当前用户对象</description>
     <name>getUser</name>
     <function-class>com.platform.modules.sys.utils.UserUtils</function-class>
-    <function-signature>com.platform.modules.sys.entity.User getUser()</function-signature>
+    <function-signature>com.platform.modules.sys.bean.User getUser()</function-signature>
     <example>${fns:getUser()}</example>  
   </function>
   
@@ -60,7 +60,7 @@
     <description>根据编码获取用户对象</description>
     <name>getUserById</name>
     <function-class>com.platform.modules.sys.utils.UserUtils</function-class>
-    <function-signature>com.platform.modules.sys.entity.User get(java.lang.String)</function-signature>
+    <function-signature>com.platform.modules.sys.bean.User get(java.lang.String)</function-signature>
     <example>${fns:getUserById(id)}</example>  
   </function>
   

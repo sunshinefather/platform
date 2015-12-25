@@ -23,8 +23,8 @@ import com.platform.common.service.BaseService;
 import com.platform.common.utils.Collections3;
 import com.platform.common.utils.StringUtils;
 import com.platform.modules.act.utils.ActUtils;
+import com.platform.modules.oa.bean.Leave;
 import com.platform.modules.oa.dao.LeaveDao;
-import com.platform.modules.oa.entity.Leave;
 
 /**
  * 请假Service

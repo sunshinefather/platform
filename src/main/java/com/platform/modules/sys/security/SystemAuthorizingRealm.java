@@ -3,8 +3,10 @@ package com.platform.modules.sys.security;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -19,17 +21,18 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.stereotype.Service;
+
 import com.platform.common.config.Global;
 import com.platform.common.servlet.ValidateCodeServlet;
 import com.platform.common.utils.Encodes;
 import com.platform.common.web.ServletUtils;
-import com.platform.modules.sys.entity.Menu;
-import com.platform.modules.sys.entity.Role;
-import com.platform.modules.sys.entity.User;
+import com.platform.modules.sys.bean.Menu;
+import com.platform.modules.sys.bean.Role;
+import com.platform.modules.sys.bean.User;
+import com.platform.modules.sys.controller.LoginController;
 import com.platform.modules.sys.service.SystemService;
 import com.platform.modules.sys.utils.LogUtils;
 import com.platform.modules.sys.utils.UserUtils;
-import com.platform.modules.sys.web.LoginController;
 
 /**
  * shiro 提供系统安全数据(用户、角色、权限)

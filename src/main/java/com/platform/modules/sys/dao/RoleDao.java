@@ -2,7 +2,7 @@ package com.platform.modules.sys.dao;
 
 import com.platform.common.persistence.CrudDao;
 import com.platform.common.persistence.annotation.MyBatisDao;
-import com.platform.modules.sys.entity.Role;
+import com.platform.modules.sys.bean.Role;
 
 /**
  * 角色DAO接口 

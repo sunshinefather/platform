@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.platform.modules.oa.bean.Leave;
 import com.platform.modules.oa.dao.LeaveDao;
-import com.platform.modules.oa.entity.Leave;
 
 /**
  * 调整请假内容处理器

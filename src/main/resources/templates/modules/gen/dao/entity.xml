@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template>
 	<name>entity</name>
-	<filePath>src/main/java/${packageName}/${moduleName}/entity/${subModuleName}</filePath>
+	<filePath>src/main/java/${packageName}/${moduleName}/bean/${subModuleName}</filePath>
 	<fileName>${ClassName}.java</fileName>
-	<content><![CDATA[package ${packageName}.${moduleName}.entity<#if subModuleName != "">.${subModuleName}</#if>;
+	<content><![CDATA[package ${packageName}.${moduleName}.bean<#if subModuleName != "">.${subModuleName}</#if>;
 
 <#list table.importList as i>
 import ${i};

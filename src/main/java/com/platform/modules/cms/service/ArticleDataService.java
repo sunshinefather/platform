@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.platform.common.service.CrudService;
+import com.platform.modules.cms.bean.ArticleData;
 import com.platform.modules.cms.dao.ArticleDataDao;
-import com.platform.modules.cms.entity.ArticleData;
 
 /**
  * 站点Service 

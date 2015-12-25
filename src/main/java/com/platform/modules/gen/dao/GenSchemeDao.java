@@ -2,7 +2,7 @@ package com.platform.modules.gen.dao;
 
 import com.platform.common.persistence.CrudDao;
 import com.platform.common.persistence.annotation.MyBatisDao;
-import com.platform.modules.gen.entity.GenScheme;
+import com.platform.modules.gen.bean.GenScheme;
 
 /**
  * 生成方案DAO接口 

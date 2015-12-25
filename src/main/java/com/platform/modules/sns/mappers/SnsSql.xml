@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.platform.modules.sns.dao.SnsDao">
+    
+	<sql id="snsColumns">
+		a.snsid AS "snsid",
+		a.snsname AS "snsname",
+		a.snsphotoid AS "snsphotoid",
+		a.description AS "description",
+		a.createdate AS "createdate",
+		a.createuserid AS "createuserid",
+		a.snssubject AS "snssubject",
+		a.categoryid AS "categoryid",
+		a.defaults AS "defaults",
+		a.sort AS "sort",
+		a.recommend AS "recommend",
+		a.attentioncount AS "attentioncount",
+		a.postcount AS "postcount",
+		a.todaypostcount AS "todaypostcount"
+	</sql>
+	
+	<sql id="snsJoins">
+		LEFT JOIN sys_user u6 ON u6.id = a.createuserid
+	</sql>
+    
+	<select id="get" resultType="Sns">
+		SELECT 
+			<include refid="snsColumns"/>
+		FROM sns a
+		<include refid="snsJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="Sns">
+		SELECT 
+			<include refid="snsColumns"/>
+		FROM sns a
+		<include refid="snsJoins"/>
+		<where>
+			
+			<if test="snsname != null and snsname != ''">
+				AND a.snsname LIKE 
+					<if test="dbName == 'oracle'">'%'||#{snsname}||'%'</if>
+					<if test="dbName == 'mssql'">'%'+#{snsname}+'%'</if>
+					<if test="dbName == 'mysql'">concat('%',#{snsname},'%')</if>
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="Sns">
+		SELECT 
+			<include refid="snsColumns"/>
+		FROM sns a
+		<include refid="snsJoins"/>
+		<where>
+			
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO sns(
+			snsid,
+			snsname,
+			snsphotoid,
+			description,
+			createdate,
+			createuserid,
+			snssubject,
+			categoryid,
+			defaults,
+			sort,
+			recommend,
+			attentioncount,
+			postcount,
+			todaypostcount
+		) VALUES (
+			#{snsid},
+			#{snsname},
+			#{snsphotoid},
+			#{description},
+			#{createdate},
+			#{createuserid},
+			#{snssubject},
+			#{categoryid},
+			#{defaults},
+			#{sort},
+			#{recommend},
+			#{attentioncount},
+			#{postcount},
+			#{todaypostcount}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE sns SET 	
+			snsname = #{snsname},
+			snsphotoid = #{snsphotoid},
+			description = #{description},
+			createuserid = #{createuserid},
+			snssubject = #{snssubject},
+			categoryid = #{categoryid},
+			defaults = #{defaults},
+			sort = #{sort},
+			recommend = #{recommend},
+			attentioncount = #{attentioncount},
+			postcount = #{postcount},
+			todaypostcount = #{todaypostcount}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		DELETE FROM sns
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

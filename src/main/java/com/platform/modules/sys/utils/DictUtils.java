@@ -10,8 +10,8 @@ import com.google.common.collect.Maps;
 import com.platform.common.mapper.JsonMapper;
 import com.platform.common.utils.CacheUtils;
 import com.platform.common.utils.SpringContextHolder;
+import com.platform.modules.sys.bean.Dict;
 import com.platform.modules.sys.dao.DictDao;
-import com.platform.modules.sys.entity.Dict;
 
 /**
  * 字典工具类 

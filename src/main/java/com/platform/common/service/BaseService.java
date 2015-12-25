@@ -1,14 +1,16 @@
 package com.platform.common.service;
 
 import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.google.common.collect.Lists;
 import com.platform.common.persistence.BaseEntity;
 import com.platform.common.utils.StringUtils;
-import com.platform.modules.sys.entity.Role;
-import com.platform.modules.sys.entity.User;
+import com.platform.modules.sys.bean.Role;
+import com.platform.modules.sys.bean.User;
 /**
  * Service基类 
  * @ClassName:  BaseService   

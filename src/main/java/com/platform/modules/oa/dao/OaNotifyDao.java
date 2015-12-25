@@ -2,7 +2,7 @@ package com.platform.modules.oa.dao;
 
 import com.platform.common.persistence.CrudDao;
 import com.platform.common.persistence.annotation.MyBatisDao;
-import com.platform.modules.oa.entity.OaNotify;
+import com.platform.modules.oa.bean.OaNotify;
 
 /**
  * 通知通告DAO接口 

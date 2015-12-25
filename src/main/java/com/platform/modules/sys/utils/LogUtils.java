@@ -16,11 +16,11 @@ import com.platform.common.utils.CacheUtils;
 import com.platform.common.utils.Exceptions;
 import com.platform.common.utils.SpringContextHolder;
 import com.platform.common.utils.StringUtils;
+import com.platform.modules.sys.bean.Log;
+import com.platform.modules.sys.bean.Menu;
+import com.platform.modules.sys.bean.User;
 import com.platform.modules.sys.dao.LogDao;
 import com.platform.modules.sys.dao.MenuDao;
-import com.platform.modules.sys.entity.Log;
-import com.platform.modules.sys.entity.Menu;
-import com.platform.modules.sys.entity.User;
 
 /**
  * 字典工具类 

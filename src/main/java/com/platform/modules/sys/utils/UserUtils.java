@@ -1,24 +1,26 @@
 package com.platform.modules.sys.utils;
 
 import java.util.List;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.UnavailableSecurityManagerException;
 import org.apache.shiro.session.InvalidSessionException;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
+
 import com.platform.common.service.BaseService;
 import com.platform.common.utils.CacheUtils;
 import com.platform.common.utils.SpringContextHolder;
+import com.platform.modules.sys.bean.Area;
+import com.platform.modules.sys.bean.Menu;
+import com.platform.modules.sys.bean.Office;
+import com.platform.modules.sys.bean.Role;
+import com.platform.modules.sys.bean.User;
 import com.platform.modules.sys.dao.AreaDao;
 import com.platform.modules.sys.dao.MenuDao;
 import com.platform.modules.sys.dao.OfficeDao;
 import com.platform.modules.sys.dao.RoleDao;
 import com.platform.modules.sys.dao.UserDao;
-import com.platform.modules.sys.entity.Area;
-import com.platform.modules.sys.entity.Menu;
-import com.platform.modules.sys.entity.Office;
-import com.platform.modules.sys.entity.Role;
-import com.platform.modules.sys.entity.User;
 import com.platform.modules.sys.security.SystemAuthorizingRealm.Principal;
 /**
  * 用户工具类

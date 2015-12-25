@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.platform.common.persistence.CrudDao;
 import com.platform.common.persistence.annotation.MyBatisDao;
-import com.platform.modules.sys.entity.Menu;
+import com.platform.modules.sys.bean.Menu;
 
 /**
  * 菜单DAO接口 

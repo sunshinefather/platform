@@ -131,21 +131,11 @@ public class Global {
 		if (StringUtils.isNotBlank(projectPath)){
 			return projectPath;
 		}
+
 		try {
 			File file = new DefaultResourceLoader().getResource("").getFile();
 			if (file != null){
-				while(true){
-					File f = new File(file.getPath() + File.separator + "src" + File.separator + "main");
-					if (f == null || f.exists()){
-						break;
-					}
-					if (file.getParentFile() != null){
-						file = file.getParentFile();
-					}else{
-						break;
-					}
-				}
-				projectPath = file.toString();
+				projectPath = file.getPath().substring(0,file.getPath().indexOf(File.separator));
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

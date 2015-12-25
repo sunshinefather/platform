@@ -2,7 +2,7 @@ package com.platform.test.dao;
 
 import com.platform.common.persistence.TreeDao;
 import com.platform.common.persistence.annotation.MyBatisDao;
-import com.platform.test.entity.TestTree;
+import com.platform.test.bean.TestTree;
 
 /**
  * 树结构生成DAO接口 

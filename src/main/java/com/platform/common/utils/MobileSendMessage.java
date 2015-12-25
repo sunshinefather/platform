@@ -10,7 +10,7 @@ package com.platform.common.utils;
 //import com.baidu.yun.channel.model.PushUnicastMessageRequest;
 //import com.baidu.yun.core.log.YunLogEvent;
 //import com.baidu.yun.core.log.YunLogHandler;
-//import com.platform.modules.sys.entity.User;
+//import com.platform.modules.sys.bean.User;
 //import com.platform.modules.sys.utils.UserUtils;
 
 public class MobileSendMessage {

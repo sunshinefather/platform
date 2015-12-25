@@ -6,8 +6,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.platform.common.persistence.Page;
 import com.platform.common.service.CrudService;
+import com.platform.modules.cms.bean.Site;
 import com.platform.modules.cms.dao.SiteDao;
-import com.platform.modules.cms.entity.Site;
 import com.platform.modules.cms.utils.CmsUtils;
 
 /**

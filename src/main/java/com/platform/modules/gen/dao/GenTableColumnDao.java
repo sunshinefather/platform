@@ -2,7 +2,7 @@ package com.platform.modules.gen.dao;
 
 import com.platform.common.persistence.CrudDao;
 import com.platform.common.persistence.annotation.MyBatisDao;
-import com.platform.modules.gen.entity.GenTableColumn;
+import com.platform.modules.gen.bean.GenTableColumn;
 
 /**
  * 业务表字段DAO接口 

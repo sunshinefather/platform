@@ -1,8 +1,9 @@
 package com.platform.common.persistence;
 
 import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.platform.modules.act.entity.Act;
+import com.platform.modules.act.bean.Act;
 /**
  * Activiti Entity
  * @ClassName:  ActEntity   

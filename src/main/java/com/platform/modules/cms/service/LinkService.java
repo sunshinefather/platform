@@ -12,8 +12,8 @@ import com.platform.common.persistence.Page;
 import com.platform.common.service.CrudService;
 import com.platform.common.utils.CacheUtils;
 import com.platform.common.utils.StringUtils;
+import com.platform.modules.cms.bean.Link;
 import com.platform.modules.cms.dao.LinkDao;
-import com.platform.modules.cms.entity.Link;
 
 /**
  * 链接Service 

@@ -1,11 +1,13 @@
 package com.platform.modules.cms.service;
 
-import com.platform.modules.cms.entity.FileTpl;
+import com.platform.modules.cms.bean.FileTpl;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.ServletContext;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;

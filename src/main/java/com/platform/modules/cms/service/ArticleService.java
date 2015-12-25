@@ -16,12 +16,12 @@ import com.platform.common.persistence.Page;
 import com.platform.common.service.CrudService;
 import com.platform.common.utils.CacheUtils;
 import com.platform.common.utils.StringUtils;
+import com.platform.modules.cms.bean.Article;
+import com.platform.modules.cms.bean.ArticleData;
+import com.platform.modules.cms.bean.Category;
 import com.platform.modules.cms.dao.ArticleDao;
 import com.platform.modules.cms.dao.ArticleDataDao;
 import com.platform.modules.cms.dao.CategoryDao;
-import com.platform.modules.cms.entity.Article;
-import com.platform.modules.cms.entity.ArticleData;
-import com.platform.modules.cms.entity.Category;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**

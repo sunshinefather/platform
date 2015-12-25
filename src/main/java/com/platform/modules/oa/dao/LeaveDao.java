@@ -1,10 +1,8 @@
-/**
- * There are <a href="https://github.com/platform">JeeSite</a> code generation
- */package com.platform.modules.oa.dao;
+package com.platform.modules.oa.dao;
 
 import com.platform.common.persistence.CrudDao;
 import com.platform.common.persistence.annotation.MyBatisDao;
-import com.platform.modules.oa.entity.Leave;
+import com.platform.modules.oa.bean.Leave;
 
 /**
  * 请假DAO接口

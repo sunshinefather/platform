@@ -10,14 +10,14 @@ import org.springframework.transaction.annotation.Transactional;
 import com.platform.common.persistence.Page;
 import com.platform.common.service.BaseService;
 import com.platform.common.utils.StringUtils;
+import com.platform.modules.gen.bean.GenConfig;
+import com.platform.modules.gen.bean.GenScheme;
+import com.platform.modules.gen.bean.GenTable;
+import com.platform.modules.gen.bean.GenTableColumn;
+import com.platform.modules.gen.bean.GenTemplate;
 import com.platform.modules.gen.dao.GenSchemeDao;
 import com.platform.modules.gen.dao.GenTableColumnDao;
 import com.platform.modules.gen.dao.GenTableDao;
-import com.platform.modules.gen.entity.GenConfig;
-import com.platform.modules.gen.entity.GenScheme;
-import com.platform.modules.gen.entity.GenTable;
-import com.platform.modules.gen.entity.GenTableColumn;
-import com.platform.modules.gen.entity.GenTemplate;
 import com.platform.modules.gen.util.GenUtils;
 
 /**

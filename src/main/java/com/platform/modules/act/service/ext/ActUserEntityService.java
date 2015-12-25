@@ -2,7 +2,6 @@ package com.platform.modules.act.service.ext;
 
 import java.util.List;
 import java.util.Map;
-
 import org.activiti.engine.identity.Group;
 import org.activiti.engine.identity.User;
 import org.activiti.engine.identity.UserQuery;
@@ -16,7 +15,7 @@ import org.springframework.stereotype.Service;
 import com.google.common.collect.Lists;
 import com.platform.common.utils.SpringContextHolder;
 import com.platform.modules.act.utils.ActUtils;
-import com.platform.modules.sys.entity.Role;
+import com.platform.modules.sys.bean.Role;
 import com.platform.modules.sys.service.SystemService;
 
 /**
@@ -69,7 +68,7 @@ public class ActUserEntityService extends UserEntityManager {
 //		}
 		User user = findUserById(userId);
 		if (user != null) {
-			getSystemService().deleteUser(new com.platform.modules.sys.entity.User(user.getId()));
+			getSystemService().deleteUser(new com.platform.modules.sys.bean.User(user.getId()));
 		}
 	}
 
@@ -86,7 +85,7 @@ public class ActUserEntityService extends UserEntityManager {
 	public List<Group> findGroupsByUser(String userId) {
 //		return getDbSqlSession().selectList("selectGroupsByUserId", userId);
 		List<Group> list = Lists.newArrayList();
-		for (Role role : getSystemService().findRole(new Role(new com.platform.modules.sys.entity.User(null, userId)))){
+		for (Role role : getSystemService().findRole(new Role(new com.platform.modules.sys.bean.User(null, userId)))){
 			list.add(ActUtils.toActivitiGroup(role));
 		}
 		return list;

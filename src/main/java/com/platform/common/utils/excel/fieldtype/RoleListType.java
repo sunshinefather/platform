@@ -6,7 +6,7 @@ import com.google.common.collect.Lists;
 import com.platform.common.utils.StringUtils;
 import com.platform.common.utils.Collections3;
 import com.platform.common.utils.SpringContextHolder;
-import com.platform.modules.sys.entity.Role;
+import com.platform.modules.sys.bean.Role;
 import com.platform.modules.sys.service.SystemService;
 
 /**

@@ -5,8 +5,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.platform.common.persistence.Page;
 import com.platform.common.service.CrudService;
+import com.platform.modules.cms.bean.Guestbook;
 import com.platform.modules.cms.dao.GuestbookDao;
-import com.platform.modules.cms.entity.Guestbook;
 
 /**
  * 留言Service 

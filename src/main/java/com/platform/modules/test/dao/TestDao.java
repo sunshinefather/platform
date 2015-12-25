@@ -2,7 +2,7 @@ package com.platform.modules.test.dao;
 
 import com.platform.common.persistence.CrudDao;
 import com.platform.common.persistence.annotation.MyBatisDao;
-import com.platform.modules.test.entity.Test;
+import com.platform.modules.test.bean.Test;
 
 /**
  * 测试DAO接口 

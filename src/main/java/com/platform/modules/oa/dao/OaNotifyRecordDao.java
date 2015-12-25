@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.platform.common.persistence.CrudDao;
 import com.platform.common.persistence.annotation.MyBatisDao;
-import com.platform.modules.oa.entity.OaNotifyRecord;
+import com.platform.modules.oa.bean.OaNotifyRecord;
 
 /**
  * 通知通告记录DAO接口 

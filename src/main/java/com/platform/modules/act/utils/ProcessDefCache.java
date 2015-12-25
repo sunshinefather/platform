@@ -1,13 +1,11 @@
 package com.platform.modules.act.utils;
 
 import java.util.List;
-
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity;
 import org.activiti.engine.impl.pvm.process.ActivityImpl;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.apache.commons.lang3.ObjectUtils;
-
 import com.platform.common.utils.CacheUtils;
 import com.platform.common.utils.SpringContextHolder;
 

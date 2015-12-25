@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.platform.common.service.CrudService;
-import com.platform.modules.test.entity.Test;
+import com.platform.modules.test.bean.Test;
 import com.platform.modules.test.dao.TestDao;
 
 /**

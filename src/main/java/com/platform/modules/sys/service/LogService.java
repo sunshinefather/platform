@@ -8,8 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.platform.common.persistence.Page;
 import com.platform.common.service.CrudService;
 import com.platform.common.utils.DateUtils;
+import com.platform.modules.sys.bean.Log;
 import com.platform.modules.sys.dao.LogDao;
-import com.platform.modules.sys.entity.Log;
 
 /**
  * 日志Service 

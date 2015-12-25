@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.platform.common.persistence.Page;
 import com.platform.common.service.CrudService;
-import com.platform.test.entity.TestData;
+import com.platform.test.bean.TestData;
 import com.platform.test.dao.TestDataDao;
 
 /**

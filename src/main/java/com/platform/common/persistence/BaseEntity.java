@@ -2,15 +2,18 @@ package com.platform.common.persistence;
 
 import java.io.Serializable;
 import java.util.Map;
+
 import javax.xml.bind.annotation.XmlTransient;
+
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.Maps;
 import com.platform.common.config.Global;
 import com.platform.common.supcan.annotation.treelist.SupTreeList;
 import com.platform.common.supcan.annotation.treelist.cols.SupCol;
 import com.platform.common.utils.StringUtils;
-import com.platform.modules.sys.entity.User;
+import com.platform.modules.sys.bean.User;
 import com.platform.modules.sys.utils.UserUtils;
 /**
  * Entity

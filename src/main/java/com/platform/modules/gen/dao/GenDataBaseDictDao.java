@@ -4,8 +4,8 @@ import java.util.List;
 
 import com.platform.common.persistence.CrudDao;
 import com.platform.common.persistence.annotation.MyBatisDao;
-import com.platform.modules.gen.entity.GenTable;
-import com.platform.modules.gen.entity.GenTableColumn;
+import com.platform.modules.gen.bean.GenTable;
+import com.platform.modules.gen.bean.GenTableColumn;
 
 /**
  * 业务表字段DAO接口 

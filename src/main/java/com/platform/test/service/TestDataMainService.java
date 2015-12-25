@@ -9,9 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.platform.common.persistence.Page;
 import com.platform.common.service.CrudService;
 import com.platform.common.utils.StringUtils;
-import com.platform.test.entity.TestDataMain;
+import com.platform.test.bean.TestDataChild;
+import com.platform.test.bean.TestDataMain;
 import com.platform.test.dao.TestDataMainDao;
-import com.platform.test.entity.TestDataChild;
 import com.platform.test.dao.TestDataChildDao;
 
 /**

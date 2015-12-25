@@ -59,12 +59,12 @@
 	
 	<filter-mapping>
 		<filter-name>sitemeshFilter</filter-name>
-		<url-pattern>/a/*</url-pattern>
+		<url-pattern>/kernel/*</url-pattern>
 	</filter-mapping>
 	
 	<filter-mapping>
 		<filter-name>sitemeshFilter</filter-name>
-		<url-pattern>/f/*</url-pattern>
+		<url-pattern>/facade/*</url-pattern>
 	</filter-mapping>
 	
 	<!-- MVC Servlet -->

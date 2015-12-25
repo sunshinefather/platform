@@ -13,12 +13,12 @@ import com.google.common.collect.Sets;
 import com.platform.common.config.Global;
 import com.platform.common.persistence.Page;
 import com.platform.common.service.TreeService;
+import com.platform.modules.cms.bean.Category;
+import com.platform.modules.cms.bean.Site;
 import com.platform.modules.cms.dao.CategoryDao;
-import com.platform.modules.cms.entity.Category;
-import com.platform.modules.cms.entity.Site;
 import com.platform.modules.cms.utils.CmsUtils;
-import com.platform.modules.sys.entity.Office;
-import com.platform.modules.sys.entity.User;
+import com.platform.modules.sys.bean.Office;
+import com.platform.modules.sys.bean.User;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**

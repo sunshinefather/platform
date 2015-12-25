@@ -32,7 +32,6 @@
 	<!-- 安全认证过滤器 -->
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<property name="securityManager" ref="securityManager" />
-    <!--<property name="loginUrl" value="${cas.server.url}?service=${cas.project.url}${adminPath}/cas" /> -->
 		<property name="loginUrl" value="${adminPath}/login" />
 		<property name="successUrl" value="${adminPath}?login" />
 		<property name="unauthorizedUrl" value="${adminPath}/login"/>
@@ -61,7 +60,7 @@
 	
 	<!-- CAS认证过滤器 -->  
 	<bean id="casFilter" class="org.apache.shiro.cas.CasFilter">  
-		<property name="failureUrl" value="${adminPath}/login"/>
+		<property name="loginUrl" value="${cas.server.url}?service=${cas.project.url}${adminPath}/cas" />
 	</bean>
 	
 	<!-- 自定义会话管理配置 -->

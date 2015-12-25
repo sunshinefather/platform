@@ -7,8 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.platform.common.service.CrudService;
 import com.platform.common.utils.CacheUtils;
+import com.platform.modules.sys.bean.Dict;
 import com.platform.modules.sys.dao.DictDao;
-import com.platform.modules.sys.entity.Dict;
 import com.platform.modules.sys.utils.DictUtils;
 
 /**

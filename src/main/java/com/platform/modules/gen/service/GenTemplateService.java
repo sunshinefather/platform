@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.platform.common.persistence.Page;
 import com.platform.common.service.BaseService;
 import com.platform.common.utils.StringUtils;
-import com.platform.modules.gen.entity.GenTemplate;
+import com.platform.modules.gen.bean.GenTemplate;
 import com.platform.modules.gen.dao.GenTemplateDao;
 
 /**

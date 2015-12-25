@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.platform.common.persistence.CrudDao;
 import com.platform.common.persistence.annotation.MyBatisDao;
-import com.platform.modules.cms.entity.Link;
+import com.platform.modules.cms.bean.Link;
 
 /**
  * 链接DAO接口 

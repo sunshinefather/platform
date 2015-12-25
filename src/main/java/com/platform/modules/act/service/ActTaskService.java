@@ -47,11 +47,11 @@ import com.google.common.collect.Maps;
 import com.platform.common.persistence.Page;
 import com.platform.common.service.BaseService;
 import com.platform.common.utils.StringUtils;
+import com.platform.modules.act.bean.Act;
 import com.platform.modules.act.dao.ActDao;
-import com.platform.modules.act.entity.Act;
 import com.platform.modules.act.utils.ActUtils;
 import com.platform.modules.act.utils.ProcessDefCache;
-import com.platform.modules.sys.entity.User;
+import com.platform.modules.sys.bean.User;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**

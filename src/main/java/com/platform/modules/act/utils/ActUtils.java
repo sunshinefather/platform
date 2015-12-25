@@ -2,15 +2,14 @@ package com.platform.modules.act.utils;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.activiti.engine.impl.persistence.entity.GroupEntity;
 import org.activiti.engine.impl.persistence.entity.UserEntity;
 import com.platform.common.config.Global;
 import com.platform.common.utils.Encodes;
 import com.platform.common.utils.StringUtils;
-import com.platform.modules.act.entity.Act;
-import com.platform.modules.sys.entity.Role;
-import com.platform.modules.sys.entity.User;
+import com.platform.modules.act.bean.Act;
+import com.platform.modules.sys.bean.Role;
+import com.platform.modules.sys.bean.User;
 
 /**
  * 流程工具 

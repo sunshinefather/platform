@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.platform.common.persistence.TreeDao;
 import com.platform.common.persistence.annotation.MyBatisDao;
-import com.platform.modules.cms.entity.Category;
+import com.platform.modules.cms.bean.Category;
 
 /**
  * 栏目DAO接口 

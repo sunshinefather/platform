@@ -8,7 +8,7 @@ import org.hibernate.validator.constraints.Length;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.platform.common.utils.IdGen;
-import com.platform.modules.sys.entity.User;
+import com.platform.modules.sys.bean.User;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**

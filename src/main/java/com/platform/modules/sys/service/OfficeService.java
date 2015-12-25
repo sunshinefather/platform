@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.platform.common.service.TreeService;
+import com.platform.modules.sys.bean.Office;
 import com.platform.modules.sys.dao.OfficeDao;
-import com.platform.modules.sys.entity.Office;
 import com.platform.modules.sys.utils.UserUtils;
 
 /**
