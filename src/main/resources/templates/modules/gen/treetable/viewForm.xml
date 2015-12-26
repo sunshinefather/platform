@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template>
 	<name>viewForm</name>
-	<filePath>src/main/webapp/WEB-INF/views/${lastPackageName}/${moduleName}/${subModuleName}</filePath>
+	<filePath>src/main/webapp/WEB-INF/views/${lastPackageName}/${moduleName}</filePath>
 	<fileName>${className}Form.jsp</fileName>
 	<content><![CDATA[
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -80,7 +80,7 @@
 					title="区域" url="/sys/area/treeData" cssClass="<#if c.isNull != "1">required</#if>" allowClear="true" notAllowSelectParent="true"/>
 			<#elseif c.showType == "fileselect">
 				<form:hidden id="${c.simpleJavaField}" path="${c.javaFieldId}" htmlEscape="false"<#if c.dataLength != "0"> maxlength="${c.dataLength}"</#if> class="input-xlarge"/>
-				<sys:ckfinder input="${c.simpleJavaField}" type="files" uploadPath="/${moduleName}<#if subModuleName != "">/${subModuleName}</#if>/${className}" selectMultiple="true"/>
+				<sys:ckfinder input="${c.simpleJavaField}" type="files" uploadPath="/${moduleName}/${className}" selectMultiple="true"/>
 			</#if>
 			<#if c.isNull != "1">
 				<span class="help-inline"><font color="red">*</font> </span>

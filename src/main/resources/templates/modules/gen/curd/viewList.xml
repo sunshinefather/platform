@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template>
 	<name>viewList</name>
-	<filePath>src/main/webapp/WEB-INF/views/${lastPackageName}/${moduleName}/${subModuleName}</filePath>
+	<filePath>src/main/webapp/WEB-INF/views/${lastPackageName}/${moduleName}</filePath>
 	<fileName>${className}List.jsp</fileName>
 	<content><![CDATA[
 <%@ page contentType="text/html;charset=UTF-8" %>

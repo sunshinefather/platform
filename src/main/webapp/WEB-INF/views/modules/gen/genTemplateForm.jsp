@@ -56,9 +56,9 @@
 				<br/>
 				<span class="help-inline">
 					示例如下：<br/>
-					java：src/main/java/\${packageName}/\${moduleName}/entity/\${subModuleName}<br/>
-					view：src/main/webapp/WEB-INF/views/\${lastPackageName}/${moduleName}/\${subModuleName}<br/>
-					mapper:/src/main/resources/mappings/\${dbType}/\${lastPackageName}/\${moduleName}/\${subModuleName}
+					java：src/main/java/\${packageName}/\${moduleName}/bean/<br/>
+					view：src/main/webapp/WEB-INF/views/\${lastPackageName}/${moduleName}/<br/>
+					mapper:/src/main/resources/mappings/\${dbType}/\${lastPackageName}/\${moduleName}/
 				</span>
 			</div>
 		</div>

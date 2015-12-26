@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template>
 	<name>controller</name>
-	<filePath>src/main/java/${packageName}/${moduleName}/controller/${subModuleName}</filePath>
+	<filePath>src/main/java/${packageName}/${moduleName}/controller</filePath>
 	<fileName>${ClassName}Controller.java</fileName>
-	<content><![CDATA[package ${packageName}.${moduleName}.controller<#if subModuleName != "">.${subModuleName}</#if>;
+	<content><![CDATA[package ${packageName}.${moduleName}.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -26,8 +26,8 @@ import com.google.common.collect.Maps;
 import com.platform.common.config.Global;
 import com.platform.common.web.BaseController;
 import com.platform.common.utils.StringUtils;
-import ${packageName}.${moduleName}.bean<#if subModuleName != "">.${subModuleName}</#if>.${ClassName};
-import ${packageName}.${moduleName}.service<#if subModuleName != "">.${subModuleName}</#if>.${ClassName}Service;
+import ${packageName}.${moduleName}.bean.${ClassName};
+import ${packageName}.${moduleName}.service.${ClassName}Service;
 
 /**
  * ${functionName}Controller

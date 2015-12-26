@@ -21,14 +21,14 @@
 		</category>
 		<category value="dao" label="持久层">
 			<template>dao/dao.xml</template>
-			<template>dao/entity.xml</template>
+			<template>dao/bean.xml</template>
 			<template>dao/mapper.xml</template>
 		</category>
 		<category value="treeTable" label="表格树">
 			<template>treetable/controller.xml</template>
 			<template>treetable/service.xml</template>
 			<template>treetable/dao.xml</template>
-			<template>treetable/entity.xml</template>
+			<template>treetable/bean.xml</template>
 			<template>treetable/mapper.xml</template>
 			<template>treetable/viewForm.xml</template>
 			<template>treetable/viewList.xml</template>

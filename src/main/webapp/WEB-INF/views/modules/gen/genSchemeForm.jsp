@@ -47,7 +47,7 @@
 					<form:options items="${config.categoryList}" itemLabel="label" itemValue="value" htmlEscape="false"/>
 				</form:select>
 				<span class="help-inline">
-					生成结构：{包名}/{模块名}/{分层(dao,entity,service,web)}/{子模块名}/{java类}
+					生成结构：{包名}/{模块名}/{分层(bean,dao,mappers,service,controller)}/{java类}
 				</span>
 			</div>
 		</div>
@@ -63,13 +63,6 @@
 			<div class="controls">
 				<form:input path="moduleName" htmlEscape="false" maxlength="500" class="required input-xlarge"/>
 				<span class="help-inline">可理解为子系统名，例如 sys</span>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">生成子模块名:</label>
-			<div class="controls">
-				<form:input path="subModuleName" htmlEscape="false" maxlength="500" class="input-xlarge"/>
-				<span class="help-inline">可选，分层下的文件夹，例如 </span>
 			</div>
 		</div>
 		<div class="control-group">

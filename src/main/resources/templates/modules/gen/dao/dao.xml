@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template>
 	<name>dao</name>
-	<filePath>src/main/java/${packageName}/${moduleName}/dao/${subModuleName}</filePath>
+	<filePath>src/main/java/${packageName}/${moduleName}/dao</filePath>
 	<fileName>${ClassName}Dao.java</fileName>
-	<content><![CDATA[package ${packageName}.${moduleName}.dao<#if subModuleName != "">.${subModuleName}</#if>;
+	<content><![CDATA[package ${packageName}.${moduleName}.dao;
 
 import com.platform.common.persistence.CrudDao;
 import com.platform.common.persistence.annotation.MyBatisDao;
-import ${packageName}.${moduleName}.bean<#if subModuleName != "">.${subModuleName}</#if>.${ClassName};
+import ${packageName}.${moduleName}.bean.${ClassName};
 
 /**
  * ${functionName}DAO接口

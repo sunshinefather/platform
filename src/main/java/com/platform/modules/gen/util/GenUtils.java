@@ -286,7 +286,6 @@ public class GenUtils {
 		model.put("packageName", StringUtils.lowerCase(genScheme.getPackageName()));
 		model.put("lastPackageName", StringUtils.substringAfterLast((String)model.get("packageName"),"."));
 		model.put("moduleName", StringUtils.lowerCase(genScheme.getModuleName()));
-		model.put("subModuleName", StringUtils.lowerCase(genScheme.getSubModuleName()));
 		model.put("className", StringUtils.uncapitalize(genScheme.getGenTable().getClassName()));
 		model.put("ClassName", StringUtils.capitalize(genScheme.getGenTable().getClassName()));
 		
@@ -295,11 +294,9 @@ public class GenUtils {
 		model.put("functionAuthor", StringUtils.isNotBlank(genScheme.getFunctionAuthor())?genScheme.getFunctionAuthor():UserUtils.getUser().getName());
 		model.put("functionVersion", DateUtils.getDate());
 		
-		model.put("urlPrefix", model.get("moduleName")+(StringUtils.isNotBlank(genScheme.getSubModuleName())
-				?"/"+StringUtils.lowerCase(genScheme.getSubModuleName()):"")+"/"+model.get("className"));
+		model.put("urlPrefix", "/"+model.get("moduleName")+"/"+model.get("className"));
 		model.put("viewPrefix",model.get("urlPrefix"));
-		model.put("permissionPrefix", model.get("moduleName")+(StringUtils.isNotBlank(genScheme.getSubModuleName())
-				?":"+StringUtils.lowerCase(genScheme.getSubModuleName()):"")+":"+model.get("className"));
+		model.put("permissionPrefix", model.get("moduleName")+":"+model.get("className"));
 		
 		model.put("dbType", Global.getConfig("jdbc.type"));
 

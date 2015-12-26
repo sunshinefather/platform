@@ -35,7 +35,7 @@
 			<tr>
 				<td><a href="${ctx}/gen/genScheme/form?id=${genScheme.id}">${genScheme.name}</a></td>
 				<td>${genScheme.packageName}</td>
-				<td>${genScheme.moduleName}${not empty genScheme.subModuleName?'.':''}${genScheme.subModuleName}</td>
+				<td>${genScheme.moduleName}</td>
 				<td>${genScheme.functionName}</td>
 				<td>${genScheme.functionAuthor}</td>
 				<shiro:hasPermission name="gen:genScheme:edit"><td>

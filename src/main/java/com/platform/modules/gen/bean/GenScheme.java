@@ -16,7 +16,6 @@ public class GenScheme extends DataEntity<GenScheme> {
 	private String category;		// 分类
 	private String packageName;		// 生成包路径
 	private String moduleName;		// 生成模块名
-	private String subModuleName;		// 生成子模块名
 	private String functionName;		// 生成功能名
 	private String functionNameSimple;		// 生成功能名（简写）
 	private String functionAuthor;		// 生成功能作者
@@ -57,14 +56,6 @@ public class GenScheme extends DataEntity<GenScheme> {
 
 	public void setModuleName(String moduleName) {
 		this.moduleName = moduleName;
-	}
-
-	public String getSubModuleName() {
-		return subModuleName;
-	}
-
-	public void setSubModuleName(String subModuleName) {
-		this.subModuleName = subModuleName;
 	}
 
 	public String getCategory() {
