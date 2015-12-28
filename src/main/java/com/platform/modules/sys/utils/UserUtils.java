@@ -143,7 +143,7 @@ public class UserUtils {
 		if (roleList == null){
 			User user = getUser();
 			if (user.isAdmin()){
-				roleList = roleDao.findAllList(new Role());
+				roleList = roleDao.findList(new Role());
 			}else{
 				Role role = new Role();
 				role.getSqlMap().put("dsf", BaseService.dataScopeFilter(user.getCurrentUser(), "o", "u"));
@@ -164,7 +164,7 @@ public class UserUtils {
 		if (menuList == null){
 			User user = getUser();
 			if (user.isAdmin()){
-				menuList = menuDao.findAllList(new Menu());
+				menuList = menuDao.findList(new Menu());
 			}else{
 				Menu m = new Menu();
 				m.setUserId(user.getId());
@@ -183,7 +183,7 @@ public class UserUtils {
 		@SuppressWarnings("unchecked")
 		List<Area> areaList = (List<Area>)getCache(CACHE_AREA_LIST);
 		if (areaList == null){
-			areaList = areaDao.findAllList(new Area());
+			areaList = areaDao.findList(new Area());
 			putCache(CACHE_AREA_LIST, areaList);
 		}
 		return areaList;
@@ -199,7 +199,7 @@ public class UserUtils {
 		if (officeList == null){
 			User user = getUser();
 			if (user.isAdmin()){
-				officeList = officeDao.findAllList(new Office());
+				officeList = officeDao.findList(new Office());
 			}else{
 				Office office = new Office();
 				office.getSqlMap().put("dsf", BaseService.dataScopeFilter(user, "a", ""));
@@ -218,7 +218,7 @@ public class UserUtils {
 		@SuppressWarnings("unchecked")
 		List<Office> officeList = (List<Office>)getCache(CACHE_OFFICE_ALL_LIST);
 		if (officeList == null){
-			officeList = officeDao.findAllList(new Office());
+			officeList = officeDao.findList(new Office());
 		}
 		return officeList;
 	}

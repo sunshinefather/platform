@@ -27,7 +27,7 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 文章Service 
  * @author sunshine
- * @version 2013-05-15
+ * @date 2013-05-15
  */
 @Service
 @Transactional(readOnly = true)

@@ -9,7 +9,7 @@ import com.platform.modules.cms.bean.Link;
 /**
  * 链接DAO接口 
  * @author sunshine
- * @version 2013-8-23
+ * @date 2013-8-23
  */
 @MyBatisDao
 public interface LinkDao extends CrudDao<Link> {

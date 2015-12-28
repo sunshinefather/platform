@@ -34,7 +34,7 @@
 		WHERE a.id = #{id}
 	</select>
 	
-	<select id="findAllList" resultType="Menu">
+	<select id="findList" resultType="Menu">
 		SELECT
 			<include refid="menuColumns"/>
 		FROM sys_menu a

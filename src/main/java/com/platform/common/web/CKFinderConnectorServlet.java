@@ -16,7 +16,7 @@ import com.ckfinder.connector.ConnectorServlet;
 /**
  * CKFinderConnectorServlet 
  * @author sunshine
- * @version 2014-06-25
+ * @date 2014-06-25
  */
 public class CKFinderConnectorServlet extends ConnectorServlet {
 	

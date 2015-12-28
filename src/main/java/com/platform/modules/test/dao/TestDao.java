@@ -7,7 +7,7 @@ import com.platform.modules.test.bean.Test;
 /**
  * 测试DAO接口 
  * @author sunshine
- * @version 2013-10-17
+ * @date 2013-10-17
  */
 @MyBatisDao
 public interface TestDao extends CrudDao<Test> {

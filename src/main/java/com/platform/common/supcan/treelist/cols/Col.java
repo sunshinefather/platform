@@ -11,7 +11,7 @@ import com.thoughtworks.xstream.converters.extended.ToAttributedValueConverter;
 /**
  * 硕正TreeList Cols Col
  * @author WangZhen
- * @version 2013-11-04
+ * @date 2013-11-04
  */
 @XStreamAlias("Col")
 @XStreamConverter(value = ToAttributedValueConverter.class, strings = {"text"})

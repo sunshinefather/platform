@@ -16,7 +16,7 @@ import com.google.common.collect.Lists;
  * 4. 区分创建新的B对象与将对象A值复制到已存在的B对象两种函数.
  * 
  * @author calvin
- * @version 2013-01-15
+ * @date 2013-01-15
  */
 public class BeanMapper {
 

@@ -11,7 +11,7 @@ import com.platform.modules.cms.dao.GuestbookDao;
 /**
  * 留言Service 
  * @author sunshine
- * @version 2013-01-15
+ * @date 2013-01-15
  */
 @Service
 @Transactional(readOnly = true)

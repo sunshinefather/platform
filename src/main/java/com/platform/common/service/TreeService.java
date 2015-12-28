@@ -10,7 +10,7 @@ import com.platform.common.utils.reflection.ReflectionUtils;
 /**
  * Service基类 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 @Transactional(readOnly = true)
 public abstract class TreeService<D extends TreeDao<T>, T extends TreeEntity<T>> extends CrudService<D, T> {

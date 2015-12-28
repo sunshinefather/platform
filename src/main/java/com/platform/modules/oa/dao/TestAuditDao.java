@@ -7,7 +7,7 @@ import com.platform.modules.oa.bean.TestAudit;
 /**
  * 审批DAO接口 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 @MyBatisDao
 public interface TestAuditDao extends CrudDao<TestAudit> {

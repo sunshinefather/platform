@@ -16,7 +16,7 @@ import ${packageName}.${moduleName}.dao.${ClassName}Dao;
 /**
  * ${functionName}Service
  * @author ${functionAuthor}
- * @version ${functionVersion}
+ * @date ${functionCreateDate}
  */
 @Service
 @Transactional(readOnly = true)

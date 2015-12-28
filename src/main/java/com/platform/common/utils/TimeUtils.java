@@ -8,7 +8,7 @@ import org.apache.commons.lang3.time.DateFormatUtils;
 /**
  * 时间计算工具类 
  * @author sunshine
- * @version 2013-11-03
+ * @date 2013-11-03
  */
 public class TimeUtils {
 	

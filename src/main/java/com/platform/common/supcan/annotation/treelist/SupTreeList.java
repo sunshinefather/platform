@@ -13,7 +13,7 @@ import com.platform.common.supcan.annotation.treelist.cols.SupGroup;
 /**
  * 硕正TreeList注解
  * @author WangZhen
- * @version 2013-11-12
+ * @date 2013-11-12
  * @see 在类上添加注解，应用实例：
 
 @SupTreeList(

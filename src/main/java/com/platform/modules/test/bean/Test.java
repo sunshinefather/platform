@@ -16,7 +16,7 @@ import com.platform.modules.sys.bean.Office;
 /**
  * 测试Entity 
  * @author sunshine
- * @version 2013-10-17
+ * @date 2013-10-17
  */
 @SupTreeList(
 	groups={

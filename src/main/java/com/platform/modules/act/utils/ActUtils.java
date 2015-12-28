@@ -14,7 +14,7 @@ import com.platform.modules.sys.bean.User;
 /**
  * 流程工具 
  * @author sunshine
- * @version 2013-11-03
+ * @date 2013-11-03
  */
 public class ActUtils {
 

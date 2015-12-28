@@ -10,7 +10,7 @@ import com.thoughtworks.xstream.converters.extended.ToAttributedValueConverter;
 /**
  * 硕正TreeList Properties Express
  * @author WangZhen
- * @version 2013-11-04
+ * @date 2013-11-04
  */
 @XStreamAlias("Express")
 @XStreamConverter(value = ToAttributedValueConverter.class, strings = {"text"})

@@ -7,13 +7,13 @@ import com.platform.common.persistence.DataEntity;
 /**
  * 主子表生成Entity 
  * @author sunshine
- * @version 2015-04-06
+ * @date 2015-04-06
  */
 public class TestDataChild extends DataEntity<TestDataChild> {
 	
 	private static final long serialVersionUID = 1L;
-	private TestDataMain testDataMain;		// 业务主表 父类
-	private String name;		// 名称
+	private TestDataMain testDataMain;
+	private String name;
 	
 	public TestDataChild() {
 		super();

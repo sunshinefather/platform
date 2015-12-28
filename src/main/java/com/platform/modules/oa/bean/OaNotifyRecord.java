@@ -11,7 +11,7 @@ import com.platform.common.persistence.DataEntity;
 /**
  * 通知通告记录Entity 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 public class OaNotifyRecord extends DataEntity<OaNotifyRecord> {
 	

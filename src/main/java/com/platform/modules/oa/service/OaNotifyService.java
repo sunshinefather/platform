@@ -16,7 +16,7 @@ import com.platform.modules.oa.dao.OaNotifyRecordDao;
 /**
  * 通知通告Service 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 @Service
 @Transactional(readOnly = true)

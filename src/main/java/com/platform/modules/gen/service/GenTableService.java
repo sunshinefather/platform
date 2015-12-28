@@ -19,7 +19,7 @@ import com.platform.modules.gen.dao.GenTableDao;
 /**
  * 业务表Service 
  * @author sunshine
- * @version 2013-10-15
+ * @date 2013-10-15
  */
 @Service
 @Transactional(readOnly = true)
@@ -47,7 +47,7 @@ public class GenTableService extends BaseService {
 	}
 
 	public List<GenTable> findAll() {
-		return genTableDao.findAllList(new GenTable());
+		return genTableDao.findList(new GenTable());
 	}
 	
 	/**

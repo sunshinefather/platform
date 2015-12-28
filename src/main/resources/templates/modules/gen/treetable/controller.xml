@@ -32,7 +32,7 @@ import ${packageName}.${moduleName}.service.${ClassName}Service;
 /**
  * ${functionName}Controller
  * @author ${functionAuthor}
- * @version ${functionVersion}
+ * @date ${functionCreateDate}
  */
 @Controller
 @RequestMapping(value = "${r"${adminPath}"}/${urlPrefix}")

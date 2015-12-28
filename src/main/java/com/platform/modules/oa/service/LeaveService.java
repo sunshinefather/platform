@@ -29,7 +29,7 @@ import com.platform.modules.oa.dao.LeaveDao;
 /**
  * 请假Service
  * @author liuj
- * @version 2013-04-05
+ * @date 2013-04-05
  */
 @Service
 @Transactional(readOnly = true)

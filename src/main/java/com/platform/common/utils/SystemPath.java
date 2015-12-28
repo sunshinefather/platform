@@ -3,7 +3,7 @@ package com.platform.common.utils;
 /**
  * @author wanye
  * @date Dec 14, 2008
- * @version v 1.0
+ * @date v 1.0
  * @description 得到当前应用的系统路径
  */
 public class SystemPath {

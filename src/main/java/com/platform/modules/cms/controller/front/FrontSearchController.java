@@ -24,7 +24,7 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 网站搜索Controller 
  * @author sunshine
- * @version 2013-5-29
+ * @date 2013-5-29
  */
 @Controller
 @RequestMapping(value = "${frontPath}/search")

@@ -17,7 +17,7 @@ import com.platform.modules.cms.service.StatsService;
 /**
  * 统计Controller 
  * @author sunshine
- * @version 2013-5-21
+ * @date 2013-5-21
  */
 @Controller
 @RequestMapping(value = "${adminPath}/cms/stats")

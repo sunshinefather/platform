@@ -16,7 +16,7 @@ import com.platform.modules.sys.dao.DictDao;
 /**
  * 字典工具类 
  * @author sunshine
- * @version 2013-5-29
+ * @date 2013-5-29
  */
 public class DictUtils {
 	
@@ -62,7 +62,7 @@ public class DictUtils {
 		Map<String, List<Dict>> dictMap = (Map<String, List<Dict>>)CacheUtils.get(CACHE_DICT_MAP);
 		if (dictMap==null){
 			dictMap = Maps.newHashMap();
-			for (Dict dict : dictDao.findAllList(new Dict())){
+			for (Dict dict : dictDao.findList(new Dict())){
 				List<Dict> dictList = dictMap.get(dict.getType());
 				if (dictList != null){
 					dictList.add(dict);

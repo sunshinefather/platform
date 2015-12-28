@@ -21,7 +21,7 @@ import com.platform.common.web.ServletUtils;
 /**
  * 自定义授权缓存管理类 
  * @author sunshine
- * @version 2014-7-20
+ * @date 2014-7-20
  */
 public class JedisCacheManager implements CacheManager {
 
@@ -43,7 +43,7 @@ public class JedisCacheManager implements CacheManager {
 	/**
 	 * 自定义授权缓存管理类 
  * @author sunshine
- * @version 2014-7-20
+ * @date 2014-7-20
 	 */
 	public class JedisCache<K, V> implements Cache<K, V> {
 

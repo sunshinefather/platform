@@ -41,7 +41,7 @@ import com.platform.modules.sys.utils.DictUtils;
 /**
  * 导出Excel文件（导出“XLSX”格式，支持大数据量导出   @see org.apache.poi.ss.SpreadsheetVersion） 
  * @author sunshine
- * @version 2013-04-21
+ * @date 2013-04-21
  */
 public class ExportExcel {
 	

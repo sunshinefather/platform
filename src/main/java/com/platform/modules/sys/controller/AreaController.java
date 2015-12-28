@@ -27,7 +27,7 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 区域Controller 
  * @author sunshine
- * @version 2013-5-15
+ * @date 2013-5-15
  */
 @Controller
 @RequestMapping(value = "${adminPath}/sys/area")

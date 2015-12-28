@@ -13,7 +13,7 @@ import com.platform.test.dao.TestDataDao;
 /**
  * 单表生成Service 
  * @author sunshine
- * @version 2015-04-06
+ * @date 2015-04-06
  */
 @Service
 @Transactional(readOnly = true)

@@ -7,7 +7,7 @@ import com.platform.modules.sys.bean.Area;
 /**
  * 区域DAO接口 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 @MyBatisDao
 public interface AreaDao extends TreeDao<Area> {

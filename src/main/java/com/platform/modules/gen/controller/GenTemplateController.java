@@ -23,7 +23,7 @@ import com.platform.modules.gen.service.GenTemplateService;
 /**
  * 代码模板Controller 
  * @author sunshine
- * @version 2013-10-15
+ * @date 2013-10-15
  */
 @Controller
 @RequestMapping(value = "${adminPath}/gen/genTemplate")

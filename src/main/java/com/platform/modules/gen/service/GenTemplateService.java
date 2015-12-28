@@ -14,7 +14,7 @@ import com.platform.modules.gen.dao.GenTemplateDao;
 /**
  * 代码模板Service 
  * @author sunshine
- * @version 2013-10-15
+ * @date 2013-10-15
  */
 @Service
 @Transactional(readOnly = true)

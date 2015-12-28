@@ -21,7 +21,7 @@ import com.platform.common.utils.excel.fieldtype.RoleListType;
 /**
  * 用户Entity 
  * @author sunshine
- * @version 2013-12-05
+ * @date 2013-12-05
  */
 public class User extends DataEntity<User> {
 

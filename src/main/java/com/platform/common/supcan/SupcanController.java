@@ -29,7 +29,7 @@ import com.platform.common.web.BaseController;
 /**
  * 硕正Controller 
  * @author sunshine
- * @version 2013-11-13
+ * @date 2013-11-13
  */
 @Controller
 @RequestMapping(value = "${adminPath}/supcan")

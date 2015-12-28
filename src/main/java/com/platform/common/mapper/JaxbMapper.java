@@ -25,7 +25,7 @@ import com.platform.common.utils.reflection.ReflectionUtils;
  * 特别支持Root对象是Collection的情形.
  * 
  * @author calvin
- * @version 2013-01-15
+ * @date 2013-01-15
  */
 @SuppressWarnings("rawtypes")
 public class JaxbMapper {

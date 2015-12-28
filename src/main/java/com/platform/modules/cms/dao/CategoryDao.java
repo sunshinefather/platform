@@ -10,7 +10,7 @@ import com.platform.modules.cms.bean.Category;
 /**
  * 栏目DAO接口 
  * @author sunshine
- * @version 2013-8-23
+ * @date 2013-8-23
  */
 @MyBatisDao
 public interface CategoryDao extends TreeDao<Category> {

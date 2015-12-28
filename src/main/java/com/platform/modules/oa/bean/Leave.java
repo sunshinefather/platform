@@ -22,7 +22,7 @@ import com.platform.modules.sys.utils.DictUtils;
 /**
  * 请假Entity
  * @author liuj
- * @version 2013-04-05
+ * @date 2013-04-05
  */
 public class Leave extends DataEntity<Leave> {
 	

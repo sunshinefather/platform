@@ -7,7 +7,7 @@ import com.platform.modules.gen.bean.GenTemplate;
 /**
  * 代码模板DAO接口 
  * @author sunshine
- * @version 2013-10-15
+ * @date 2013-10-15
  */
 @MyBatisDao
 public interface GenTemplateDao extends CrudDao<GenTemplate> {

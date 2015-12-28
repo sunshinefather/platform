@@ -38,7 +38,7 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 用户Controller 
  * @author sunshine
- * @version 2013-8-29
+ * @date 2013-8-29
  */
 @Controller
 @RequestMapping(value = "${adminPath}/sys/user")

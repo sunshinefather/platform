@@ -36,7 +36,7 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 代码生成工具类 
  * @author sunshine
- * @version 2015-11-16
+ * @date 2015-11-16
  */
 public class GenUtils {
 
@@ -292,7 +292,7 @@ public class GenUtils {
 		model.put("functionName", genScheme.getFunctionName());
 		model.put("functionNameSimple", genScheme.getFunctionNameSimple());
 		model.put("functionAuthor", StringUtils.isNotBlank(genScheme.getFunctionAuthor())?genScheme.getFunctionAuthor():UserUtils.getUser().getName());
-		model.put("functionVersion", DateUtils.getDate());
+		model.put("functionCreateDate", DateUtils.getDateTime());
 		
 		model.put("urlPrefix", "/"+model.get("moduleName")+"/"+model.get("className"));
 		model.put("viewPrefix",model.get("urlPrefix"));

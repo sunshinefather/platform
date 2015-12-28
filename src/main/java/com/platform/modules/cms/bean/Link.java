@@ -14,7 +14,7 @@ import com.platform.modules.sys.bean.User;
 /**
  * 链接Entity 
  * @author sunshine
- * @version 2013-05-15
+ * @date 2013-05-15
  */
 public class Link extends DataEntity<Link> {
 	

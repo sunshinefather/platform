@@ -50,23 +50,7 @@
 				ORDER BY a.name ASC
 			</otherwise>
 		</choose>
-	</select>
-	<select id="findAllList" resultType="GenTable">
-		SELECT 
-			<include refid="genTableColumns"/>
-		FROM gen_table a
-		<include refid="genTableJoins"/>
-		WHERE a.del_flag = #{DEL_FLAG_NORMAL}
-		<choose>
-			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
-				ORDER BY ${page.orderBy}
-			</when>
-			<otherwise>
-				ORDER BY a.name ASC
-			</otherwise>
-		</choose>
-	</select>
-	
+	</select>	
 	<insert id="insert">
 		INSERT INTO gen_table(
 			id, 

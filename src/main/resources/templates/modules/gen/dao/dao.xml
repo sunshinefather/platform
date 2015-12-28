@@ -10,9 +10,9 @@ import com.platform.common.persistence.annotation.MyBatisDao;
 import ${packageName}.${moduleName}.bean.${ClassName};
 
 /**
- * ${functionName}DAO接口
+ * @Description ${functionName}DAO接口
  * @author ${functionAuthor}
- * @version ${functionVersion}
+ * @date ${functionCreateDate}
  */
 @MyBatisDao
 public interface ${ClassName}Dao extends CrudDao<${ClassName}> {

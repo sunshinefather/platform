@@ -8,7 +8,7 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 /**
  * 硕正TreeList Properties Background
  * @author WangZhen
- * @version 2013-11-04
+ * @date 2013-11-04
  */
 @XStreamAlias("Background")
 public class Background {

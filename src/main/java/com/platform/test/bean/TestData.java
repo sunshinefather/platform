@@ -14,7 +14,7 @@ import com.platform.common.persistence.DataEntity;
 /**
  * 单表生成Entity 
  * @author sunshine
- * @version 2015-04-06
+ * @date 2015-04-06
  */
 public class TestData extends DataEntity<TestData> {
 	

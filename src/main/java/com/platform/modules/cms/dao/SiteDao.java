@@ -7,7 +7,7 @@ import com.platform.modules.cms.bean.Site;
 /**
  * 站点DAO接口 
  * @author sunshine
- * @version 2013-8-23
+ * @date 2013-8-23
  */
 @MyBatisDao
 public interface SiteDao extends CrudDao<Site> {

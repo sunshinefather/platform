@@ -28,7 +28,7 @@ import com.platform.modules.sys.service.DictService;
 /**
  * 字典Controller 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 @Controller
 @RequestMapping(value = "${adminPath}/sys/dict")

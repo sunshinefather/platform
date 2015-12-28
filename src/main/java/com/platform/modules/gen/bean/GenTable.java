@@ -1,35 +1,38 @@
 package com.platform.modules.gen.bean;
 
 import java.util.List;
-
 import org.hibernate.validator.constraints.Length;
-
 import com.google.common.collect.Lists;
 import com.platform.common.persistence.DataEntity;
 import com.platform.common.utils.StringUtils;
 
 /**
- * 业务表Entity 
  * @author sunshine
- * @version 2013-10-15
+ * @date 2015-10-15
  */
 public class GenTable extends DataEntity<GenTable> {
 	
 	private static final long serialVersionUID = 1L;
-	private String name; 	// 名称
-	private String comments;		// 描述
-	private String className;		// 实体类名称
-	private String parentTable;		// 关联父表
-	private String parentTableFk;		// 关联父表外键
-
-	private List<GenTableColumn> columnList = Lists.newArrayList();	// 表列
-
-	private String nameLike; 	// 按名称模糊查询
-	
-	private List<String> pkList; // 当前表主键列表
-	
-	private GenTable parent;	// 父表对象
-	private List<GenTable> childList = Lists.newArrayList();	// 子表列表
+	/**名称*/
+	private String name;
+	/**描述*/
+	private String comments;
+	/**实体类名称*/
+	private String className;
+	/**父表*/
+	private String parentTable;
+	/**父表外键*/
+	private String parentTableFk;
+    /**表字段集合*/
+	private List<GenTableColumn> columnList = Lists.newArrayList();
+    /**名称模糊查询*/
+	private String nameLike;
+	/**表主键列表*/
+	private List<String> pkList;
+	/**父表对象*/
+	private GenTable parent;
+	/**子表列表*/
+	private List<GenTable> childList = Lists.newArrayList();
 	
 	public GenTable() {
 		super();
@@ -129,21 +132,22 @@ public class GenTable extends DataEntity<GenTable> {
 	}
 
 	/**
-	 * 获取导入依赖包字符串
-	 * @return
+	 * 依赖包列表
 	 */
 	public List<String> getImportList(){
-		List<String> importList = Lists.newArrayList(); // 引用列表
+		List<String> importList = Lists.newArrayList();
 		for (GenTableColumn column : getColumnList()){
-			if (column.getIsNotBaseField() || ("1".equals(column.getIsQuery()) && "between".equals(column.getQueryType())
-							&& ("createDate".equals(column.getSimpleJavaField()) || "updateDate".equals(column.getSimpleJavaField())))){
-				// 导入类型依赖包， 如果类型中包含“.”，则需要导入引用。
+			if (column.getIsNotBaseField() || 
+					        ("1".equals(column.getIsQuery()) && "between".equals(column.getQueryType()) && 
+					          ("createDate".equals(column.getSimpleJavaField()) || "updateDate".equals(column.getSimpleJavaField()))
+							)
+			   ){
+				//如果类型中包含"."，则需要导入依赖包
 				if (StringUtils.indexOf(column.getJavaType(), ".") != -1 && !importList.contains(column.getJavaType())){
 					importList.add(column.getJavaType());
 				}
 			}
 			if (column.getIsNotBaseField()){
-				// 导入JSR303、Json等依赖包
 				for (String ann : column.getAnnotationList()){
 					if (!importList.contains(StringUtils.substringBeforeLast(ann, "("))){
 						importList.add(StringUtils.substringBeforeLast(ann, "("));
@@ -165,7 +169,6 @@ public class GenTable extends DataEntity<GenTable> {
 	
 	/**
 	 * 是否存在父类
-	 * @return
 	 */
 	public Boolean getParentExists(){
 		return parent != null && StringUtils.isNotBlank(parentTable) && StringUtils.isNotBlank(parentTableFk);
@@ -173,7 +176,6 @@ public class GenTable extends DataEntity<GenTable> {
 
 	/**
 	 * 是否存在create_date列
-	 * @return
 	 */
 	public Boolean getCreateDateExists(){
 		for (GenTableColumn c : columnList){
@@ -186,7 +188,6 @@ public class GenTable extends DataEntity<GenTable> {
 	
 	/**
 	 * 是否存在update_date列
-	 * @return
 	 */
 	public Boolean getUpdateDateExists(){
 		for (GenTableColumn c : columnList){
@@ -199,7 +200,6 @@ public class GenTable extends DataEntity<GenTable> {
 
 	/**
 	 * 是否存在del_flag列
-	 * @return
 	 */
 	public Boolean getDelFlagExists(){
 		for (GenTableColumn c : columnList){
@@ -210,5 +210,3 @@ public class GenTable extends DataEntity<GenTable> {
 		return false;
 	}
 }
-
-

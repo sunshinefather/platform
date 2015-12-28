@@ -37,7 +37,7 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 系统管理，安全相关实体的管理类,包括用户、角色、菜单.
  * @author sunshine
- * @version 2015-12-05
+ * @date 2015-12-05
  */
 @Service
 @Transactional(readOnly = true)
@@ -400,7 +400,7 @@ public class SystemService extends BaseService implements InitializingBean {
 	        // 同步角色数据
 			List<Group> groupList = identityService.createGroupQuery().list();
 			if (groupList.size() == 0){
-			 	Iterator<Role> roles = roleDao.findAllList(new Role()).iterator();
+			 	Iterator<Role> roles = roleDao.findList(new Role()).iterator();
 			 	while(roles.hasNext()) {
 			 		Role role = roles.next();
 			 		saveActivitiGroup(role);
@@ -409,7 +409,7 @@ public class SystemService extends BaseService implements InitializingBean {
 		 	// 同步用户数据
 			List<org.activiti.engine.identity.User> userList = identityService.createUserQuery().list();
 			if (userList.size() == 0){
-			 	Iterator<User> users = userDao.findAllList(new User()).iterator();
+			 	Iterator<User> users = userDao.findList(new User()).iterator();
 			 	while(users.hasNext()) {
 			 		saveActivitiUser(users.next());
 			 	}

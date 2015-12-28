@@ -7,7 +7,7 @@ import com.platform.modules.oa.bean.Leave;
 /**
  * 请假DAO接口
  * @author liuj
- * @version 2013-8-23
+ * @date 2013-8-23
  */
 @MyBatisDao
 public interface LeaveDao extends CrudDao<Leave> {

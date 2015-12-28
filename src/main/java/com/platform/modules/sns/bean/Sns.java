@@ -3,14 +3,12 @@ package com.platform.modules.sns.bean;
 import org.hibernate.validator.constraints.Length;
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import javax.validation.constraints.NotNull;
-
 import com.platform.common.persistence.DataEntity;
 
 /**
  * 圈子Entity
  * @author sunshine
- * @version 2015-12-25
+ * @date 2015-12-25
  */
 public class Sns extends DataEntity<Sns> {
 	

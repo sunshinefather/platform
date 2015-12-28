@@ -27,7 +27,7 @@ import com.platform.test.service.TestTreeService;
 /**
  * 树结构生成Controller 
  * @author sunshine
- * @version 2015-04-06
+ * @date 2015-04-06
  */
 @Controller
 @RequestMapping(value = "${adminPath}/test/testTree")

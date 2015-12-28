@@ -12,7 +12,7 @@ import com.platform.common.persistence.Page;
 /**
  * Service基类 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 @Transactional(readOnly = true)
 public abstract class CrudService<D extends CrudDao<T>, T extends DataEntity<T>> extends BaseService {

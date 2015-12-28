@@ -7,7 +7,7 @@ import com.platform.modules.sys.bean.Role;
 /**
  * 角色DAO接口 
  * @author sunshine
- * @version 2013-12-05
+ * @date 2013-12-05
  */
 @MyBatisDao
 public interface RoleDao extends CrudDao<Role> {

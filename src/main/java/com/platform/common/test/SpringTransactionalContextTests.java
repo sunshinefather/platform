@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 /**
  * Spring 单元测试基类 
  * @author sunshine
- * @version 2013-05-15
+ * @date 2013-05-15
  */
 @ActiveProfiles("production")
 @ContextConfiguration(locations = {"/spring-context.xml"})

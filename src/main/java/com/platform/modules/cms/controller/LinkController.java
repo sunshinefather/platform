@@ -28,7 +28,7 @@ import com.platform.modules.cms.service.LinkService;
 /**
  * 链接Controller 
  * @author sunshine
- * @version 2013-3-23
+ * @date 2013-3-23
  */
 @Controller
 @RequestMapping(value = "${adminPath}/cms/link")

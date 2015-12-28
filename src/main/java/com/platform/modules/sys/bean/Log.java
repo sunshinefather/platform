@@ -11,7 +11,7 @@ import com.platform.common.utils.StringUtils;
 /**
  * 日志Entity 
  * @author sunshine
- * @version 2014-8-19
+ * @date 2014-8-19
  */
 public class Log extends DataEntity<Log> {
 

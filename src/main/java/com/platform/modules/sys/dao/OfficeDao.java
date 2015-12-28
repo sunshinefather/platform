@@ -7,7 +7,7 @@ import com.platform.modules.sys.bean.Office;
 /**
  * 机构DAO接口 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 @MyBatisDao
 public interface OfficeDao extends TreeDao<Office> {

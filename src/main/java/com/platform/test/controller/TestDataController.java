@@ -22,7 +22,7 @@ import com.platform.test.service.TestDataService;
 /**
  * 单表生成Controller 
  * @author sunshine
- * @version 2015-04-06
+ * @date 2015-04-06
  */
 @Controller
 @RequestMapping(value = "${adminPath}/test/testData")

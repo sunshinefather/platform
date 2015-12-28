@@ -11,7 +11,7 @@ import com.platform.modules.sys.bean.Dict;
 /**
  * 生成方案Entity 
  * @author sunshine
- * @version 2013-10-15
+ * @date 2013-10-15
  */
 @XmlRootElement(name="category")
 public class GenCategory extends Dict {

@@ -26,7 +26,7 @@ import com.platform.modules.gen.util.GenUtils;
 /**
  * 业务表Controller 
  * @author sunshine
- * @version 2013-10-15
+ * @date 2013-10-15
  */
 @Controller
 @RequestMapping(value = "${adminPath}/gen/genTable")

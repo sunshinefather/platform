@@ -23,7 +23,7 @@ import com.platform.modules.gen.util.GenUtils;
 /**
  * 生成方案Service 
  * @author sunshine
- * @version 2013-10-15
+ * @date 2013-10-15
  */
 @Service
 @Transactional(readOnly = true)

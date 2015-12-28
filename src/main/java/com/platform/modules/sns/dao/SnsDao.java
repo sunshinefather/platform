@@ -7,7 +7,7 @@ import com.platform.modules.sns.bean.Sns;
 /**
  * 圈子DAO接口
  * @author sunshine
- * @version 2015-12-25
+ * @date 2015-12-25
  */
 @MyBatisDao
 public interface SnsDao extends CrudDao<Sns> {

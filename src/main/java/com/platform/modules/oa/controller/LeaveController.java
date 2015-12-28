@@ -34,7 +34,7 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 请假Controller
  * @author liuj
- * @version 2013-04-05
+ * @date 2013-04-05
  */
 @Controller
 @RequestMapping(value = "${adminPath}/oa/leave")

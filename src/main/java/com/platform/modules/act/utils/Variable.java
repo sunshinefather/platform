@@ -11,7 +11,7 @@ import com.platform.common.utils.StringUtils;
 /**
  * 流程变量对象 
  * @author sunshine
- * @version 2013-11-03
+ * @date 2013-11-03
  */
 public class Variable {
 

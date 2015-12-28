@@ -9,7 +9,7 @@ import com.platform.modules.sys.bean.User;
 /**
  * 用户DAO接口 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 @MyBatisDao
 public interface UserDao extends CrudDao<User> {

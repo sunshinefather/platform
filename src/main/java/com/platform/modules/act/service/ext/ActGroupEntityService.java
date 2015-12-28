@@ -20,7 +20,7 @@ import com.platform.modules.sys.service.SystemService;
 /**
  * Activiti Group Entity Service 
  * @author sunshine
- * @version 2013-12-05
+ * @date 2013-12-05
  */
 @Service
 public class ActGroupEntityService extends GroupEntityManager {

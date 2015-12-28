@@ -19,7 +19,7 @@ import com.google.common.collect.Lists;
  * </p>
  *
  * @author poplar.yfyang
- * @version 1.0 2013-01-02 12:57 PM
+ * @date 1.0 2013-01-02 12:57 PM
  * @since JDK 1.5
  */
 public class OrderProperties extends Properties {

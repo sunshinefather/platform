@@ -14,7 +14,7 @@ import freemarker.template.Template;
 /**
  * FreeMarkers工具类 
  * @author sunshine
- * @version 2015-11-15
+ * @date 2015-11-15
  */
 public class FreeMarkers {
 

@@ -7,7 +7,7 @@ import com.platform.common.persistence.TreeEntity;
 /**
  * 区域Entity 
  * @author sunshine
- * @version 2013-05-15
+ * @date 2013-05-15
  */
 public class Area extends TreeEntity<Area> {
 

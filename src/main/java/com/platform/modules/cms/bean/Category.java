@@ -14,7 +14,7 @@ import com.platform.modules.sys.bean.Office;
 /**
  * 栏目Entity 
  * @author sunshine
- * @version 2013-05-15
+ * @date 2013-05-15
  */
 public class Category extends TreeEntity<Category> {
 

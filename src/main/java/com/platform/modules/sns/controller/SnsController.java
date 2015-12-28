@@ -22,7 +22,7 @@ import com.platform.modules.sns.service.SnsService;
 /**
  * 圈子Controller
  * @author sunshine
- * @version 2015-12-25
+ * @date 2015-12-25
  */
 @Controller
 @RequestMapping(value = "${adminPath}/sns/sns")

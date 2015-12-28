@@ -9,7 +9,7 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 站点Entity 
  * @author sunshine
- * @version 2013-05-15
+ * @date 2013-05-15
  */
 public class Site extends DataEntity<Site> {
 	

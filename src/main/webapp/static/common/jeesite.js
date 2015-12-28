@@ -3,7 +3,7 @@
  * 
  * 通用公共方法 
  * @author sunshine
- * @version 2014-4-29
+ * @date 2014-4-29
  */
 $(document).ready(function() {
 	try{

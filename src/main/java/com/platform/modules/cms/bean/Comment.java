@@ -12,7 +12,7 @@ import com.platform.modules.sys.bean.User;
 /**
  * 评论Entity 
  * @author sunshine
- * @version 2013-05-15
+ * @date 2013-05-15
  */
 public class Comment extends DataEntity<Comment> {
 

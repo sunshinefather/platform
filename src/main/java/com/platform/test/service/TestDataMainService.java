@@ -17,7 +17,7 @@ import com.platform.test.dao.TestDataChildDao;
 /**
  * 主子表生成Service 
  * @author sunshine
- * @version 2015-04-06
+ * @date 2015-04-06
  */
 @Service
 @Transactional(readOnly = true)

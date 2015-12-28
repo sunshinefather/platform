@@ -24,7 +24,7 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 站点Controller 
  * @author sunshine
- * @version 2013-3-23
+ * @date 2013-3-23
  */
 @Controller
 @RequestMapping(value = "${adminPath}/cms/site")

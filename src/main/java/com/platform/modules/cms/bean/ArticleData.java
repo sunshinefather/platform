@@ -9,7 +9,7 @@ import com.platform.common.persistence.DataEntity;
 /**
  * 文章Entity 
  * @author sunshine
- * @version 2013-01-15
+ * @date 2013-01-15
  */
 public class ArticleData extends DataEntity<ArticleData> {
 

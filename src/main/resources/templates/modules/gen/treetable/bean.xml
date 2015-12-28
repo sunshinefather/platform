@@ -14,7 +14,7 @@ import com.platform.common.persistence.TreeEntity;
 /**
  * ${functionName}Entity
  * @author ${functionAuthor}
- * @version ${functionVersion}
+ * @date ${functionCreateDate}
  */
 public class ${ClassName} extends TreeEntity<${ClassName}> {
 	

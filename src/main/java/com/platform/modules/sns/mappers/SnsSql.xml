@@ -37,31 +37,10 @@
 		FROM sns a
 		<include refid="snsJoins"/>
 		<where>
-			
 			<if test="snsname != null and snsname != ''">
-				AND a.snsname LIKE 
-					<if test="dbName == 'oracle'">'%'||#{snsname}||'%'</if>
-					<if test="dbName == 'mssql'">'%'+#{snsname}+'%'</if>
-					<if test="dbName == 'mysql'">concat('%',#{snsname},'%')</if>
+				AND a.snsname LIKE concat('%',#{snsname},'%')
 			</if>
 		</where>
-		<choose>
-			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
-				ORDER BY ${page.orderBy}
-			</when>
-			<otherwise>
-			</otherwise>
-		</choose>
-	</select>
-	
-	<select id="findAllList" resultType="Sns">
-		SELECT 
-			<include refid="snsColumns"/>
-		FROM sns a
-		<include refid="snsJoins"/>
-		<where>
-			
-		</where>		
 		<choose>
 			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
 				ORDER BY ${page.orderBy}

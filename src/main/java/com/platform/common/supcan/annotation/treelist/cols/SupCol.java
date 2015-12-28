@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 /**
  * 硕正Col注解
  * @author WangZhen
- * @version 2013-11-12
+ * @date 2013-11-12
  * @see 在get方法上添加注解，应用实例：
  * 
  * 		@SupCol(text="归属公司", sort = 10)

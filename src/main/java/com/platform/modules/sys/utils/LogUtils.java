@@ -25,7 +25,7 @@ import com.platform.modules.sys.dao.MenuDao;
 /**
  * 字典工具类 
  * @author sunshine
- * @version 2014-11-7
+ * @date 2014-11-7
  */
 public class LogUtils {
 	
@@ -109,7 +109,7 @@ public class LogUtils {
 		Map<String, String> menuMap = (Map<String, String>)CacheUtils.get(CACHE_MENU_NAME_PATH_MAP);
 		if (menuMap == null){
 			menuMap = Maps.newHashMap();
-			List<Menu> menuList = menuDao.findAllList(new Menu());
+			List<Menu> menuList = menuDao.findList(new Menu());
 			for (Menu menu : menuList){
 				// 获取菜单名称路径（如：系统设置-机构用户-用户管理-编辑）
 				String namePath = "";

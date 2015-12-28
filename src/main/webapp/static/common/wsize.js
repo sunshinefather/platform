@@ -3,7 +3,7 @@
  * 
  * 主框架窗口大小调整 
  * @author sunshine
- * @version 2013-11-09
+ * @date 2013-11-09
  */
 
 $("#left").width(leftWidth);

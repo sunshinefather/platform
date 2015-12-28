@@ -14,7 +14,7 @@ import com.platform.modules.sys.bean.User;
 /**
  * 通知通告Entity 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 public class OaNotify extends DataEntity<OaNotify> {
 	

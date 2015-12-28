@@ -14,7 +14,7 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 数据Entity类 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 public abstract class DataEntity<T> extends BaseEntity<T> {
 

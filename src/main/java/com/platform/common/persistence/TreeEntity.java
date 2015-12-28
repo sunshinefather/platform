@@ -9,7 +9,7 @@ import com.platform.common.utils.reflection.ReflectionUtils;
 /**
  * 数据Entity类 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 public abstract class TreeEntity<T> extends DataEntity<T> {
 

@@ -13,7 +13,7 @@ import com.platform.modules.sns.dao.SnsDao;
 /**
  * 圈子Service
  * @author sunshine
- * @version 2015-12-25
+ * @date 2015-12-25
  */
 @Service
 @Transactional(readOnly = true)

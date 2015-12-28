@@ -16,7 +16,7 @@ import com.platform.common.utils.reflection.ReflectionUtils;
  * Collections工具集.
  * 在JDK的Collections和Guava的Collections2后, 命名为Collections3.
  * @author calvin
- * @version 2013-01-15
+ * @date 2013-01-15
  */
 @SuppressWarnings("rawtypes")
 public class Collections3 {

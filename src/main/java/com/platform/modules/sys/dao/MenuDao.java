@@ -9,7 +9,7 @@ import com.platform.modules.sys.bean.Menu;
 /**
  * 菜单DAO接口 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 @MyBatisDao
 public interface MenuDao extends CrudDao<Menu> {

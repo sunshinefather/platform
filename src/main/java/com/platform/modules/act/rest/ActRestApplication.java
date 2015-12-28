@@ -11,7 +11,7 @@ import org.restlet.routing.Router;
 /**
  * Activit Rest 
  * @author sunshine
- * @version 2013-11-03
+ * @date 2013-11-03
  */
 public class ActRestApplication extends ActivitiRestApplication {
 

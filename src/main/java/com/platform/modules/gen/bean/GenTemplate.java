@@ -14,7 +14,7 @@ import com.platform.common.utils.StringUtils;
 /**
  * 生成方案Entity 
  * @author sunshine
- * @version 2013-10-15
+ * @date 2013-10-15
  */
 @XmlRootElement(name="template")
 public class GenTemplate extends DataEntity<GenTemplate> {

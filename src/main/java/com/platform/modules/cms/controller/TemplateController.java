@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * 站点Controller
  * @author SongLai
- * @version 2013-3-23
+ * @date 2013-3-23
  */
 @Controller
 @RequestMapping(value = "${adminPath}/cms/template")

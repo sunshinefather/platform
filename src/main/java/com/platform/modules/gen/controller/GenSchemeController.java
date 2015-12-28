@@ -25,7 +25,7 @@ import com.platform.modules.gen.util.GenUtils;
 /**
  * 生成方案Controller 
  * @author sunshine
- * @version 2013-10-15
+ * @date 2013-10-15
  */
 @Controller
 @RequestMapping(value = "${adminPath}/gen/genScheme")

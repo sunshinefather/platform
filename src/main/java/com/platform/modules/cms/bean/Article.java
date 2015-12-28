@@ -16,7 +16,7 @@ import com.platform.modules.cms.utils.CmsUtils;
 /**
  * 文章Entity 
  * @author sunshine
- * @version 2013-05-15
+ * @date 2013-05-15
  */
 public class Article extends DataEntity<Article> {
 

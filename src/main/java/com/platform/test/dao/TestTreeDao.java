@@ -7,7 +7,7 @@ import com.platform.test.bean.TestTree;
 /**
  * 树结构生成DAO接口 
  * @author sunshine
- * @version 2015-04-06
+ * @date 2015-04-06
  */
 @MyBatisDao
 public interface TestTreeDao extends TreeDao<TestTree> {

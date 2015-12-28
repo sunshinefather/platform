@@ -21,7 +21,7 @@ import com.platform.modules.sys.service.SystemService;
 /**
  * Activiti User Entity Service 
  * @author sunshine
- * @version 2013-11-03
+ * @date 2013-11-03
  */
 @Service
 public class ActUserEntityService extends UserEntityManager {

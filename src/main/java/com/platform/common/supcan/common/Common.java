@@ -11,7 +11,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 /**
  * 硕正Common
  * @author WangZhen
- * @version 2013-11-04
+ * @date 2013-11-04
  */
 public class Common {
 

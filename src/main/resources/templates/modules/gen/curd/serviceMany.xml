@@ -24,7 +24,7 @@ import ${packageName}.${moduleName}.dao.${c.className?cap_first}Dao;
 /**
  * ${functionName}Service
  * @author ${functionAuthor}
- * @version ${functionVersion}
+ * @date ${functionCreateDate}
  */
 @Service
 @Transactional(readOnly = true)

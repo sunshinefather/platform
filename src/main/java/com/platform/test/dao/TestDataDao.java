@@ -7,7 +7,7 @@ import com.platform.test.bean.TestData;
 /**
  * 单表生成DAO接口 
  * @author sunshine
- * @version 2015-04-06
+ * @date 2015-04-06
  */
 @MyBatisDao
 public interface TestDataDao extends CrudDao<TestData> {

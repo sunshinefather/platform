@@ -14,7 +14,7 @@ import com.platform.modules.sys.bean.User;
 /**
  * 留言Entity 
  * @author sunshine
- * @version 2013-05-15
+ * @date 2013-05-15
  */
 public class Guestbook extends DataEntity<Guestbook> {
 	

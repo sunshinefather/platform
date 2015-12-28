@@ -9,7 +9,7 @@ import com.platform.modules.oa.bean.OaNotifyRecord;
 /**
  * 通知通告记录DAO接口 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 @MyBatisDao
 public interface OaNotifyRecordDao extends CrudDao<OaNotifyRecord> {

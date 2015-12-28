@@ -7,7 +7,7 @@ import com.platform.modules.act.bean.Act;
 /**
  * 审批DAO接口 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 @MyBatisDao
 public interface ActDao extends CrudDao<Act> {

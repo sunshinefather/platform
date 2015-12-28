@@ -17,7 +17,7 @@ import com.platform.modules.sys.service.LogService;
 /**
  * 日志Controller 
  * @author sunshine
- * @version 2013-6-2
+ * @date 2013-6-2
  */
 @Controller
 @RequestMapping(value = "${adminPath}/sys/log")

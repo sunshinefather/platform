@@ -30,7 +30,7 @@ import com.platform.common.web.ServletUtils;
  * 自定义授权会话管理类 
  
  * @author sunshine
- * @version 2014-7-20
+ * @date 2014-7-20
  */
 public class JedisSessionDAO extends AbstractSessionDAO implements SessionDAO {
 

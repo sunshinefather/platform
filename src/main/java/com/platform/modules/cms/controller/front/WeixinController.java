@@ -13,7 +13,7 @@ import com.platform.modules.cms.utils.WiexinSignUtil;
 /**
  * 测试Controller 
  * @author sunshine
- * @version 2014-02-28
+ * @date 2014-02-28
  */
 @Controller
 @RequestMapping(value = "${frontPath}/weixin")

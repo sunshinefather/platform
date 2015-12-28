@@ -32,7 +32,7 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 角色Controller 
  * @author sunshine
- * @version 2013-12-05
+ * @date 2013-12-05
  */
 @Controller
 @RequestMapping(value = "${adminPath}/sys/role")

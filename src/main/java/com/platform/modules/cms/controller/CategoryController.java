@@ -32,7 +32,7 @@ import com.platform.modules.cms.utils.TplUtils;
 /**
  * 栏目Controller 
  * @author sunshine
- * @version 2013-4-21
+ * @date 2013-4-21
  */
 @Controller
 @RequestMapping(value = "${adminPath}/cms/category")

@@ -9,7 +9,7 @@ import com.platform.common.utils.StringUtils;
 /**
  * 业务表字段Entity 
  * @author sunshine
- * @version 2013-10-15
+ * @date 2013-10-15
  */
 public class GenTableColumn extends DataEntity<GenTableColumn> {
 	
@@ -292,12 +292,12 @@ public class GenTableColumn extends DataEntity<GenTableColumn> {
 	 */
 	public Boolean getIsNotBaseField(){
 		return !StringUtils.equals(getSimpleJavaField(), "id")
-				&& !StringUtils.equals(getSimpleJavaField(), "remarks")
 				&& !StringUtils.equals(getSimpleJavaField(), "createBy")
 				&& !StringUtils.equals(getSimpleJavaField(), "createDate")
 				&& !StringUtils.equals(getSimpleJavaField(), "updateBy")
 				&& !StringUtils.equals(getSimpleJavaField(), "updateDate")
-				&& !StringUtils.equals(getSimpleJavaField(), "delFlag");
+				&& !StringUtils.equals(getSimpleJavaField(), "delFlag")
+				&& !StringUtils.equals(getSimpleJavaField(), "remarks");
 	}
 	
 }

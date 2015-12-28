@@ -7,7 +7,7 @@ import com.platform.modules.sys.bean.User;
 /**
  * 审批Entity 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 public class TestAudit extends ActEntity<TestAudit> {
 	

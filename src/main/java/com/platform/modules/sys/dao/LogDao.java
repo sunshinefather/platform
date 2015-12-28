@@ -7,7 +7,7 @@ import com.platform.modules.sys.bean.Log;
 /**
  * 日志DAO接口 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 @MyBatisDao
 public interface LogDao extends CrudDao<Log> {

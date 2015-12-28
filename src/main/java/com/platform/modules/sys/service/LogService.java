@@ -14,7 +14,7 @@ import com.platform.modules.sys.dao.LogDao;
 /**
  * 日志Service 
  * @author sunshine
- * @version 2014-05-16
+ * @date 2014-05-16
  */
 @Service
 @Transactional(readOnly = true)

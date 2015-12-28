@@ -11,7 +11,7 @@ import com.platform.common.persistence.TreeEntity;
 /**
  * 机构Entity 
  * @author sunshine
- * @version 2015-11-15
+ * @date 2015-11-15
  */
 public class Office extends TreeEntity<Office> {
 
