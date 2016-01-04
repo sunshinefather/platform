@@ -40,7 +40,7 @@ public class ${ClassName} extends DataEntity<${ClassName}> {
 	private ${c.simpleJavaType} end${c.simpleJavaField?cap_first};
 		</#if>
 	</#list>
-	<#-- 子表列表字段 -->
+	<#-- 子表列表字段(一对多) -->
 	<#list table.childList as c>
 	private List<${c.className?cap_first}> ${c.className?uncap_first}List = Lists.newArrayList();
 	</#list>

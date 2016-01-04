@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.platform.modules.sys.bean.Dict;
 
 /**
- * 生成方案Entity 
+ * 模板配置映射 
  * @author sunshine
  * @date 2015-10-15
  */

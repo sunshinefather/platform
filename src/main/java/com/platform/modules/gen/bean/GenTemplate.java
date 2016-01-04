@@ -12,7 +12,7 @@ import com.platform.common.persistence.DataEntity;
 import com.platform.common.utils.StringUtils;
 
 /**
- * 生成方案Entity 
+ * 模板描述
  * @author sunshine
  * @date 2013-10-15
  */

@@ -9,11 +9,14 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.LocaleResolver;
+
 import com.google.common.collect.Lists;
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
 	
@@ -316,11 +319,12 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     	return result.toString();
     }
 
-	public  static String toUTF8(String str) throws Exception {
+	public  static String toUTF8(String str){
 		if (isEmpty(str)) {
 			return "";
 		}
 		String retStr = str;
+		try{
 		byte b[];
 		b = str.getBytes("ISO8859_1");
 
@@ -334,6 +338,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 				retStr = new String(b, "utf8");
 				break;
 			}
+		}
+		}catch(Exception e){
 		}
 		return retStr;
 	}
@@ -472,5 +478,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 			}
 		}
 		return 0;
+	}
+	public static void main(String[] args) {
+		System.out.println("");
 	}
 }

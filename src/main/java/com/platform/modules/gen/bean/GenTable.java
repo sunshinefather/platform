@@ -7,6 +7,7 @@ import com.platform.common.persistence.DataEntity;
 import com.platform.common.utils.StringUtils;
 
 /**
+ * 表描述
  * @author sunshine
  * @date 2015-10-15
  */

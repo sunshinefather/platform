@@ -43,7 +43,7 @@ public class GenUtils {
 	private static Logger logger = LoggerFactory.getLogger(GenUtils.class);
 
 	/**
-	 * 初始化列属性字段
+	 * 约定化列属性字段
 	 * @param genTable
 	 */
 	public static void initColumnField(GenTable genTable){
@@ -60,16 +60,15 @@ public class GenUtils {
 			}
 			
 			// 设置java类型
-			if (StringUtils.startsWithIgnoreCase(column.getJdbcType(), "CHAR")
-					|| StringUtils.startsWithIgnoreCase(column.getJdbcType(), "VARCHAR")
-					|| StringUtils.startsWithIgnoreCase(column.getJdbcType(), "NARCHAR")){
+			if (StringUtils.containsIgnoreCase(column.getJdbcType(), "CHAR")
+					|| StringUtils.containsIgnoreCase(column.getJdbcType(), "TEXT")){
 				column.setJavaType("String");
 			}else if (StringUtils.startsWithIgnoreCase(column.getJdbcType(), "DATETIME")
 					|| StringUtils.startsWithIgnoreCase(column.getJdbcType(), "DATE")
 					|| StringUtils.startsWithIgnoreCase(column.getJdbcType(), "TIMESTAMP")){
 				column.setJavaType("java.util.Date");
 				column.setShowType("dateselect");
-			}else if (StringUtils.startsWithIgnoreCase(column.getJdbcType(), "BIGINT")
+			}else if (StringUtils.containsIgnoreCase(column.getJdbcType(), "INT")
 					|| StringUtils.startsWithIgnoreCase(column.getJdbcType(), "NUMBER")){
 				// 如果是浮点型
 				String[] ss = StringUtils.split(StringUtils.substringBetween(column.getJdbcType(), "(", ")"), ",");

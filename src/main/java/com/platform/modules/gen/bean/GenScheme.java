@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.Length;
 import com.platform.common.persistence.DataEntity;
 
 /**
- * 生成方案Entity 
+ * 确定生成方案 
  * @author sunshine
  * @date 2013-10-15
  */

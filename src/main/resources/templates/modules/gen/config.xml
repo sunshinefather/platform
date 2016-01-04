@@ -47,8 +47,8 @@
 		<dict value="com.platform.modules.sys.bean.User" label="User"/>
 		<dict value="com.platform.modules.sys.bean.Office" label="Office"/>
 		<dict value="com.platform.modules.sys.bean.Area" label="Area"/>
-		<dict value="This" label="ThisObj" description="生成当前对象"/>
-		<dict value="Custom" label="Custom" description="自定义对象，生成后手动设置"/>
+		<dict value="This" label="ThisObj" description="生成对象本身"/>
+		<dict value="Custom" label="Custom" description="自定义对象,生成后手动设置"/>
 	</javaType>
 	<!-- 查询类型 -->
 	<queryType>
