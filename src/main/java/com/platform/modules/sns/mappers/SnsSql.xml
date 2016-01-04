@@ -8,7 +8,7 @@
 		a.snsphotoid AS "snsphotoid",
 		a.description AS "description",
 		a.createdate AS "createdate",
-		a.createuserid AS "createuserid",
+		a.createuserid AS "user.id",
 		a.snssubject AS "snssubject",
 		a.categoryid AS "categoryid",
 		a.defaults AS "defaults",
@@ -16,7 +16,8 @@
 		a.recommend AS "recommend",
 		a.attentioncount AS "attentioncount",
 		a.postcount AS "postcount",
-		a.todaypostcount AS "todaypostcount"
+		a.todaypostcount AS "todaypostcount",
+		u6.name AS "user.name"
 	</sql>
 	
 	<sql id="snsJoins">
@@ -37,10 +38,31 @@
 		FROM sns a
 		<include refid="snsJoins"/>
 		<where>
+			
 			<if test="snsname != null and snsname != ''">
-				AND a.snsname LIKE concat('%',#{snsname},'%')
+				AND a.snsname LIKE 
+					<if test="dbName == 'oracle'">'%'||#{snsname}||'%'</if>
+					<if test="dbName == 'mssql'">'%'+#{snsname}+'%'</if>
+					<if test="dbName == 'mysql'">concat('%',#{snsname},'%')</if>
 			</if>
 		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="Sns">
+		SELECT 
+			<include refid="snsColumns"/>
+		FROM sns a
+		<include refid="snsJoins"/>
+		<where>
+			
+		</where>		
 		<choose>
 			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
 				ORDER BY ${page.orderBy}
@@ -72,7 +94,7 @@
 			#{snsphotoid},
 			#{description},
 			#{createdate},
-			#{createuserid},
+			#{user.id},
 			#{snssubject},
 			#{categoryid},
 			#{defaults},
@@ -89,7 +111,7 @@
 			snsname = #{snsname},
 			snsphotoid = #{snsphotoid},
 			description = #{description},
-			createuserid = #{createuserid},
+			createuserid = #{user.id},
 			snssubject = #{snssubject},
 			categoryid = #{categoryid},
 			defaults = #{defaults},

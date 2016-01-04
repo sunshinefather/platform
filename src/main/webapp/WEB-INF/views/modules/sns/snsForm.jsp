@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/include/taglib.jsp"%>
 <html>
 <head>
-	<title>添加圈子管理</title>
+	<title>圈子管理</title>
 	<meta name="decorator" content="default"/>
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -27,10 +27,10 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li><a href="${ctx}/sns/sns/">添加圈子列表</a></li>
-		<li class="active"><a href="${ctx}/sns/sns/form?id=${sns.id}">添加圈子<shiro:hasPermission name="sns:sns:edit">${not empty sns.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="sns:sns:edit">查看</shiro:lacksPermission></a></li>
+		<li><a href="${ctx}//sns/sns/">圈子列表</a></li>
+		<li class="active"><a href="${ctx}//sns/sns/form?id=${sns.id}">圈子<shiro:hasPermission name="sns:sns:edit">${not empty sns.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="sns:sns:edit">查看</shiro:lacksPermission></a></li>
 	</ul><br/>
-	<form:form id="inputForm" modelAttribute="sns" action="${ctx}/sns/sns/save" method="post" class="form-horizontal">
+	<form:form id="inputForm" modelAttribute="sns" action="${ctx}//sns/sns/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
 		<sys:message content="${message}"/>		
 		<div class="control-group">
@@ -56,7 +56,7 @@
 		<div class="control-group">
 			<label class="control-label">圈子创建人Id：</label>
 			<div class="controls">
-				<sys:treeselect id="createuserid" name="createuserid" value="${sns.createuserid}" labelName="" labelValue="${sns.createuserid}"
+				<sys:treeselect id="user" name="user.id" value="${sns.user.id}" labelName="user.name" labelValue="${sns.user.name}"
 					title="用户" url="/sys/office/treeData?type=3" cssClass="" allowClear="true" notAllowSelectParent="true"/>
 			</div>
 		</div>

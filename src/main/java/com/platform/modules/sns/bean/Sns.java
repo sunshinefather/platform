@@ -3,30 +3,45 @@ package com.platform.modules.sns.bean;
 import org.hibernate.validator.constraints.Length;
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import javax.validation.constraints.NotNull;
 import com.platform.common.persistence.DataEntity;
 
 /**
- * 圈子Entity
+ * @Description 圈子Entity
  * @author sunshine
- * @date 2015-12-25
+ * @date 2016-01-04 17:58:14
  */
 public class Sns extends DataEntity<Sns> {
 	
 	private static final long serialVersionUID = 1L;
-	private String snsid;		// 主键
-	private String snsname;		// 圈子名称
-	private String snsphotoid;		// 圈子配图ID
-	private String description;		// 简介
-	private Date createdate;		// 创建时间
-	private String createuserid;		// 圈子创建人Id
-	private String snssubject;		// 圈子主题，标题
-	private String categoryid;		// 圈子类别ID
-	private String defaults;		// 是否默认拥有的圈子  为true时表示孕妇注册时自动绑定到我的圈。
-	private String sort;		// 排序
-	private String recommend;		// 是否推荐，为true时显示到我的圈里面。
-	private String attentioncount;		// 关注人数
-	private String postcount;		// 帖子数量
-	private String todaypostcount;		// 今日帖子数目
+	/**主键*/
+	private String snsid;
+	/**圈子名称*/
+	private String snsname;
+	/**圈子配图ID*/
+	private String snsphotoid;
+	/**简介*/
+	private String description;
+	/**创建时间*/
+	private Date createdate;
+	/**圈子创建人Id*/
+	private String user;
+	/**圈子主题，标题*/
+	private String snssubject;
+	/**圈子类别ID*/
+	private String categoryid;
+	/**是否默认拥有的圈子  为true时表示孕妇注册时自动绑定到我的圈。*/
+	private String defaults;
+	/**排序*/
+	private String sort;
+	/**是否推荐，为true时显示到我的圈里面。*/
+	private String recommend;
+	/**关注人数*/
+	private String attentioncount;
+	/**帖子数量*/
+	private String postcount;
+	/**今日帖子数目*/
+	private String todaypostcount;
 	
 	public Sns() {
 		super();
@@ -72,6 +87,7 @@ public class Sns extends DataEntity<Sns> {
 	}
 	
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@NotNull(message="创建时间不能为空")
 	public Date getCreatedate() {
 		return createdate;
 	}
@@ -81,12 +97,12 @@ public class Sns extends DataEntity<Sns> {
 	}
 	
 	@Length(min=0, max=32, message="圈子创建人Id长度必须介于 0 和 32 之间")
-	public String getCreateuserid() {
-		return createuserid;
+	public String getUser() {
+		return user;
 	}
 
-	public void setCreateuserid(String createuserid) {
-		this.createuserid = createuserid;
+	public void setUser(String user) {
+		this.user = user;
 	}
 	
 	@Length(min=0, max=200, message="圈子主题，标题长度必须介于 0 和 200 之间")

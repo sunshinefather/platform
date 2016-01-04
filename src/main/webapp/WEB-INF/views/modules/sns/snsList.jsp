@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/include/taglib.jsp"%>
 <html>
 <head>
-	<title>添加圈子管理</title>
+	<title>圈子管理</title>
 	<meta name="decorator" content="default"/>
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -18,10 +18,10 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li class="active"><a href="${ctx}/sns/sns/">添加圈子列表</a></li>
-		<shiro:hasPermission name="sns:sns:edit"><li><a href="${ctx}/sns/sns/form">添加圈子添加</a></li></shiro:hasPermission>
+		<li class="active"><a href="${ctx}//sns/sns/">圈子列表</a></li>
+		<shiro:hasPermission name="sns:sns:edit"><li><a href="${ctx}//sns/sns/form">圈子添加</a></li></shiro:hasPermission>
 	</ul>
-	<form:form id="searchForm" modelAttribute="sns" action="${ctx}/sns/sns/" method="post" class="breadcrumb form-search">
+	<form:form id="searchForm" modelAttribute="sns" action="${ctx}//sns/sns/" method="post" class="breadcrumb form-search">
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
 		<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
 		<ul class="ul-form">
@@ -47,7 +47,7 @@
 		<tbody>
 		<c:forEach items="${page.list}" var="sns">
 			<tr>
-				<td><a href="${ctx}/sns/sns/form?id=${sns.id}">
+				<td><a href="${ctx}//sns/sns/form?id=${sns.id}">
 					${sns.snsname}
 				</a></td>
 				<td>
@@ -63,8 +63,8 @@
 					${sns.todaypostcount}
 				</td>
 				<shiro:hasPermission name="sns:sns:edit"><td>
-    				<a href="${ctx}/sns/sns/form?id=${sns.id}">修改</a>
-					<a href="${ctx}/sns/sns/delete?id=${sns.id}" onclick="return confirmx('确认要删除该添加圈子吗？', this.href)">删除</a>
+    				<a href="${ctx}//sns/sns/form?id=${sns.id}">修改</a>
+					<a href="${ctx}//sns/sns/delete?id=${sns.id}" onclick="return confirmx('确认要删除该圈子吗？', this.href)">删除</a>
 				</td></shiro:hasPermission>
 			</tr>
 		</c:forEach>
