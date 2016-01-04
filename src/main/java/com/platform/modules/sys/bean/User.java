@@ -2,18 +2,14 @@ package com.platform.modules.sys.bean;
 
 import java.util.Date;
 import java.util.List;
-
 import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.Lists;
 import com.platform.common.config.Global;
 import com.platform.common.persistence.DataEntity;
-import com.platform.common.supcan.annotation.treelist.cols.SupCol;
 import com.platform.common.utils.Collections3;
 import com.platform.common.utils.excel.annotation.ExcelField;
 import com.platform.common.utils.excel.fieldtype.RoleListType;
@@ -86,7 +82,6 @@ public class User extends DataEntity<User> {
 		this.loginFlag = loginFlag;
 	}
 
-	@SupCol(isUnique="true", isHide="true")
 	@ExcelField(title="ID", type=1, align=2, sort=1)
 	public String getId() {
 		return id;

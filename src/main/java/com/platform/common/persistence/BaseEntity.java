@@ -2,16 +2,11 @@ package com.platform.common.persistence;
 
 import java.io.Serializable;
 import java.util.Map;
-
 import javax.xml.bind.annotation.XmlTransient;
-
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.Maps;
 import com.platform.common.config.Global;
-import com.platform.common.supcan.annotation.treelist.SupTreeList;
-import com.platform.common.supcan.annotation.treelist.cols.SupCol;
 import com.platform.common.utils.StringUtils;
 import com.platform.modules.sys.bean.User;
 import com.platform.modules.sys.utils.UserUtils;
@@ -23,7 +18,6 @@ import com.platform.modules.sys.utils.UserUtils;
  * @date:   2015年11月26日 下午2:10:32
  * @param <T>
  */
-@SupTreeList
 public abstract class BaseEntity<T> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -62,8 +56,7 @@ public abstract class BaseEntity<T> implements Serializable {
 		this();
 		this.id = id;
 	}
-
-	@SupCol(isUnique="true", isHide="true")
+	
 	public String getId() {
 		return id;
 	}

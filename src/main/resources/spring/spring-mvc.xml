@@ -37,24 +37,6 @@
 					</bean>
 				</property>
             </bean>
-            <bean class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
-		        <constructor-arg>
-		        	<bean class="org.springframework.oxm.xstream.XStreamMarshaller">
-				        <property name="streamDriver">
-				            <bean class="com.thoughtworks.xstream.io.xml.StaxDriver"/>
-				        </property>
-				        <property name="annotatedClasses">
-				            <list>
-				                <value>com.platform.common.persistence.BaseEntity</value>
-				                <value>com.platform.common.supcan.treelist.TreeList</value>
-				                <value>com.platform.common.supcan.treelist.cols.Col</value>
-				                <value>com.platform.common.supcan.treelist.cols.Group</value>
-				            </list>
-				        </property>
-				    </bean>
-		        </constructor-arg>
-		        <property name="supportedMediaTypes" value="application/xml;charset=UTF-8"/>
-			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
 	

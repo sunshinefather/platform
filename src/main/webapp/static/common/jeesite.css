@@ -34,9 +34,6 @@ input.btn:hover {*color:#333333}
 .table-striped tbody>tr:nth-child(odd)>td, .table-striped tbody>tr:nth-child(odd)>th{background-color:#F5F5F5}
 
 .sort-column{color:#0663A2;cursor:pointer;}
-
-.supcan {border:1px #d3d3d3 solid;height:300px;}
-
 .control-group {padding-bottom:8px;margin-bottom:0;border-bottom:1px dotted #dddddd;} legend + .control-group {margin-top:8px;}
 .controls .lbl {display:inline-block;padding-top:5px;margin-bottom:0;vertical-align:middle;}
 .measure-input {background:url("../images/ruler.gif") repeat-x scroll 0 bottom transparent;}
