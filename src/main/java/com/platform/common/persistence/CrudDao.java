@@ -42,16 +42,7 @@ public interface CrudDao<T> {
 	public int update(T entity);
 	
 	/**
-	 * 删除数据（一般为逻辑删除，更新del_flag字段为1）
-	 * @param id
-	 * @see public int delete(T entity)
-	 * @return
-	 */
-	@Deprecated
-	public int delete(String id);
-	
-	/**
-	 * 删除数据（一般为逻辑删除，更新del_flag字段为1）
+	 * 删除数据（逻辑删除，更新del_flag字段为1）
 	 * @param entity
 	 */
 	public int delete(T entity);

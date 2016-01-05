@@ -2,11 +2,9 @@ package com.platform.modules.sys.controller;
 
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.ConstraintViolationException;
-
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.platform.common.beanvalidator.BeanValidators;
@@ -38,7 +35,7 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 用户Controller 
  * @author sunshine
- * @date 2013-8-29
+ * @date 2015-8-29
  */
 @Controller
 @RequestMapping(value = "${adminPath}/sys/user")
@@ -344,26 +341,4 @@ public class UserController extends BaseController {
 		}
 		return mapList;
 	}
-    
-//	@InitBinder
-//	public void initBinder(WebDataBinder b) {
-//		b.registerCustomEditor(List.class, "roleList", new PropertyEditorSupport(){
-//			@Autowired
-//			private SystemService systemService;
-//			@Override
-//			public void setAsText(String text) throws IllegalArgumentException {
-//				String[] ids = StringUtils.split(text, ",");
-//				List<Role> roles = new ArrayList<Role>();
-//				for (String id : ids) {
-//					Role role = systemService.getRole(Long.valueOf(id));
-//					roles.add(role);
-//				}
-//				setValue(roles);
-//			}
-//			@Override
-//			public String getAsText() {
-//				return Collections3.extractToString((List) getValue(), "id", ",");
-//			}
-//		});
-//	}
 }

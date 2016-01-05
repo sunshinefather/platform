@@ -24,11 +24,6 @@
 		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>
 	</cache>
 	
-	<!-- 工作流模块缓存 -->
-	<cache name="actCache" maxEntriesLocalHeap="100" eternal="true" overflowToDisk="true">
-		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>
-	</cache>
-	
 	<!-- 内容管理模块缓存
 	<cache name="cmsCache" maxEntriesLocalHeap="100" eternal="true" overflowToDisk="true">
 		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>

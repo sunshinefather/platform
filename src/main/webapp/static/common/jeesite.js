@@ -1,6 +1,4 @@
-/*!
- * Copyright &copy; 2012-2014 <a href="https://github.com/platform">JeeSite</a> All rights reserved.
- * 
+/*
  * 通用公共方法 
  * @author sunshine
  * @date 2014-4-29
@@ -111,7 +109,7 @@ function confirmx(mess, href, closed){
 			if (typeof href == 'function') {
 				href();
 			}else{
-				resetTip(); //loading();
+				resetTip();
 				location = href;
 			}
 		}
@@ -182,13 +180,12 @@ function cookie(name, value, options) {
         var domain = options.domain ? '; domain=' + options.domain : '';
         var secure = options.secure ? '; secure' : '';
         document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
-    } else { // only name given, get cookie
+    } else {
         var cookieValue = null;
         if (document.cookie && document.cookie != '') {
             var cookies = document.cookie.split(';');
             for (var i = 0; i < cookies.length; i++) {
                 var cookie = jQuery.trim(cookies[i]);
-                // Does this cookie string begin with the name we want?
                 if (cookie.substring(0, name.length + 1) == (name + '=')) {
                     cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
                     break;

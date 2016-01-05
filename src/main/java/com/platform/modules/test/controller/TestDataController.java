@@ -2,7 +2,6 @@ package com.platform.modules.test.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,8 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import com.platform.common.config.Global;
 import com.platform.common.persistence.Page;
 import com.platform.common.utils.StringUtils;
 import com.platform.common.web.BaseController;
@@ -66,7 +63,7 @@ public class TestDataController extends BaseController {
 		}
 		testDataService.save(testData);
 		addMessage(redirectAttributes, "保存单表成功");
-		return "redirect:"+Global.getAdminPath()+"/test/testData/?repage";
+		return "redirect:"+adminPath+"/test/testData/?repage";
 	}
 	
 	@RequiresPermissions("test:testData:edit")
@@ -74,7 +71,7 @@ public class TestDataController extends BaseController {
 	public String delete(TestData testData, RedirectAttributes redirectAttributes) {
 		testDataService.delete(testData);
 		addMessage(redirectAttributes, "删除单表成功");
-		return "redirect:"+Global.getAdminPath()+"/test/testData/?repage";
+		return "redirect:"+adminPath+"/test/testData/?repage";
 	}
 
 }
