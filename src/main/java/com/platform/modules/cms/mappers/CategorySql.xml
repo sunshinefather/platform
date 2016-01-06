@@ -236,7 +236,7 @@
 	<update id="delete">
 		UPDATE cms_category SET 
 			del_flag = #{DEL_FLAG_DELETE}
-		WHERE id = #{id}
+		WHERE id = #{id} OR parent_ids LIKE CONCAT('%,', #{id}, ',%')
 	</update>
 	
 	<select id="findByParentIdAndSiteId" resultType="Category">

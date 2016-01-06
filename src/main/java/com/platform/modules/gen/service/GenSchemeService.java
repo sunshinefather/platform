@@ -2,11 +2,9 @@ package com.platform.modules.gen.service;
 
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.platform.common.persistence.Page;
 import com.platform.common.service.BaseService;
 import com.platform.common.utils.StringUtils;

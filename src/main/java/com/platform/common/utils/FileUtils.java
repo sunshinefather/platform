@@ -599,11 +599,6 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 		return filePath.substring(index + dirPaths.length());
 	}
 	
-	/**
-	 * 修复路径，将 \\ 或 / 等替换为 File.separator
-	 * @param path
-	 * @return
-	 */
 	public static String path(String path){
 		String p = StringUtils.replace(path, "\\", "/");
 		p = StringUtils.join(StringUtils.split(p, "/"), "/");
@@ -613,7 +608,9 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 		if (!StringUtils.endsWithAny(p, "/") && StringUtils.endsWithAny(path, "\\", "/")){
 			p = p + "/";
 		}
+		if (path != null && path.startsWith("/")){
+			 p = "/" + p;
+			}
 		return p;
 	}
-
 }

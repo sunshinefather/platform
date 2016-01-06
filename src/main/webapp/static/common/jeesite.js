@@ -92,6 +92,10 @@ function loading(mess){
 	top.$.jBox.tip(mess,'loading',{opacity:0});
 }
 
+function closeLoading(){
+	resetTip();
+	closeTip();
+}
 // 警告对话框
 function alertx(mess, closed){
 	top.$.jBox.info(mess, '提示', {closed:function(){
