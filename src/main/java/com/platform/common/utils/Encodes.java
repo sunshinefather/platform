@@ -1,5 +1,6 @@
 package com.platform.common.utils;
 
+import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -10,19 +11,21 @@ import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang3.StringEscapeUtils;
 
 /**
- * 封装各种格式的编码解码工具类.
- * 1.Commons-Codec的 hex/base64 编码
- * 2.自制的base62 编码
- * 3.Commons-Lang的xml/html escape
- * 4.JDK提供的URLEncoder
- * @author calvin
- * @date 2013-01-15
+ * 编码解码工具类
+ * @author sunshine
+ * @date 2015-01-15
  */
 public class Encodes {
 
 	private static final String DEFAULT_URL_ENCODING = "UTF-8";
-	private static final char[] BASE62 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();
-
+	private static final char[] encodes = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".toCharArray();
+	private static byte[] decodes = new byte[256];  
+	static {  
+	    for (int i = 0; i < encodes.length; i++) {  
+	        decodes[encodes[i]] = (byte) i;
+	    }
+	}
+	
 	/**
 	 * Hex编码.
 	 */
@@ -47,24 +50,6 @@ public class Encodes {
 	public static String encodeBase64(byte[] input) {
 		return new String(Base64.encodeBase64(input));
 	}
-	
-	/**
-	 * Base64编码.
-	 */
-	public static String encodeBase64(String input) {
-		try {
-			return new String(Base64.encodeBase64(input.getBytes(DEFAULT_URL_ENCODING)));
-		} catch (UnsupportedEncodingException e) {
-			return "";
-		}
-	}
-
-//	/**
-//	 * Base64编码, URL安全(将Base64中的URL非法字符'+'和'/'转为'-'和'_', 见RFC3548).
-//	 */
-//	public static String encodeUrlSafeBase64(byte[] input) {
-//		return Base64.encodeBase64URLSafe(input);
-//	}
 
 	/**
 	 * Base64解码.
@@ -72,29 +57,61 @@ public class Encodes {
 	public static byte[] decodeBase64(String input) {
 		return Base64.decodeBase64(input.getBytes());
 	}
+    
+	/**
+	 * Base62编码.
+	 */
+	public static String encodeBase62(byte[] data) {  
+	    StringBuffer sb = new StringBuffer(data.length * 2);  
+	    int pos = 0, val = 0;  
+	    for (int i = 0; i < data.length; i++) {  
+	        val = (val << 8) | (data[i] & 0xFF);  
+	        pos += 8;  
+	        while (pos > 5) {  
+	            char c = encodes[val >> (pos -= 6)];  
+	            sb.append(  
+	            c == 'i' ? "ia" :  
+	            c == '+' ? "ib" :  
+	            c == '/' ? "ic" : c);  
+	            val &= ((1 << pos) - 1);  
+	        }  
+	    }  
+	    if (pos > 0) {  
+	        char c = encodes[val << (6 - pos)];  
+	        sb.append(  
+	        c == 'i' ? "ia" :  
+	        c == '+' ? "ib" :  
+	        c == '/' ? "ic" : c);  
+	    }  
+	    return sb.toString();  
+	} 
 	
 	/**
-	 * Base64解码.
+	 * Base62解码.
 	 */
-	public static String decodeBase64String(String input) {
-		try {
-			return new String(Base64.decodeBase64(input.getBytes()), DEFAULT_URL_ENCODING);
-		} catch (UnsupportedEncodingException e) {
-			return "";
-		}
+	public static byte[] decodeBase62(String input) {  
+		char[] data = input.toCharArray();
+	    ByteArrayOutputStream baos = new ByteArrayOutputStream(data.length);  
+	    int pos = 0, val = 0;  
+	    for (int i = 0; i < data.length; i++) {  
+	        char c = data[i];  
+	        if (c == 'i') {  
+	            c = data[++i];  
+	            c =  
+	            c == 'a' ? 'i' :  
+	            c == 'b' ? '+' :  
+	            c == 'c' ? '/' : data[--i];  
+	        }  
+	        val = (val << 6) | decodes[c];  
+	        pos += 6;  
+	        while (pos > 7) {  
+	            baos.write(val >> (pos -= 8));  
+	            val &= ((1 << pos) - 1);  
+	        }  
+	    }  
+	    return baos.toByteArray();  
 	}
-
-	/**
-	 * Base62编码。
-	 */
-	public static String encodeBase62(byte[] input) {
-		char[] chars = new char[input.length];
-		for (int i = 0; i < input.length; i++) {
-			chars[i] = BASE62[((input[i] & 0xFF) % BASE62.length)];
-		}
-		return new String(chars);
-	}
-
+	
 	/**
 	 * Html 转码.
 	 */
@@ -138,7 +155,6 @@ public class Encodes {
 	 * URL 解码, Encode默认为UTF-8. 
 	 */
 	public static String urlDecode(String part) {
-
 		try {
 			return URLDecoder.decode(part, DEFAULT_URL_ENCODING);
 		} catch (UnsupportedEncodingException e) {
