@@ -18,7 +18,7 @@ import com.platform.common.utils.StringUtils;
  * @ClassName: Reflections
  * @Description:TODO
  * @author: sunshine
- * @date: 2014年5月15日 下午5:54:25
+ * @date: 2015年5月15日 下午5:54:25
  */
 public class ReflectionUtils {
 	

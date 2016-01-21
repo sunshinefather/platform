@@ -7,19 +7,21 @@ import com.platform.common.utils.StringUtils;
 import com.platform.common.utils.reflection.ReflectionUtils;
 
 /**
- * 数据Entity类 
+ * 树形Entity类 
  * @author sunshine
- * @date 2014-05-16
  */
 public abstract class TreeEntity<T> extends DataEntity<T> {
 
 	private static final long serialVersionUID = 1L;
+	
     /**父级编号*/
 	protected T parent;
 	/**所有父级编号*/
 	protected String parentIds;
 	/**节点名称*/
 	protected String name;
+	/**所在层级*/
+	protected Integer levelIndex;
 	/**排序*/
 	protected Integer sort;
 	
@@ -32,18 +34,10 @@ public abstract class TreeEntity<T> extends DataEntity<T> {
 		super(id);
 	}
 	
-	/**
-	 * 父对象，只能通过子类实现，父类实现mybatis无法读取
-	 * @return
-	 */
 	@JsonBackReference
 	@NotNull
 	public abstract T getParent();
 
-	/**
-	 * 父对象，只能通过子类实现，父类实现mybatis无法读取
-	 * @return
-	 */
 	public abstract void setParent(T parent);
 
 	@Length(min=1, max=2000)
@@ -78,5 +72,13 @@ public abstract class TreeEntity<T> extends DataEntity<T> {
 			id = (String)ReflectionUtils.getFieldValue(parent, "id");
 		}
 		return StringUtils.isNotBlank(id) ? id : "0";
-	}	
+	}
+
+	public Integer getLevelIndex() {
+		return levelIndex;
+	}
+
+	public void setLevelIndex(Integer levelIndex) {
+		this.levelIndex = levelIndex;
+	}		
 }

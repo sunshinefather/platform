@@ -11,12 +11,8 @@ import com.platform.common.utils.StringUtils;
 import com.platform.modules.sys.bean.User;
 import com.platform.modules.sys.utils.UserUtils;
 /**
- * Entity
- * @ClassName:  BaseEntity   
- * @Description:TODO   
+ * BaseEntity
  * @author: sunshine  
- * @date:   2015年11月26日 下午2:10:32
- * @param <T>
  */
 public abstract class BaseEntity<T> implements Serializable {
 
@@ -38,13 +34,12 @@ public abstract class BaseEntity<T> implements Serializable {
 	protected Page<T> page;
 	
 	/**
-	 * 自定义SQL（SQL标识，SQL内容）
+	 * 自定义SQL
 	 */
 	protected Map<String, String> sqlMap;
 	
 	/**
-	 * 是否是新记录（默认：false），调用setIsNewRecord()设置新记录，使用自定义ID。
-	 * 设置为true后强制执行插入语句，ID不会自动生成，需从手动传入。
+	 * 是否是新记录
 	 */
 	protected boolean isNewRecord = false;
 
@@ -116,17 +111,15 @@ public abstract class BaseEntity<T> implements Serializable {
 	public abstract void preUpdate();
 	
     /**
-	 * 是否是新记录（默认：false），调用setIsNewRecord()设置新记录，使用自定义ID。
-	 * 设置为true后强制执行插入语句，ID不会自动生成，需从手动传入。
-     * @return
+	 * 是否是新记录
+	 * @return
      */
 	public boolean getIsNewRecord() {
         return isNewRecord || StringUtils.isBlank(getId());
     }
 
 	/**
-	 * 是否是新记录（默认：false），调用setIsNewRecord()设置新记录，使用自定义ID。
-	 * 设置为true后强制执行插入语句，ID不会自动生成，需从手动传入。
+	 * 设置是否是新记录（默认：false）
 	 */
 	public void setIsNewRecord(boolean isNewRecord) {
 		this.isNewRecord = isNewRecord;

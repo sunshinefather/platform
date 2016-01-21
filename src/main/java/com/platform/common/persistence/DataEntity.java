@@ -14,11 +14,11 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 数据Entity类 
  * @author sunshine
- * @date 2014-05-16
  */
 public abstract class DataEntity<T> extends BaseEntity<T> {
 
 	private static final long serialVersionUID = 1L;
+	
 	/**创建者*/
 	protected User createBy;
 	/**创建日期*/
@@ -46,7 +46,6 @@ public abstract class DataEntity<T> extends BaseEntity<T> {
 	 */
 	@Override
 	public void preInsert(){
-		// 不限制ID为UUID，调用setIsNewRecord()使用自定义ID
 		if (!this.isNewRecord){
 			setId(IdGen.uuid());
 		}
