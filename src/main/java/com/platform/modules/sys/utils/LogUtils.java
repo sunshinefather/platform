@@ -3,12 +3,9 @@ package com.platform.modules.sys.utils;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.web.method.HandlerMethod;
-
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.platform.common.config.Global;
@@ -23,9 +20,8 @@ import com.platform.modules.sys.dao.LogDao;
 import com.platform.modules.sys.dao.MenuDao;
 
 /**
- * 字典工具类 
+ * 日志工具类 
  * @author sunshine
- * @date 2014-11-7
  */
 public class LogUtils {
 	

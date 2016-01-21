@@ -21,7 +21,7 @@ import com.platform.modules.sys.bean.User;
 @Transactional(readOnly = true)
 public abstract class BaseService {
 	
-	protected Logger logger = LoggerFactory.getLogger(getClass());
+	protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	public static String dataScopeFilter(User user, String officeAlias, String userAlias) {
 

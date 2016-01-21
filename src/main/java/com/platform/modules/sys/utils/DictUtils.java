@@ -16,7 +16,6 @@ import com.platform.modules.sys.dao.DictDao;
 /**
  * 字典工具类 
  * @author sunshine
- * @date 2013-5-29
  */
 public class DictUtils {
 	

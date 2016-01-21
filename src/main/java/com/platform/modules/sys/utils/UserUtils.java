@@ -1,13 +1,11 @@
 package com.platform.modules.sys.utils;
 
 import java.util.List;
-
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.UnavailableSecurityManagerException;
 import org.apache.shiro.session.InvalidSessionException;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
-
 import com.platform.common.service.BaseService;
 import com.platform.common.utils.CacheUtils;
 import com.platform.common.utils.SpringContextHolder;
@@ -22,6 +20,7 @@ import com.platform.modules.sys.dao.OfficeDao;
 import com.platform.modules.sys.dao.RoleDao;
 import com.platform.modules.sys.dao.UserDao;
 import com.platform.modules.sys.security.SystemAuthorizingRealm.Principal;
+
 /**
  * 用户工具类
  * @ClassName:  UserUtils   
