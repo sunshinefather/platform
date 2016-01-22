@@ -22,9 +22,7 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
 /**
  * 条形码和二维码编码解码
- * 
  * @author sunshine
- * @date 2014-02-28
  */
 public class ZxingHandler {
 

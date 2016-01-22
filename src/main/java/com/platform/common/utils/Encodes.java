@@ -69,19 +69,13 @@ public class Encodes {
 	        pos += 8;  
 	        while (pos > 5) {  
 	            char c = encodes[val >> (pos -= 6)];  
-	            sb.append(  
-	            c == 'i' ? "ia" :  
-	            c == '+' ? "ib" :  
-	            c == '/' ? "ic" : c);  
+	            sb.append(c == 'i' ? "ia" : c == '+' ? "ib" : c == '/' ? "ic" : c);
 	            val &= ((1 << pos) - 1);  
 	        }  
 	    }  
 	    if (pos > 0) {  
 	        char c = encodes[val << (6 - pos)];  
-	        sb.append(  
-	        c == 'i' ? "ia" :  
-	        c == '+' ? "ib" :  
-	        c == '/' ? "ic" : c);  
+	        sb.append(c == 'i' ? "ia" : c == '+' ? "ib" : c == '/' ? "ic" : c);
 	    }  
 	    return sb.toString();  
 	} 
@@ -97,10 +91,7 @@ public class Encodes {
 	        char c = data[i];  
 	        if (c == 'i') {  
 	            c = data[++i];  
-	            c =  
-	            c == 'a' ? 'i' :  
-	            c == 'b' ? '+' :  
-	            c == 'c' ? '/' : data[--i];  
+	            c = c == 'a' ? 'i' : c == 'b' ? '+' : c == 'c' ? '/' : data[--i];  
 	        }  
 	        val = (val << 6) | decodes[c];  
 	        pos += 6;  

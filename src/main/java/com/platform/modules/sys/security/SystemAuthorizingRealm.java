@@ -3,10 +3,8 @@ package com.platform.modules.sys.security;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -21,7 +19,6 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.stereotype.Service;
-
 import com.platform.common.config.Global;
 import com.platform.common.servlet.ValidateCodeServlet;
 import com.platform.common.utils.Encodes;

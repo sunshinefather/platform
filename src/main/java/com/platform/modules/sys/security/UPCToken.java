@@ -1,10 +1,7 @@
 package com.platform.modules.sys.security;
 /**
  * 用户名,密码和验证码 TOKEN
- * @ClassName:  UsernamePasswordToken   
- * @Description:TODO   
  * @author: sunshine  
- * @date:   2015年11月6日 下午2:15:27
  */
 public class UPCToken extends org.apache.shiro.authc.UsernamePasswordToken {
 
@@ -34,5 +31,4 @@ public class UPCToken extends org.apache.shiro.authc.UsernamePasswordToken {
 	public boolean isMobileLogin() {
 		return mobileLogin;
 	}
-	
 }
