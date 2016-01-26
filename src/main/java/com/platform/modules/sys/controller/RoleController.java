@@ -2,9 +2,7 @@ package com.platform.modules.sys.controller;
 
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.platform.common.config.Global;
@@ -80,10 +77,6 @@ public class RoleController extends BaseController {
 			addMessage(redirectAttributes, "越权操作，只有超级管理员才能修改此数据！");
 			return "redirect:" + adminPath + "/sys/role/?repage";
 		}
-		if(Global.isDemoMode()){
-			addMessage(redirectAttributes, "演示模式，不允许操作！");
-			return "redirect:" + adminPath + "/sys/role/?repage";
-		}
 		if (!beanValidator(model, role)){
 			return form(role, model);
 		}
@@ -107,18 +100,10 @@ public class RoleController extends BaseController {
 			addMessage(redirectAttributes, "越权操作，只有超级管理员才能修改此数据！");
 			return "redirect:" + adminPath + "/sys/role/?repage";
 		}
-		if(Global.isDemoMode()){
-			addMessage(redirectAttributes, "演示模式，不允许操作！");
-			return "redirect:" + adminPath + "/sys/role/?repage";
-		}
-//		if (Role.isAdmin(id)){
-//			addMessage(redirectAttributes, "删除角色失败, 不允许内置角色或编号空");
-////		}else if (UserUtils.getUser().getRoleIdList().contains(id)){
-////			addMessage(redirectAttributes, "删除角色失败, 不能删除当前用户所在角色");
-//		}else{
-			systemService.deleteRole(role);
-			addMessage(redirectAttributes, "删除角色成功");
-//		}
+
+		systemService.deleteRole(role);
+		addMessage(redirectAttributes, "删除角色成功");
+
 		return "redirect:" + adminPath + "/sys/role/?repage";
 	}
 	
@@ -187,10 +172,6 @@ public class RoleController extends BaseController {
 	@RequiresPermissions("sys:role:edit")
 	@RequestMapping(value = "outrole")
 	public String outrole(String userId, String roleId, RedirectAttributes redirectAttributes) {
-		if(Global.isDemoMode()){
-			addMessage(redirectAttributes, "演示模式，不允许操作！");
-			return "redirect:" + adminPath + "/sys/role/assign?id="+roleId;
-		}
 		Role role = systemService.getRole(roleId);
 		User user = systemService.getUser(userId);
 		if (UserUtils.getUser().getId().equals(userId)) {
@@ -220,10 +201,6 @@ public class RoleController extends BaseController {
 	@RequiresPermissions("sys:role:edit")
 	@RequestMapping(value = "assignrole")
 	public String assignRole(Role role, String[] idsArr, RedirectAttributes redirectAttributes) {
-		if(Global.isDemoMode()){
-			addMessage(redirectAttributes, "演示模式，不允许操作！");
-			return "redirect:" + adminPath + "/sys/role/assign?id="+role.getId();
-		}
 		StringBuilder msg = new StringBuilder();
 		int newNum = 0;
 		for (int i = 0; i < idsArr.length; i++) {

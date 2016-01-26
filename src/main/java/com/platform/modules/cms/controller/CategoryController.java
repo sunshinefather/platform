@@ -2,9 +2,7 @@ package com.platform.modules.cms.controller;
 
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.platform.common.config.Global;
 import com.platform.common.utils.StringUtils;
 import com.platform.common.web.BaseController;
 import com.platform.modules.cms.bean.Article;
@@ -87,10 +83,6 @@ public class CategoryController extends BaseController {
 	@RequiresPermissions("cms:category:edit")
 	@RequestMapping(value = "save")
 	public String save(Category category, Model model, RedirectAttributes redirectAttributes) {
-		if(Global.isDemoMode()){
-			addMessage(redirectAttributes, "演示模式，不允许操作！");
-			return "redirect:" + adminPath + "/cms/category/";
-		}
 		if (!beanValidator(model, category)){
 			return form(category, model);
 		}
@@ -102,10 +94,6 @@ public class CategoryController extends BaseController {
 	@RequiresPermissions("cms:category:edit")
 	@RequestMapping(value = "delete")
 	public String delete(Category category, RedirectAttributes redirectAttributes) {
-		if(Global.isDemoMode()){
-			addMessage(redirectAttributes, "演示模式，不允许操作！");
-			return "redirect:" + adminPath + "/cms/category/";
-		}
 		if (Category.isRoot(category.getId())){
 			addMessage(redirectAttributes, "删除栏目失败, 不允许删除顶级栏目或编号为空");
 		}else{

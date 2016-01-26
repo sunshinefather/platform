@@ -2,9 +2,7 @@ package com.platform.modules.sys.controller;
 
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.platform.common.config.Global;
@@ -29,7 +26,6 @@ import com.platform.modules.sys.utils.UserUtils;
 /**
  * 机构Controller 
  * @author sunshine
- * @date 2013-5-15
  */
 @Controller
 @RequestMapping(value = "${adminPath}/sys/office")
@@ -50,7 +46,6 @@ public class OfficeController extends BaseController {
 	@RequiresPermissions("sys:office:view")
 	@RequestMapping(value = {""})
 	public String index(Office office, Model model) {
-//        model.addAttribute("list", officeService.findAll());
 		return "modules/sys/officeIndex";
 	}
 
@@ -92,10 +87,6 @@ public class OfficeController extends BaseController {
 	@RequiresPermissions("sys:office:edit")
 	@RequestMapping(value = "save")
 	public String save(Office office, Model model, RedirectAttributes redirectAttributes) {
-		if(Global.isDemoMode()){
-			addMessage(redirectAttributes, "演示模式，不允许操作！");
-			return "redirect:" + adminPath + "/sys/office/";
-		}
 		if (!beanValidator(model, office)){
 			return form(office, model);
 		}
@@ -123,16 +114,8 @@ public class OfficeController extends BaseController {
 	@RequiresPermissions("sys:office:edit")
 	@RequestMapping(value = "delete")
 	public String delete(Office office, RedirectAttributes redirectAttributes) {
-		if(Global.isDemoMode()){
-			addMessage(redirectAttributes, "演示模式，不允许操作！");
-			return "redirect:" + adminPath + "/sys/office/list";
-		}
-//		if (Office.isRoot(id)){
-//			addMessage(redirectAttributes, "删除机构失败, 不允许删除顶级机构或编号空");
-//		}else{
-			officeService.delete(office);
-			addMessage(redirectAttributes, "删除机构成功");
-//		}
+		officeService.delete(office);
+		addMessage(redirectAttributes, "删除机构成功");
 		return "redirect:" + adminPath + "/sys/office/list?id="+office.getParentId()+"&parentIds="+office.getParentIds();
 	}
 

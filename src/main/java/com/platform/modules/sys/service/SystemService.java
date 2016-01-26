@@ -24,7 +24,6 @@ import com.platform.modules.sys.bean.User;
 import com.platform.modules.sys.dao.MenuDao;
 import com.platform.modules.sys.dao.RoleDao;
 import com.platform.modules.sys.dao.UserDao;
-import com.platform.modules.sys.security.SystemAuthorizingRealm;
 import com.platform.modules.sys.utils.LogUtils;
 import com.platform.modules.sys.utils.UserUtils;
 
@@ -43,14 +42,15 @@ public class SystemService extends BaseService {
 	
 	@Autowired
 	private UserDao userDao;
+	
 	@Autowired
 	private RoleDao roleDao;
+	
 	@Autowired
 	private MenuDao menuDao;
+	
 	@Autowired
 	private SessionDAO sessionDao;
-	@Autowired
-	private SystemAuthorizingRealm systemRealm;
 	
 	public SessionDAO getSessionDao() {
 		return sessionDao;
@@ -181,8 +181,9 @@ public class SystemService extends BaseService {
 	 * 生成安全的密码，生成随机的16位salt并经过1024次 sha-1 hash
 	 */
 	public static String entryptPassword(String plainPassword) {
+		String plain = Encodes.unescapeHtml(plainPassword);
 		byte[] salt = Digests.generateSalt(SALT_SIZE);
-		byte[] hashPassword = Digests.sha1(plainPassword.getBytes(), salt, HASH_INTERATIONS);
+		byte[] hashPassword = Digests.sha1(plain.getBytes(), salt, HASH_INTERATIONS);
 		return Encodes.encodeHex(salt)+Encodes.encodeHex(hashPassword);
 	}
 	
@@ -193,8 +194,9 @@ public class SystemService extends BaseService {
 	 * @return 验证成功返回true
 	 */
 	public static boolean validatePassword(String plainPassword, String password) {
+		String plain = Encodes.unescapeHtml(plainPassword);
 		byte[] salt = Encodes.decodeHex(password.substring(0,16));
-		byte[] hashPassword = Digests.sha1(plainPassword.getBytes(), salt, HASH_INTERATIONS);
+		byte[] hashPassword = Digests.sha1(plain.getBytes(), salt, HASH_INTERATIONS);
 		return password.equals(Encodes.encodeHex(salt)+Encodes.encodeHex(hashPassword));
 	}
 	
