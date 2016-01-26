@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
-import org.apache.commons.lang3.Validate;
 import com.platform.common.utils.Exceptions;
 
 /**
@@ -79,8 +78,6 @@ public class Digests {
 	 * @param numBytes byte数组的大小
 	 */
 	public static byte[] generateSalt(int numBytes) {
-		Validate.isTrue(numBytes > 0, "numBytes argument must be a positive integer (1 or larger)", numBytes);
-
 		byte[] bytes = new byte[numBytes];
 		random.nextBytes(bytes);
 		return bytes;

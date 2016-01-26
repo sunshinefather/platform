@@ -67,8 +67,8 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 				throw new AuthenticationException("msg:该已帐号禁止登录");
 			}
 			String userPwd=user.getPassword();
-			byte[] salt = Encodes.decodeHex(userPwd.substring(0,16));
-			return new SimpleAuthenticationInfo(new Principal(user,token.isMobileLogin()),userPwd.substring(16), ByteSource.Util.bytes(salt),getName());
+			byte[] salt = Encodes.decodeHex(userPwd.substring(0,2 * SystemService.SALT_SIZE));
+			return new SimpleAuthenticationInfo(new Principal(user,token.isMobileLogin()),userPwd.substring(2 * SystemService.SALT_SIZE), ByteSource.Util.bytes(salt),getName());
 		} else {
 			return null;
 		}
