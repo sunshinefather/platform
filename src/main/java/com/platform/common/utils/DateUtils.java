@@ -353,4 +353,40 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
         String[] str = {"星期日","星期一","星期二","星期三","星期四","星期五","星期六"};
     	return str[number];
     }
+    /**
+     * 根据出生日期计算成长时间
+     * @Title: getYearMonthDay
+     * @Description: TODO  
+     * @param: @param birthday
+     * @param: @return      
+     * @return: String[]
+     * @author: sunshine  
+     * @throws
+     */
+    public static int[] getYearMonthDay(Date oldBirthday){
+		Calendar birthday = Calendar.getInstance();
+		birthday.setTime(oldBirthday);
+		Calendar now = Calendar.getInstance();
+
+		int day = now.get(Calendar.DAY_OF_MONTH) - birthday.get(Calendar.DAY_OF_MONTH);
+		int month = now.get(Calendar.MONTH) - birthday.get(Calendar.MONTH);
+		int year = now.get(Calendar.YEAR) - birthday.get(Calendar.YEAR);
+
+		if(day<0){
+			 month -= 1;
+			 now.add(Calendar.MONTH, -1);
+			 day = day + now.getActualMaximum(Calendar.DAY_OF_MONTH);
+		}
+
+		if(month<0){
+			month = (month+12)%12;
+			year--;
+		}
+		if(year<0){
+			day=0;
+			month=0;
+			year=0;
+		}
+     return new int[]{year,month,day};
+    }
 }
