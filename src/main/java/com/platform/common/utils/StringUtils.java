@@ -3,6 +3,7 @@ package com.platform.common.utils;
 import java.io.UnsupportedEncodingException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
@@ -478,6 +479,29 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 			}
 		}
 		return 0;
+	}
+	/**
+	 * 抽取数字字母汉字
+	 * @Title: extractNLCC
+	 * @Description: TODO  
+	 * @param: @param content
+	 * @param: @return      
+	 * @return: String
+	 * @author: sunshine  
+	 * @throws
+	 */
+	public static String extractNLCC(String content){
+		Pattern p = Pattern.compile("[a-zA-Z0-9\u4e00-\u9fa5]");
+		Matcher m = p.matcher(content);
+		StringBuffer sb=new StringBuffer();
+		List<String> result=new ArrayList<String>();
+		while(m.find()){
+			result.add(m.group());
+		}
+		for(String s1:result){
+			sb.append(s1);
+		}
+		return sb.toString();
 	}
 	public static void main(String[] args) {
 		System.out.println("");

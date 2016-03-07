@@ -5,9 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.commons.io.FileUtils;
-
 import com.platform.common.utils.StringUtils;
 
 public class BanWordsUtil {
@@ -63,6 +61,7 @@ public class BanWordsUtil {
 	        }
 	        List<String> result = new ArrayList<String>();
 	        int i = 0;
+	        content = StringUtils.extractNLCC(content);
 	        for (;i < content.length(); i++) {
 	            Integer index = wordIndex.get(content.substring(i, i + 1));
 	            int p = 0;
