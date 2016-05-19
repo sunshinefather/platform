@@ -7,10 +7,12 @@ import java.lang.reflect.Modifier;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
+
 import org.apache.commons.lang3.Validate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
+
 import com.platform.common.utils.StringUtils;
 /**
  * 反射工具类
@@ -45,8 +47,12 @@ public class ReflectionUtils {
 		for (String name : StringUtils.split(propertyName, ".")) {
 			String getterMethodName = GETTER_PREFIX
 					+ StringUtils.capitalize(name);
-			object = invokeMethod(object, getterMethodName, new Class[] {},
-					new Object[] {});
+			if(object!=null){
+				object = invokeMethod(object, getterMethodName, new Class[] {},
+						new Object[] {});
+			}else{
+				break;
+			}
 		}
 		return object;
 	}
