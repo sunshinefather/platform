@@ -19,7 +19,7 @@ public class Global {
 
 	private static Global global = new Global();
 	private static Map<String, String> map = Maps.newHashMap();
-	private static PropertiesLoader loader = new PropertiesLoader("project-config.properties");
+	private static PropertiesLoader loader = new PropertiesLoader("/project-config.properties");
 	
 	public static final String SHOW = "1";
 	public static final String HIDE = "0";
@@ -134,5 +134,7 @@ public class Global {
 		}
 		return projectPath;
     }
-	
+	public static void main(String[] args) {
+		System.out.println(Global.getInstance().getConfig("version"));
+	}
 }
