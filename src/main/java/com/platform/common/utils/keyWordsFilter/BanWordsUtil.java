@@ -7,6 +7,7 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -63,7 +64,7 @@ public class BanWordsUtil {
 	     */
 	    public static void addBanWords(String w){
 	    	if (StringUtils.isNotBlank(w)) {
-            	if(w.length()<WORDS_MAX_LENGTH){
+            	if(w.length()<WORDS_MAX_LENGTH && !banWordsList[w.length()].containsKey(w.toLowerCase())){
             		banWordsList[w.length()].put(w.toLowerCase(), "");
 	                Integer index = wordIndex.get(w.substring(0,1));
 	                if (index == null) {
