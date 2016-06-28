@@ -215,10 +215,10 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
         return leap;
     }
     /**
-     * 根据身份证号码计算生日
+     * 根据身份证号码计算出生日期
      * @param: @param identity
      */
-    public static Date parseToBirthday(String identity){
+    public static Date identityToBirthday(String identity){
     	try {
         	String birthday = identity.substring(6,14);
     		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
@@ -232,9 +232,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
      * @param: @param identity
 
      */
-    public static Integer parseToAge(String identity){
+    public static Integer identityToAge(String identity){
     	try {
-    	Date birthDay=parseToBirthday(identity);
+    	Date birthDay=identityToBirthday(identity);
     	Calendar cal = Calendar.getInstance();
     	if (cal.before(birthDay)) {
                 throw new IllegalArgumentException("出生时间大于当前时间!");
@@ -266,7 +266,50 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
 			return null;
 		}
     }
-    
+    /**
+     * 出生日期计算年龄
+     * @Title: birthdayToAge
+     * @Description: TODO  
+     * @param: @param birthday
+     * @param: @return      
+     * @return: Integer
+     * @author: sunshine  
+     * @throws
+     */
+    public static Integer birthdayToAge(String birthday){
+    	try {
+    		Date birthDay=parseDate(birthday,"yyyy-MM-dd");
+    		Calendar cal = Calendar.getInstance();
+    		if (cal.before(birthDay)) {
+    			throw new IllegalArgumentException("出生时间大于当前时间!");
+    		}
+    		int yearNow = cal.get(Calendar.YEAR);
+    		int monthNow = cal.get(Calendar.MONTH) + 1;
+    		int dayOfMonthNow = cal.get(Calendar.DAY_OF_MONTH);
+    		
+    		cal.setTime(birthDay);
+    		int yearBirth = cal.get(Calendar.YEAR);
+    		int monthBirth = cal.get(Calendar.MONTH)+1;
+    		int dayOfMonthBirth = cal.get(Calendar.DAY_OF_MONTH);
+    		int age = yearNow - yearBirth;
+    		
+    		if (monthNow <= monthBirth) {
+    			if (monthNow == monthBirth) {
+    				if (dayOfMonthNow < dayOfMonthBirth) {
+    					age--;
+    				}
+    			} else {
+    				age--;
+    			}
+    		}
+    		if(age<0){
+    			return null;
+    		}
+    		return age;
+    	} catch (Exception e) {
+    		return null;
+    	}
+    }
     /**
      * 获取本周周一(以星期一开始)
      */
