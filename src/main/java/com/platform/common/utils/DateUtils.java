@@ -432,4 +432,40 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
 		}
      return new int[]{year,month,day};
     }
+    /**
+     * 判断curDate 是否包含在startDate,endDate之间
+     * @Title: isWithinDate
+     * @Description: TODO  
+     * @param: @param curDate
+     * @param: @param startDate
+     * @param: @param endDate
+     * @param: @return      
+     * @return: boolean
+     * @author: sunshine  
+     * @throws
+     */
+    public static boolean isWithinDate(String curDate,String startDate,String endDate){
+    	boolean tag = false;
+    	try{
+    	Calendar cdate = Calendar.getInstance();
+    	cdate.setTime(parseDate(curDate));
+    	
+    	Calendar sdate = Calendar.getInstance();
+    	sdate.setTime(parseDate(startDate));
+    	
+    	Calendar edate = Calendar.getInstance();
+    	edate.setTime(parseDate(endDate));
+    	
+    	tag = (cdate.after(sdate) && cdate.before(edate));
+    	if(!tag){
+        	tag = (cdate.equals(sdate) || cdate.equals(edate));	
+    	}
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}
+    	return tag;
+    }
+    public static void main(String[] args) {
+    	System.out.println(isWithinDate("2016-07-27", "2016-07-11", "2016-07-26"));
+	}
 }
