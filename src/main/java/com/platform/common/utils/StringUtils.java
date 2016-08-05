@@ -503,7 +503,21 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		}
 		return sb.toString();
 	}
-	public static void main(String[] args) {
-		System.out.println("");
+	/**
+	 * 判断是否是数字或小数
+	 * @Title: isBigDecimal
+	 * @Description: TODO  
+	 * @param: @param str
+	 * @param: @return      
+	 * @return: boolean
+	 * @author: sunshine  
+	 * @throws
+	 */
+	public static boolean isBigDecimal(String str){
+		if(isNotEmpty(str)){
+			return str.matches("^[-]?([0-9]+([.]([0-9]+))?)$");
+		}else{
+			return false;
+		}
 	}
 }
