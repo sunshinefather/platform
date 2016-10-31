@@ -70,7 +70,7 @@ public class RSA {
         try {
             PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(privateKeyValue);
             KeyFactory keyFactory = KeyFactory.getInstance(ALGORITHM_RSA);
-            privateKey = keyFactory.generatePrivate(keySpec);
+            this.privateKey = keyFactory.generatePrivate(keySpec);
         } catch (NoSuchAlgorithmException e) {
             throw new IllegalStateException(e);
         } catch (InvalidKeySpecException e) {
