@@ -12,7 +12,7 @@ public class AES {
 	private static final String LOCAL_ENCODING = "UTF-8";
 	
 	/**
-	 * 加密
+	 * 加密(兼容版)
 	 * @Title: encrypt
 	 * @Description: TODO  
 	 * @param: @param content
