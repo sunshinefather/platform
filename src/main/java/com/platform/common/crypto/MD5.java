@@ -16,7 +16,7 @@ public class MD5 {
 	 * @throws
 	 */
     public static String encrypt(String message) {
-        final StringBuffer md5Code = new StringBuffer();
+        final StringBuilder md5Code = new StringBuilder();
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("MD5");
             messageDigest.reset();
