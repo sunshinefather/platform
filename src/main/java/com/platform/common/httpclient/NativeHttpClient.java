@@ -81,11 +81,11 @@ public class NativeHttpClient implements IHttpClient {
 	}
 	
 	@Override
-	public ResponseWrapper sendPost(String url,Map<String,String> entity) throws Exception {
+	public ResponseWrapper sendPost(String url,Map<String,Object> entity) throws Exception {
 		StringBuilder content =new StringBuilder();
 		if(!entity.isEmpty()){
 			int size = entity.size(),i=0;
-			for(Map.Entry<String,String> entry: entity.entrySet()){
+			for(Map.Entry<String,Object> entry: entity.entrySet()){
 				i++;
 				content.append(entry.getKey());
 				content.append("=");

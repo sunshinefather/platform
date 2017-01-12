@@ -38,7 +38,7 @@ public interface IHttpClient {
     
     public ResponseWrapper sendPost(String url, String content)throws Exception;
     
-    public ResponseWrapper sendPost(String url, Map<String, String> entity)throws Exception;
+    public ResponseWrapper sendPost(String url, Map<String, Object> entity)throws Exception;
     
     public ResponseWrapper sendPut(String url, String content)throws Exception;
 }
