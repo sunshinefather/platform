@@ -465,6 +465,47 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     	}
     	return tag;
     }
+	/**
+     * @Title: dateCompare
+     * @Description: 时间比较  
+     * @param: source
+     * @param: traget
+     * @param: type
+     * @return: int -1:小于;0:相等;1:大于
+     * @author: sunshine  
+     * @throws
+     */
+    public static int dateCompare(String source,String traget, String type){
+        int ret = 0;
+        SimpleDateFormat format = new SimpleDateFormat(type);
+		try {
+	        Date sourcedate = format.parse(source);
+	        Date tragetdate = format.parse(traget);
+	        ret = sourcedate.compareTo(tragetdate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+        return ret;
+    }
+    /**
+     * 
+     * @Title: getToday
+     * @Description: 获取当前时间  
+     * @param: @param pattern
+     * @param: @param offset时间偏移天数
+     * @param: @return      
+     * @return: String
+     * @author: sunshine  
+     * @throws
+     */
+    public static String getToday(String pattern,int offset){
+    	Calendar calendar = Calendar.getInstance();
+    	if(offset!=0){
+    		calendar.add(Calendar.DATE,offset);
+    	}
+    	SimpleDateFormat formatter = new SimpleDateFormat(pattern);
+    	return formatter.format(calendar.getTime());
+    }
     public static void main(String[] args) {
     	System.out.println(isWithinDate("2016-07-27", "2016-07-11", "2016-07-26"));
 	}
