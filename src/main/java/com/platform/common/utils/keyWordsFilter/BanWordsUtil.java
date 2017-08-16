@@ -1,14 +1,15 @@
 package com.platform.common.utils.keyWordsFilter;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 
 public class BanWordsUtil {
@@ -36,12 +37,9 @@ public class BanWordsUtil {
 	                banWordsList[i] = new Hashtable<String, String>();
 	            }
 	        }
-	        
-	        String path = BanWordsUtil.class.getResource(BAN_WORDS_LIB_FILE_NAME).getPath();
-	  
 	        List<String> words=null;
 			try {
-				words = FileUtils.readLines(FileUtils.getFile(path));
+				words = IOUtils.readLines(BanWordsUtil.class.getResourceAsStream(BAN_WORDS_LIB_FILE_NAME),Charset.defaultCharset());
 			} catch (IOException e) {
 				loadTag=false;
 				e.printStackTrace();
@@ -56,7 +54,7 @@ public class BanWordsUtil {
 	    /**
 	     * 动态添加关键字到内存中
 	     * @Title: addBanWords
-	     * @Description: TODO  
+  
 	     * @param: @param w      
 	     * @return: void
 	     * @author: sunshine  
@@ -79,7 +77,7 @@ public class BanWordsUtil {
 	    /**
 	     * 刷入动态添加的关键字
 	     * @Title: writeBanWordsToFile
-	     * @Description: TODO  
+  
 	     * @param: @return      
 	     * @return: boolean
 	     * @author: sunshine  
